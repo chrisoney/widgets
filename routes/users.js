@@ -22,8 +22,16 @@ const userValidators = [
     .exists({ checkFalsy: true })
     .withMessage('Please provide a value for username')
     .isLength({ max: 50 })
-    .withMessage('First Name must not be more than 50 characters long'),
-  check('emailAddress')
+    .withMessage('First Name must not be more than 50 characters long')
+    .custom((value) => {
+      return db.User.findOne({ where: { username: value } })
+        .then((user) => {
+          if (user) {
+            return Promise.reject('The provided username is already in use by another account');
+          }
+        });
+    }),
+  check('email')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a value for Email Address')
     .isLength({ max: 255 })
@@ -31,7 +39,7 @@ const userValidators = [
     .isEmail()
     .withMessage('Email Address is not a valid email')
     .custom((value) => {
-      return db.User.findOne({ where: { emailAddress: value } })
+      return db.User.findOne({ where: { email: value } })
         .then((user) => {
           if (user) {
             return Promise.reject('The provided Email Address is already in use by another account');
@@ -61,16 +69,14 @@ const userValidators = [
 router.post('/register', csrfProtection, userValidators,
   asyncHandler(async (req, res) => {
     const {
-      emailAddress,
-      firstName,
-      lastName,
+      email,
+      username,
       password,
     } = req.body;
 
     const user = db.User.build({
-      emailAddress,
-      firstName,
-      lastName,
+      email,
+      username
     });
 
     const validatorErrors = validationResult(req);
@@ -100,9 +106,9 @@ router.get('/login', csrfProtection, (req, res) => {
 });
 
 const loginValidators = [
-  check('emailAddress')
+  check('username')
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a value for Email Address'),
+    .withMessage('Please provide a value for username'),
   check('password')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a value for Password'),
@@ -111,7 +117,7 @@ const loginValidators = [
 router.post('/login', csrfProtection, loginValidators,
   asyncHandler(async (req, res) => {
     const {
-      emailAddress,
+      username,
       password,
     } = req.body;
 
@@ -120,7 +126,7 @@ router.post('/login', csrfProtection, loginValidators,
 
     if (validatorErrors.isEmpty()) {
       // Attempt to get the user by their email address.
-      const user = await db.User.findOne({ where: { emailAddress } });
+      const user = await db.User.findOne({ where: { username } });
 
       if (user !== null) {
         // If the user exists then compare their password
@@ -143,7 +149,7 @@ router.post('/login', csrfProtection, loginValidators,
 
     res.render('login', {
       title: 'Login',
-      emailAddress,
+      username,
       errors,
       csrfToken: req.csrfToken(),
     });
