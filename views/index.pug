@@ -8,4 +8,7 @@ append head
 
 block content
   h1= title
-  p Welcome to your Project Skeleton
+  if locals.authenticated
+    p My Widgets
+  else
+    p Welcome to Widgets, a sample site for an Express/Pug application

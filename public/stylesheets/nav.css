@@ -1,0 +1,7 @@
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px; }
+  .top-nav .widget-icon {
+    font-size: 25px; }

@@ -5,7 +5,8 @@
   "scripts": {
     "start": "per-env",
     "start:development": "nodemon -r dotenv/config ./bin/www",
-    "start:production": "node ./bin/www"
+    "start:production": "node ./bin/www",
+    "scss": "node-sass --watch ./public/scss -o ./public/stylesheets"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -18,6 +19,7 @@
     "express-validator": "^6.7.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "node-sass": "^5.0.0",
     "per-env": "^1.0.2",
     "pg": "^8.4.2",
     "pug": "2.0.4",

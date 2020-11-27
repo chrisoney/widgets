@@ -142,7 +142,7 @@ router.post('/login', csrfProtection, loginValidators,
       }
 
       // Otherwise display an error message to the user.
-      errors.push('Login failed for the provided email address and password');
+      errors.push('Login failed for the provided username and password');
     } else {
       errors = validatorErrors.array().map((error) => error.msg);
     }

@@ -1,6 +1,6 @@
 mixin validationErrorSummary(errors)
   if errors
-    div(class='alert alert-danger' role='alert')
+    div()
       p The following error(s) occurred:
       ul
         each error in errors
@@ -13,3 +13,14 @@ mixin field(labelText, fieldName, fieldValue, fieldType = 'text', placeholder = 
       textarea(id=fieldName name=fieldName class='form-control' rows='5')= fieldValue
     else
       input(type=fieldType id=fieldName name=fieldName value=fieldValue placeholder=placeholder class='form-control')
+
+mixin preview(icon, name, description, imgSrc)
+  div(class="preview-container")
+    div(class="splash-details")
+      div(class="preview-title")
+        span(class=icon)
+        p= name
+      p= description
+    div(class="splash-image-container")
+      img(src=imgSrc)
+
