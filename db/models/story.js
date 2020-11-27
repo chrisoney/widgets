@@ -16,7 +16,21 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Story.associate = function(models) {
-    // associations can be defined here
+    const columnMappingOne = { // Story -> User, through Subscription
+      through: 'Subscription',
+      otherKey: 'userId',
+      foreignKey: 'storyId',
+      as: 'story'
+    }
+    const columnMappingTwo = { // Story -> User, through Recommendation
+      through: 'Recommendation',
+      otherKey: 'userId',
+      foreignKey: 'storyId',
+      as: 'story'
+    }
+
+    Story.belongsToMany(models.User, columnMappingOne);
+    Story.belongsToMany(models.User, columnMappingTwo);
   };
   return Story;
 };
