@@ -14,8 +14,8 @@ mixin field(labelText, fieldName, fieldValue, fieldType = 'text', placeholder = 
     else
       input(type=fieldType id=fieldName name=fieldName value=fieldValue placeholder=placeholder class='form-control')
 
-mixin preview(icon, name, description, imgSrc)
-  div(class="preview-container")
+mixin preview(id, icon, name, description, imgSrc)
+  div(id=id class="preview-container")
     div(class="splash-details")
       div(class="preview-title")
         span(class=icon)

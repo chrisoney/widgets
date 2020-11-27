@@ -5,7 +5,8 @@ const { restoreUser } = require('../auth');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Widgets' });
+  const storiesDescription = "A widget to keep track of online stories that you're reading, and finding new ones that may interest you";
+  res.render('index', { title: 'Widgets', storiesDescription });
 });
 
 module.exports = router;
