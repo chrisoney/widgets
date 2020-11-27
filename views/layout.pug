@@ -2,7 +2,20 @@ doctype html
 html
   head
       block head
-        title="Express Starter App"
+        title="Widgets"
         link(rel='stylesheet' href='/stylesheets/reset.css')
   body
+    nav
+      if locals.authenticated
+        span(class='navbar-text px-4') Welcome #{user.firstName}!
+        form(class='form-inline pr-4' action='/users/logout' method='post')
+          button(class='btn btn-sm btn-warning' type='submit') Logout
+      else
+        span(class='navbar-text px-4')
+          a(class='btn btn-sm btn-dark mr-2' href='/users/login') Login
+          a(class='btn btn-sm btn-dark' href='/users/register') Register
+
     block content
+
+
+

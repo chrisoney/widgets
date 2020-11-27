@@ -21,13 +21,13 @@ module.exports = (sequelize, DataTypes) => {
       through: 'Subscription',
       otherKey: 'storyId',
       foreignKey: 'userId',
-      as: 'user'
+      as: 'subscribedUser'
     }
     const columnMappingTwo = { // User -> Story, through Recommendation
       through: 'Recommendation',
       otherKey: 'storyId',
       foreignKey: 'userId',
-      as: 'user'
+      as: 'recommendingUser'
     }
     const columnMappingThree = { // User -> User, through Follow as follower
       through: 'Follow',
