@@ -14,7 +14,6 @@ module.exports = {
       }], {});
     */
   const password = await bcrypt.hash('Hunter12!', 10);
-  console.log()
   return queryInterface.bulkInsert('Users', [
     {
       username: 'chris',
