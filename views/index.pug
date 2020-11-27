@@ -7,8 +7,9 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1= title
-  if locals.authenticated
-    p My Widgets
-  else
-    p Welcome to Widgets, a sample site for an Express/Pug application
+  div(class="page-container")
+    h1(class="title")= title
+    if locals.authenticated
+      p My Widgets
+    else
+      include splash

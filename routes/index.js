@@ -4,7 +4,7 @@ const { restoreUser } = require('../auth');
 
 
 /* GET home page. */
-router.get('/', restoreUser, function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('index', { title: 'Widgets' });
 });
 
