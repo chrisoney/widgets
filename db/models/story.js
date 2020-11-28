@@ -20,13 +20,13 @@ module.exports = (sequelize, DataTypes) => {
       through: 'Subscription',
       otherKey: 'userId',
       foreignKey: 'storyId',
-      as: 'subscribedStory'
+      as: 'subscribingUsers'
     }
     const columnMappingTwo = { // Story -> User, through Recommendation
       through: 'Recommendation',
       otherKey: 'userId',
       foreignKey: 'storyId',
-      as: 'recommendedStory'
+      as: 'recommendedingUsers'
     }
 
     Story.belongsToMany(models.User, columnMappingOne);

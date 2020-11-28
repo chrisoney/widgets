@@ -11,9 +11,9 @@ block content
     div(class="secondary-container")
       div(class="discover-container")
         div(class="discover-nav")
-          span(class="nav-item active") Stories
-          span(class="nav-item") Users
-          span(class="nav-item") Follows
+          span(id="stories" class="nav-item active") Stories
+          span(id="users" class="nav-item") Users
+          span(id="follows" class="nav-item") Follows
         div(class="tab-content")
           ul
             each story in stories

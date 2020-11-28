@@ -46,16 +46,25 @@ h1 {
   transition: 0.5s ease-in-out;
 }
 
-.story-button-container span:hover {
-  transform: scale(1.2);
-}
-
 .fa-chevron-circle-left {
   margin-right: 10px;
 }
-
 .opening {
   transform: rotate(-90deg);
+}
+
+.fa-chevron-circle-left:hover {
+  transition-delay: 0.2s;
+  transform: rotate(-90deg) scale(1.2);
+}
+
+.opening:hover {
+  transition-delay: 0.2s;
+  transform: rotate(0deg) scale(1.2);
+}
+
+.fa-arrow-circle-right:hover {
+  transform: scale(1.2);
 }
 
 .story-details-container{

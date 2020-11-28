@@ -21,25 +21,25 @@ module.exports = (sequelize, DataTypes) => {
       through: 'Subscription',
       otherKey: 'storyId',
       foreignKey: 'userId',
-      as: 'subscribedUser'
+      as: 'subscribedStories'
     }
     const columnMappingTwo = { // User -> Story, through Recommendation
       through: 'Recommendation',
       otherKey: 'storyId',
       foreignKey: 'userId',
-      as: 'recommendingUser'
+      as: 'recommendedStories'
     }
     const columnMappingThree = { // User -> User, through Follow as follower
       through: 'Follow',
-      otherKey: 'userId',
-      foreignKey: 'userId',
-      as: 'follower'
+      otherKey: 'followingId',
+      foreignKey: 'followerId',
+      as: 'followings'
     }
     const columnMappingFour = { // User -> User, through Follow as following
       through: 'Follow',
-      otherKey: 'userId',
-      foreignKey: 'userId',
-      as: 'following'
+      otherKey: 'followerId',
+      foreignKey: 'followingId',
+      as: 'followers'
     }
     
     User.belongsToMany(models.Story, columnMappingOne);
