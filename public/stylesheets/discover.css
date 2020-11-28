@@ -1,7 +1,20 @@
-.discover-container{
-  width: 80%;
-  height: auto;
+.main-container {
+  display:flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+}
+
+.secondary-container {
   margin-top: 20px;
+  display:flex;
+  justify-content: space-around;
+}
+.discover-container{
+  width: 60%;
+  height: auto;
 }
 .discover-nav{
   width: 100%;
@@ -45,4 +58,8 @@
   margin-bottom: 50px;
   border: 1px solid black;
   border-top: none;
+}
+
+.story-container{
+  list-style: none;
 }

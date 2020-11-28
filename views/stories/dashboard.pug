@@ -8,20 +8,21 @@ append head
   script(src="/javascripts/dashboard.js" type="module" defer)
 
 block content
-  div(class="dashboard-container")
+  div(class="main-container")
     h1 Stories dashboard
+    div(class="dashboard-container")
 
-    div(class="stories-container")
-        ul
-          each story, idx in stories
-            li(class="story-container")
-              div(class="story-header-container")
-                span(class="story-title")=story.title
-                div(class="story-button-container")
-                  span(class=`fas fa-chevron-circle-left toggle-${idx}`)
-                  span(class="fas fa-arrow-circle-right")
-              div(class=`story-details-container container-${idx}`)
-                +dashStoryDetail("Book:", story.book)
-                +dashStoryDetail("Chapter:", story.chapter)
-                a(href=story.link class="link") Link
-    include ../nav-section
+      div(class="stories-container")
+          ul
+            each story, idx in stories
+              li(class="story-container")
+                div(class="story-header-container")
+                  span(class="story-title")=story.title
+                  div(class="story-button-container")
+                    span(class=`fas fa-chevron-circle-left toggle-${idx}`)
+                    span(class="fas fa-arrow-circle-right")
+                div(class=`story-details-container container-${idx}`)
+                  +dashStoryDetail("Book:", story.book)
+                  +dashStoryDetail("Chapter:", story.chapter)
+                  a(href=story.link class="link") Link
+      include nav-section
