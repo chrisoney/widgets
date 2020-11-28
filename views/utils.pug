@@ -24,3 +24,9 @@ mixin preview(id, icon, name, description, imgSrc)
     div(class="splash-image-container")
       img(src=imgSrc)
 
+mixin dashStoryDetail(label, value)
+  div(class="detail-container")
+    span(class="detail-label")=label
+    span(class="detail-value")=value
+
+

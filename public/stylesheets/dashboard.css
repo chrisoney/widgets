@@ -1,0 +1,61 @@
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.stories-container{
+  display:flex;
+  margin-left: 20px;
+  width: 60%;
+  flex-direction: column;
+}
+
+.story-container {
+  overflow: hidden;
+  display:flex;
+  width: 100%;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.story-header-container{
+  padding: 10px 5px;
+  display:flex;
+  justify-content: space-between;
+  background: yellow;
+}
+
+.story-button-container {
+  display:flex;
+}
+
+.story-button-container span {
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.5s ease-in-out;
+}
+
+.story-button-container span:hover {
+  transform: scale(1.2);
+}
+
+.fa-chevron-circle-left {
+  margin-right: 10px;
+}
+
+.opening {
+  transform: rotate(-90deg);
+}
+
+.story-details-container{
+  display: none;
+}
+
+.story-details-container.open{
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid black;
+  padding: 10px 5px;
+
+}

@@ -35,6 +35,13 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        title: 'Dungeon Crawler Carl',
+        chapter: '112',
+        link: 'https://www.royalroad.com/fiction/29358/dungeon-crawler-carl-book-2-carls-doomsday-scenario',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 
