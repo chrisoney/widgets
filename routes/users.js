@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/register', csrfProtection, (req, res) => {
   const user = db.User.build();
-  res.render('register', {
+  res.render('auth/register', {
     title: 'Register',
     user,
     csrfToken: req.csrfToken(),
@@ -89,7 +89,7 @@ router.post('/register', csrfProtection, userValidators,
       res.redirect('/');
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
-      res.render('register', {
+      res.render('auth/register', {
         title: 'Register',
         user,
         errors,
@@ -99,7 +99,7 @@ router.post('/register', csrfProtection, userValidators,
   }));
 
 router.get('/login', csrfProtection, (req, res) => {
-  res.render('login', {
+  res.render('auth/login', {
     title: 'Login',
     csrfToken: req.csrfToken(),
   });
@@ -146,8 +146,8 @@ router.post('/login', csrfProtection, loginValidators,
     } else {
       errors = validatorErrors.array().map((error) => error.msg);
     }
-
-    res.render('login', {
+    
+    res.render('auth/login', {
       title: 'Login',
       username,
       errors,
