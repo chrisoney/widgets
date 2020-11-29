@@ -1,0 +1,14 @@
+extends ../layout
+
+include ../utils
+
+block content
+  div(class="story-form-container")
+    form(action="/stories/create", method="post" class="user-form")
+      input(type="hidden" name="_csrf" value=token)
+      +field("Title", 'title', title)
+      +field("Book", 'book', book)
+      +field("Chapter", 'chapter', chapter)
+      +field("Link", 'link', link)
+      div(class='form-buttons')
+        button(type='submit') Submit

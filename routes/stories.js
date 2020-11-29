@@ -1,6 +1,6 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
-const { asyncHandler } = require('./utils');
+const { csrfProtection, asyncHandler } = require('./utils');
 const { Story, User, Subscription, Recommendation, Follow } = require('../db/models')
 
 const router = express.Router();
@@ -8,6 +8,26 @@ const router = express.Router();
 router.get("/", (req, res) => {
     res.redirect('/stories/dashboard');
 })
+
+router.get("/create", csrfProtection, asyncHandler( async (req, res) => {
+    res.render('stories/add-story', { token: req.csrfToken() });
+}))
+
+router.post("/create", asyncHandler( async (req, res) => {
+    const { title, book, chapter, link } = req.body;
+    const newStory = await Story.create({
+        title,
+        book,
+        chapter,
+        link
+    });
+    const newSubscription = await Subscription.create({
+        userId: req.session.auth.userId,
+        storyId: newStory.id
+    })
+
+    res.redirect("/stories/dashboard")
+}))
 
 router.get("/dashboard", asyncHandler( async (req,res) =>{
     const stories = await Story.findAll({ 
