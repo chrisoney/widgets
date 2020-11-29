@@ -34,7 +34,7 @@ document.querySelector("#follows").addEventListener("click", async e =>{
     const result = [];
     
     data.forEach(following => {
-      const stories = following.subscribedStories.map(story => {
+      const stories = following.recommendedStories.map(story => {
         return `
           <span class="following-story-title">${story.title}</span>
           <a href=${story.link}>Link to Story</a>
