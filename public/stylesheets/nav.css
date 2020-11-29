@@ -1,9 +1,11 @@
 .top-nav {
+  background: var(--dark-blue);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px; }
   .top-nav .widget-icon {
-    font-size: 25px; }
+    height: 30px;
+    width: auto; }
   .top-nav .login-button {
     margin-right: 10px; }

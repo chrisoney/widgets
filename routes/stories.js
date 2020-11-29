@@ -18,7 +18,6 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
         }
     }).filter(story => {
         const users = story.subscribingUsers.map(user => user.id);
-        console.log(users);
         return users.some(id => id === req.session.auth.userId)
     });
     res.render("stories/dashboard", { title:"Dashboard", stories })

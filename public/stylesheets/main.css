@@ -1,0 +1,14 @@
+:root {
+  --light-blue: #EFF3F8; /* background */
+  --light-gray: #F2F2F2; /* instruction box */
+  --faded-blue: #7CA9D0;
+  --medium-blue: #337AB7;
+  --dark-blue: #286090;
+  --darker-blue: #2A3642;
+  --faded-orange: #F0AC6B;
+  --darker-orange: #E87E04;
+
+  --dm-dark-black: #181818; /* background */
+  --dm-dark-gray: #393939; /* instruction box */
+  --dm-slightly-darker-black: #131313; /* replace white */
+}
