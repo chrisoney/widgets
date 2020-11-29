@@ -27,6 +27,36 @@ document.querySelector("#stories").addEventListener("click", async e =>{
   }
 });
 
+document.querySelector("#users").addEventListener("click", async e =>{
+  try {
+    const res = await fetch("/stories/discover-users");
+    const data = await res.json()
+    const result = [];
+
+    data.forEach(following => {
+      const stories = following.recommendedStories.map(story => {
+        return `
+          <span class="following-story-title">${story.title}</span>
+          <a href=${story.link}>Link to Story</a>
+        `
+      })
+      result.push(`
+        <div class="following-container">
+          <div class="following-header">
+            <div class="following-name">${following.username}</div>
+            ${stories.join('')}
+          </div>
+        </div>
+      `);
+      
+    })
+    document.querySelector(".tab-content").innerHTML = result.join("");
+  } catch (e){
+    throw new Error('Uh oh. Something went wrong...');
+  }
+
+});
+
 document.querySelector("#follows").addEventListener("click", async e =>{
   try {
     const res = await fetch("/stories/discover-follows");

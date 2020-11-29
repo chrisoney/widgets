@@ -33,7 +33,14 @@ module.exports = {
         storyId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
-      }
+      },
+      {
+        rating: 5,
+        userId: 3,
+        storyId: 4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 

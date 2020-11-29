@@ -56,16 +56,20 @@ router.get("/discover-stories", asyncHandler( async (req,res) =>{
 
 router.get("/discover-users", asyncHandler( async (req, res) => {
     const users = await User.findAll({
-        include: {
+        include: [{
             model:User,
             as: 'followers',
             through: { attributes: []}
         },
-        include: {
+        {
             model: Story,
             as: 'recommendedStories',
             through: { attributes: []}
-        }
+        }]
+    }).filter(user => {
+        const users = user.followers.map(user => user.id);
+        return user.id !== req.session.auth.userId && 
+                users.every(id => id !== req.session.auth.userId);
     })
     res.json(users);
 }))

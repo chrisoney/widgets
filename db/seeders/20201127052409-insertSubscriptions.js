@@ -36,7 +36,13 @@ module.exports = {
         storyId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
-      }
+      },
+      {
+        userId: 3,
+        storyId: 4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 
