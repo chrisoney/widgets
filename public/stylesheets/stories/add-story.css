@@ -1,0 +1,50 @@
+.story-form-container{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: var(--light-blue);
+}
+
+.form-container {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--light-gray);
+  padding: 10px;
+}
+
+.form-title {
+  text-align: center;
+}
+
+.form-label {
+  margin-right: 10px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.form-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-submit {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 8px 8px;
+  color: white;
+  background: var(--medium-blue);
+}
+
+.form-submit:hover {
+  background: var(--dark-blue);
+}
