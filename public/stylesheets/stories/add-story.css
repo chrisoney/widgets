@@ -43,6 +43,11 @@
   padding: 8px 8px;
   color: white;
   background: var(--medium-blue);
+  cursor: pointer;
+}
+
+.form-submit:first-child {
+  margin-right: 5px;
 }
 
 .form-submit:hover {

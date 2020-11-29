@@ -4,6 +4,7 @@ include ../utils
 
 append head
   link(rel="stylesheet" href="/stylesheets/stories/add-story.css")
+  script(src="/javascripts/stories/add-story.js" type="module" defer)
 
 block content
   div(class="story-form-container")
@@ -18,3 +19,4 @@ block content
         +field("Link", 'link', link)
         div(class='form-buttons')
           button(class="form-submit" type='submit') Submit
+          span(class="form-submit cancel") Cancel
