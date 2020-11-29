@@ -12,7 +12,7 @@ block content
     +field('Password', 'password', user.password, 'password')
     +field('Confirm Password', 'confirmPassword', '', 'password')
     div(class='py-4')
-      button(type='submit') Register
-      a(href='/') Cancel
+      button(class="form-submit" type='submit') Register
+      a(class="form-submit cancel" href='/') Cancel
   div
-    p: a(href='/users/login') Already have an account?
+    p(class="redirect"): a(href='/users/login') Already have an account?

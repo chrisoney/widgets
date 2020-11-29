@@ -9,7 +9,7 @@ block content
     +field('Username', 'username', username)
     +field('Password', 'password', null, 'password')
     div(class='form-buttons')
-      button(type='submit') Login
-      a(href='/') Cancel
+      button(class="form-submit" type='submit') Login
+      a(class="form-submit cancel" href='/') Cancel
   div
-    p: a(href='/users/register') Don't have an account?
+    p(class="redirect"): a(href='/users/register') Don't have an account?

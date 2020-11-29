@@ -2,6 +2,7 @@ body {
   position: relative;
   width:100vw;
   height: 100vh;
+  background: var(--light-blue)
 }
 .auth-nav {
   display: flex;
@@ -15,18 +16,69 @@ img {
   margin-top: 2px;
 }
 
+
 .form-container {
-  width: 400px;
   border: 1px solid black;
+  border-radius: 10px;
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: var(--light-gray);
+  padding: 10px;
+}
+
+.form-title {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-label {
+  margin-right: 10px;
 }
 
 .form-group {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 5px;
 }
 
+.form-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-submit {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 8px 8px;
+  color: white;
+  background: var(--medium-blue);
+  cursor: pointer;
+}
+
+.form-submit:first-child {
+  margin-right: 5px;
+}
+
+.form-submit:hover {
+  background: var(--dark-blue);
+}
+
+.cancel {
+  background: var(--medium-red);
+}
+
+.cancel:hover {
+  background: var(--dark-red);
+}
+
+.redirect {
+  text-align: center;
+}
+
+.redirect:hover {
+  color: var(--dark-blue);
+}

@@ -53,3 +53,11 @@
 .form-submit:hover {
   background: var(--dark-blue);
 }
+
+.cancel {
+  background: var(--medium-red)
+}
+
+.cancel:hover {
+  background: var(--dark-red)
+}
