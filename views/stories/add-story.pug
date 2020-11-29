@@ -9,6 +9,7 @@ block content
   div(class="story-form-container")
     div(class="form-container")
       p(class="form-title") Add A Story
+      +validationErrorSummary(errors)
       form(action="/stories/create", method="post" class="user-form")
         input(type="hidden" name="_csrf" value=token)
         +field("Title", 'title', title)
