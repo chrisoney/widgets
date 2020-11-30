@@ -1,6 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Subscription = sequelize.define('Subscription', {
+    book: {
+      type: DataTypes.STRING
+    },
+    chapter: {
+      type: DataTypes.STRING
+    },
     userId: {
       allowNull: false,
       type: DataTypes.INTEGER,

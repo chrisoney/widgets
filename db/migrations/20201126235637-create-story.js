@@ -12,11 +12,8 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      book: {
-        type: Sequelize.STRING
-      },
-      chapter: {
-        type: Sequelize.STRING
+      description: {
+        type: Sequelize.TEXT
       },
       link: {
         type: Sequelize.STRING

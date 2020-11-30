@@ -14,30 +14,37 @@ module.exports = {
     */
     return queryInterface.bulkInsert('Subscriptions', [
       {
+        book:'7',
+        chapter:'Interlude – The Tribes of Izril',
         userId: 1,
         storyId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
+        chapter: '335',
         userId: 1,
         storyId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
+        chapter: 'Food and Growth',
         userId: 1,
         storyId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
+        chapter: 'Food and Growth pt.2',
         userId: 2,
         storyId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
+        book: '2',
+        chapter: '112',
         userId: 3,
         storyId: 4,
         createdAt: new Date(),

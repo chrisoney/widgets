@@ -5,11 +5,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.STRING
     },
-    book: {
-      type: DataTypes.STRING
-    },
-    chapter: {
-      type: DataTypes.STRING
+    description: {
+      type: DataTypes.TEXT,
     },
     link: {
       type:DataTypes.STRING
