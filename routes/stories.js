@@ -54,8 +54,17 @@ router.get("/find-recommend/:storyId", asyncHandler( async (req,res) => {
             storyId: req.params.storyId
         }
     })
+    if (!recommendation){
+        recommendation = await Recommendation.create({
+            userId: req.session.auth.userId,
+            storyId: req.params.storyId,
+            rating: 0
+        })
+    }
     res.json({ recommendation })
 }))
+
+
 
 router.get("/discover", asyncHandler( async (req,res) =>{
     const stories = await Story.findAll({ 

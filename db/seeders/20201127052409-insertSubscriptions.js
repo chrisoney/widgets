@@ -50,6 +50,14 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        book: '3',
+        chapter: '9',
+        userId: 1,
+        storyId: 5,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
     ], {});
   },
 

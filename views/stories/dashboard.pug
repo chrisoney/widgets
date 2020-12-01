@@ -15,7 +15,7 @@ block content
       div(class="stories-container")
           ul
             each story, idx in stories
-              - var recommendation = story.recommendation[0]
+              - var recommendation = story.recommendation[0] || { rating: 0, review: ''}
               li(class="story-container")
                 div(class="story-header-container")
                   span(class="story-title")=story.title
@@ -29,13 +29,13 @@ block content
                       +dashStoryDetail("Chapter:", story.Subscription.chapter, story.id)
                     div(class="story-details-top-right")
                       div(id=story.id class="stars")
-                        - var i = 0, j = 5
+                        - var i = 0, j = recommendation.rating + 1
                         while i < recommendation.rating
                           span(id=(i+1) class="fas fa-star")
                           - i++
-                        while j > recommendation.rating
+                        while j <= 5
                           span(id=j class="far fa-star")
-                          - j--
+                          - j++
                       a(href=story.link class="link") Link to Story
 
                   div(class="story-details-bottom")

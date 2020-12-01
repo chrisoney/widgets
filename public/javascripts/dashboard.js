@@ -14,13 +14,16 @@ document.querySelectorAll(".reveal")
 
 function changeRating(){
   document.querySelectorAll(".fa-star")
-    .forEach(star => star.addEventListener("mouseover", (e)=> {
+  .forEach(star => star.addEventListener("mouseover", (e)=> {
+      const cls = ["foo", "bar"]
       for (let i = 0; i < e.target.parentElement.children.length; i++){
         const ele = e.target.parentElement.children[i];
         if (ele.id <= e.target.id){
-          ele.classList.replace("far", "fas");
+          ele.classList.remove(...cls);
+          ele.classList.add("fas")
         } else {
-          ele.classList.replace("fas", "far");
+          ele.classList.replace(...cls);
+          ele.classList.add("far")
         }
       }
       resetRating();
