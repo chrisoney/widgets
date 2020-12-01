@@ -85,9 +85,26 @@ h1 {
 .story-details-top-left{
   width: 70%;
 }
+
+.detail-container {
+  overflow: wrap;
+}
+
+.detail-label {
+  margin-right: 5px;
+}
+
+.detail-value {
+  margin: 5px;
+}
+
 .story-details-top-right{
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.fas.fa-star {
+  color: gold;
 }

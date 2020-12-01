@@ -24,14 +24,14 @@ mixin preview(id, icon, name, description, imgSrc)
     div(class="splash-image-container")
       img(src=imgSrc)
 
-mixin dashStoryDetail(label, value)
+mixin dashStoryDetail(label, value, id)
   - var num = parseInt(value, 10)
   div(class="detail-container")
     if num
       span(class="detail-label")=label
-      span(class="fas fa-minus-circle")
+      span(id=id class="fas fa-minus-circle")
       span(class="detail-value")=value
-      span(class="fas fa-plus-circle")
+      span(id=id class="fas fa-plus-circle")
     else
       span(class="detail-label")=label
       span(class="detail-value")=value
