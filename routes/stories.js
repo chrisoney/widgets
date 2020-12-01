@@ -14,11 +14,10 @@ router.get("/create", csrfProtection, asyncHandler( async (req, res) => {
 }))
 
 router.post("/create", asyncHandler( async (req, res) => {
-    const { title, book, chapter, link } = req.body;
+    const { title, description, link } = req.body;
     const newStory = await Story.create({
         title,
-        book,
-        chapter,
+        description,
         link
     });
     const newSubscription = await Subscription.create({

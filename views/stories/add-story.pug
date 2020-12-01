@@ -14,8 +14,7 @@ block content
       form(action="/stories/create", method="post" class="user-form")
         input(type="hidden" name="_csrf" value=token)
         +field("Title", 'title', title)
-        +field("Book", 'book', book)
-        +field("Chapter", 'chapter', chapter)
+        +field("Description", 'description', description, "textarea")
         +field("Link", 'link', link)
         div(class='form-buttons')
           button(class="form-submit" type='submit') Submit
