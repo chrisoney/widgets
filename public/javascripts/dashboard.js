@@ -33,7 +33,7 @@ function resetRating(){
   document.querySelectorAll(".fa-star")
     .forEach(star => star.addEventListener("mouseout", async (e)=> {
       const storyId = e.target.parentElement.id;
-      const res = await fetch(`/stories/find-recommend/${storyId}`);
+      const res = await fetch(`/stories/${storyId}/recommendations/`);
       const data = await res.json()
       const result = [];
       for (let i = 0; i < data.recommendation.rating; i++) {
@@ -50,7 +50,7 @@ function resetRating(){
 }
 
 function newRating(){
-  
+
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
