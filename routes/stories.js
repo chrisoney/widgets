@@ -30,7 +30,7 @@ router.post("/create", asyncHandler( async (req, res) => {
 
 router.get("/dashboard", asyncHandler( async (req,res) =>{
     const stories = await Story.findAll({
-        include: {
+        include: [{
             where: { id: req.session.auth.userId },
             model:User,
             as: 'subscribingUsers',
@@ -38,14 +38,14 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
                 attributes: ["book", "chapter"]
             }
         },
-        include: {
+        {
             where: { id: req.session.auth.userId },
             model:User,
             as: 'recommendingUsers',
             through: {
                 attributes: ["rating"]
             }
-        }
+        }]
     })
     res.render("stories/dashboard", { title:"Dashboard", stories })
 }))
