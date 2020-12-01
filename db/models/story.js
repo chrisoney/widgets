@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       through: 'Recommendation',
       otherKey: 'userId',
       foreignKey: 'storyId',
-      as: 'recommendedingUsers'
+      as: 'recommendingUsers'
     }
 
     Story.belongsToMany(models.User, columnMappingOne);
