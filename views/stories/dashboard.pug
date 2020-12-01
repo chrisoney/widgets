@@ -27,7 +27,6 @@ block content
                     div(class="story-details-top-left")
                       +dashStoryDetail("Book:", story.Subscription.book, story.id)
                       +dashStoryDetail("Chapter:", story.Subscription.chapter, story.id)
-                      a(href=story.link class="link") Link
                     div(class="story-details-top-right")
                       div(class="stars")
                         - var i = 0, j = 5
@@ -37,12 +36,13 @@ block content
                         while j > recommendation.rating
                           span(class="far fa-star")
                           - j--
+                      a(href=story.link class="link") Link to Story
 
                   div(class="story-details-bottom")
                     div(class="description-container")
                       span(class="reveal") Description
-                      p(class="description-text")= story.description
+                      p(class="description-text hidden")= story.description
                     div(class="review-container")
                       span(class="reveal") Review
-                      p(class="review-text")= recommendation.review
+                      p(class="review-text hidden")= recommendation.review
       include nav-section

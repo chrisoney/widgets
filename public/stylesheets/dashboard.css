@@ -80,6 +80,9 @@ h1 {
 
 .story-details-top {
   display: flex;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px dashed black;
 }
 
 .story-details-top-left{
@@ -101,10 +104,24 @@ h1 {
 .story-details-top-right{
   width: 30%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
 .fas.fa-star {
   color: gold;
+}
+
+.reveal {
+  cursor: pointer;
+}
+
+.reveal:hover, .link:hover {
+  color: var(--dark-blue)
+}
+
+.hidden {
+  display: none;
+  transition: 1s ease-in-out;
 }
