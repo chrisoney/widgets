@@ -22,8 +22,8 @@ block content
                     span(class=`fas fa-chevron-circle-left toggle-${idx}`)
                     span(class="fas fa-arrow-circle-right")
                 div(class=`story-details-container container-${idx}`)
-                  +dashStoryDetail("Book:", story.subscribingUsers[0].Subscription.book)
-                  +dashStoryDetail("Chapter:", story.subscribingUsers[0].Subscription.chapter)
+                  +dashStoryDetail("Book:", story.Subscription.book)
+                  +dashStoryDetail("Chapter:", story.Subscription.chapter)
                   a(href=story.link class="link") Link
                   span(class=`reveal-${idx}`) Description
                   p(class=`desc-${idx}`)= story.description

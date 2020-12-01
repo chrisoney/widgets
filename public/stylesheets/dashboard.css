@@ -14,8 +14,7 @@ h1 {
 }
 .stories-container{
   display:flex;
-  margin-left: 20px;
-  width: 60%;
+  width: 70%;
   flex-direction: column;
 }
 

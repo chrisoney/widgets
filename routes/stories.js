@@ -29,24 +29,21 @@ router.post("/create", asyncHandler( async (req, res) => {
 }))
 
 router.get("/dashboard", asyncHandler( async (req,res) =>{
-    const stories = await Story.findAll({
-        include: [{
-            where: { id: req.session.auth.userId },
-            model:User,
-            as: 'subscribingUsers',
+    const user = await User.findOne({
+        where: { id: req.session.auth.userId },
+        include: {
+            model:Story,
+            as: 'subscribedStories',
             through: {
                 attributes: ["book", "chapter"]
+            },
+            include: {
+                model: Recommendation,
+                as: 'recommendation'
             }
-        },
-        {
-            where: { id: req.session.auth.userId },
-            model:User,
-            as: 'recommendingUsers',
-            through: {
-                attributes: ["rating"]
-            }
-        }]
+        }
     })
+    const stories = user.subscribedStories;
     res.render("stories/dashboard", { title:"Dashboard", stories })
 }))
 
