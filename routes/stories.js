@@ -47,6 +47,17 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
     res.render("stories/dashboard", { title:"Dashboard", stories })
 }))
 
+router.get("/get-recommend", asyncHandler( async (req,res) => {
+    const { storyId } = req.body;
+    const recommendation = await Recommendation.findOne({
+        where: {
+            userId: req.session.auth.userId,
+            storyId
+        }
+    })
+    res.json({ recommendation })
+}))
+
 router.get("/discover", asyncHandler( async (req,res) =>{
     const stories = await Story.findAll({ 
         include: { 

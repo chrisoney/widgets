@@ -113,6 +113,10 @@ h1 {
   color: gold;
 }
 
+.fa-star {
+  cursor: pointer;
+}
+
 .reveal {
   cursor: pointer;
 }

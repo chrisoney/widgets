@@ -28,13 +28,13 @@ block content
                       +dashStoryDetail("Book:", story.Subscription.book, story.id)
                       +dashStoryDetail("Chapter:", story.Subscription.chapter, story.id)
                     div(class="story-details-top-right")
-                      div(class="stars")
+                      div(id=story.id class="stars")
                         - var i = 0, j = 5
                         while i < recommendation.rating
-                          span(class="fas fa-star")
+                          span(id=(i+1) class="fas fa-star")
                           - i++
                         while j > recommendation.rating
-                          span(class="far fa-star")
+                          span(id=j class="far fa-star")
                           - j--
                       a(href=story.link class="link") Link to Story
 
