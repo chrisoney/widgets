@@ -49,6 +49,10 @@ function resetRating(){
     }))
 }
 
+function newRating(){
+  
+}
+
 window.addEventListener('DOMContentLoaded', (event) => {
   event.preventDefault();
   changeRating();
