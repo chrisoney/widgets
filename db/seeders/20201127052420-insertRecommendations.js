@@ -15,6 +15,7 @@ module.exports = {
     return queryInterface.bulkInsert('Recommendations', [
       {
         rating: 5,
+        review: 'bretty good',
         userId: 1,
         storyId: 1,
         createdAt: new Date(),
@@ -29,6 +30,7 @@ module.exports = {
       },
       {
         rating: 3,
+        review: "Honestly it's a bit cliché. It's good for a read if you're killing time but don't put too much hope in it.",
         userId: 1,
         storyId: 3,
         createdAt: new Date(),

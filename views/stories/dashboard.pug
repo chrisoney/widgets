@@ -15,6 +15,7 @@ block content
       div(class="stories-container")
           ul
             each story, idx in stories
+              - var recommendation = story.recommendation[0]
               li(class="story-container")
                 div(class="story-header-container")
                   span(class="story-title")=story.title
@@ -22,9 +23,26 @@ block content
                     span(class=`fas fa-chevron-circle-left toggle-${idx}`)
                     span(class="fas fa-arrow-circle-right")
                 div(class=`story-details-container container-${idx}`)
-                  +dashStoryDetail("Book:", story.Subscription.book)
-                  +dashStoryDetail("Chapter:", story.Subscription.chapter)
-                  a(href=story.link class="link") Link
-                  span(class=`reveal-${idx}`) Description
-                  p(class=`desc-${idx}`)= story.description
+                  div(class="story-details-top")
+                    div(class="story-details-top-left")
+                      +dashStoryDetail("Book:", story.Subscription.book)
+                      +dashStoryDetail("Chapter:", story.Subscription.chapter)
+                      a(href=story.link class="link") Link
+                    div(class="story-details-top-right")
+                      div(class="stars")
+                        - var i = 0, j = 5
+                        while i < recommendation.rating
+                          span(class="fas fa-star")
+                          - i++
+                        while j > recommendation.rating
+                          span(class="far fa-star")
+                          - j--
+
+                  div(class="story-details-bottom")
+                    div(class="description-container")
+                      span(class="reveal") Description
+                      p(class="description-text")= story.description
+                    div(class="review-container")
+                      span(class="reveal") Review
+                      p(class="review-text")= recommendation.review
       include nav-section

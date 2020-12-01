@@ -4,6 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     rating: {
       type: DataTypes.INTEGER,
     },
+    review: {
+      type: DataTypes.TEXT,
+    },
     userId: {
       allowNull: false,
       type: DataTypes.INTEGER,
