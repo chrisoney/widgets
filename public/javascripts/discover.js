@@ -90,6 +90,13 @@ document.querySelector("#users").addEventListener("click", async e =>{
     data.forEach(following => {
       const stories = following.recommendedStories.map((story, idx) => {
         const rating = populateRating(story.Recommendation.rating);
+        const review = story.Recommendation.review ?
+          `
+          <div class="review-container">
+            <span id="${idx}" class="reveal">Review</span>
+            <p class="review-text-${idx} hidden">${story.Recommendation.review}</p>
+          </div>
+          `:``;
         return `
         <li class="story-container">
           <div class="story-header-container">
@@ -113,6 +120,7 @@ document.querySelector("#users").addEventListener("click", async e =>{
                 <span id="${idx}" class="reveal">Description</span>
                 <p class="description-text-${idx} hidden">${story.description}</p>
               </div>
+              ${review}
             </div>
           </div>
         </li>
@@ -151,6 +159,13 @@ document.querySelector("#follows").addEventListener("click", async e =>{
     data.forEach(following => {
       const stories = following.recommendedStories.map((story, idx) => {
         const rating = populateRating(story.Recommendation.rating);
+        const review = story.Recommendation.review ?
+          `
+          <div class="review-container">
+            <span id="${idx}" class="reveal">Review</span>
+            <p class="review-text-${idx} hidden">${story.Recommendation.review}</p>
+          </div>
+          `:``;
         return `
         <li class="story-container">
           <div class="story-header-container">
@@ -174,6 +189,7 @@ document.querySelector("#follows").addEventListener("click", async e =>{
                 <span id="${idx}" class="reveal">Description</span>
                 <p class="description-text-${idx} hidden">${story.description}</p>
               </div>
+              ${review}
             </div>
           </div>
         </li>
