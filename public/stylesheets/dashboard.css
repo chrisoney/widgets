@@ -32,12 +32,18 @@ h1 {
   padding: 10px 5px;
   display:flex;
   justify-content: space-between;
+  align-items: center;
   background: var(--teal);
   color: white;
 }
 
+.story-title {
+  margin: 5px 10px;;
+}
+
 .story-button-container {
   display:flex;
+  margin-right: 10px;
 }
 
 .story-button-container span {
@@ -118,12 +124,9 @@ h1 {
   cursor: pointer;
 }
 
-.story-details-bottom {
-  padding: 10px 5px;
-}
-
 .reveal {
   cursor: pointer;
+  margin: 10px;
 }
 
 .reveal:hover, .link:hover {
@@ -135,3 +138,10 @@ h1 {
   transition: 1s ease-in-out;
 }
 
+.description-container {
+  border-bottom: 2px solid var(--light-border-gray);
+}
+
+.description-text, .review-text {
+  margin: 10px;
+}
