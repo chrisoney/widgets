@@ -23,12 +23,11 @@ h1 {
   display:flex;
   width: 100%;
   flex-direction: column;
-  border: 1px solid black;
-  border-radius: 10px;
   margin-bottom: 5px;
 }
 
 .story-header-container{
+  border: 2px solid var(--faded-blue);
   padding: 10px 5px;
   display:flex;
   justify-content: space-between;
@@ -71,18 +70,18 @@ h1 {
 }
 
 .story-details-container.open{
+  border: 2px solid var(--faded-blue);
+  border-top: none;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid black;
-  padding: 10px 5px;
-
 }
 
 .story-details-top {
   display: flex;
   padding-bottom: 5px;
   margin-bottom: 5px;
-  border-bottom: 1px dashed black;
+  border-bottom: 2px solid var(--faded-blue);
+  padding: 10px 5px;
 }
 
 .story-details-top-left{
@@ -117,6 +116,10 @@ h1 {
   cursor: pointer;
 }
 
+.story-details-bottom {
+  padding: 10px 5px;
+}
+
 .reveal {
   cursor: pointer;
 }
@@ -129,3 +132,4 @@ h1 {
   display: none;
   transition: 1s ease-in-out;
 }
+
