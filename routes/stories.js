@@ -1,7 +1,8 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 const { csrfProtection, asyncHandler } = require('./utils');
-const { Story, User, Subscription, Recommendation, Follow } = require('../db/models')
+const { Story, User, Subscription, Recommendation, Follow } = require('../db/models');
+const { restElement } = require('babel-types');
 
 const router = express.Router();
 
@@ -47,7 +48,7 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
     res.render("stories/dashboard", { title:"Dashboard", stories })
 }))
 
-router.get("/:storyId/recommend/", asyncHandler( async (req,res) => {
+router.get("/:storyId/recommendation/", asyncHandler( async (req,res) => {
     const recommendation = await Recommendation.findOne({
         where: {
             userId: req.session.auth.userId,
@@ -62,6 +63,28 @@ router.get("/:storyId/recommend/", asyncHandler( async (req,res) => {
         })
     }
     res.json({ recommendation })
+}))
+
+router.post("/:storyId/recommendation/", asyncHandler( async (req, res) => {
+    const { storyId, rating } = req.body;
+    const recommendation = await Recommendation.findOne({
+        where: {
+            userId: req.session.auth.userId,
+            storyId,
+        }
+    })
+    if (recommendation){
+        recommendation.rating = rating;
+        await recommendation.save();
+    } else {
+        recommendation = await Recommendation.create({
+            userId: req.session.auth.userId,
+            storyId,
+            rating
+        })
+    }
+
+    res.json( { recommendation });
 }))
 
 
