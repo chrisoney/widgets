@@ -25,7 +25,7 @@ img {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--light-gray);
+  background: var(--white);
   padding: 10px;
 }
 
@@ -55,7 +55,7 @@ img {
   /* border-radius: 5px; */
   padding: 8px 8px;
   color: white;
-  background: var(--medium-blue);
+  background: var(--reg-blue);
   cursor: pointer;
 }
 
@@ -64,15 +64,15 @@ img {
 }
 
 .form-submit:hover {
-  background: var(--dark-blue);
+  background: var(--darker-blue);
 }
 
 .cancel {
-  background: var(--medium-red);
+  background: var(--reg-red);
 }
 
 .cancel:hover {
-  background: var(--dark-red);
+  background: var(--darker-red);
 }
 
 .redirect {
@@ -80,5 +80,5 @@ img {
 }
 
 .redirect:hover {
-  color: var(--dark-blue);
+  color: var(--darker-blue);
 }

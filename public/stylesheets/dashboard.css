@@ -27,7 +27,7 @@ h1 {
 }
 
 .story-header-container{
-  border: 2px solid var(--faded-blue);
+  border: 2px solid var(--light-border-gray);
   padding: 10px 5px;
   display:flex;
   justify-content: space-between;
@@ -70,7 +70,7 @@ h1 {
 }
 
 .story-details-container.open{
-  border: 2px solid var(--faded-blue);
+  border: 2px solid var(--light-border-gray);
   border-top: none;
   display: flex;
   flex-direction: column;
@@ -80,7 +80,7 @@ h1 {
   display: flex;
   padding-bottom: 5px;
   margin-bottom: 5px;
-  border-bottom: 2px solid var(--faded-blue);
+  border-bottom: 2px solid var(--light-border-gray);
   padding: 10px 5px;
 }
 
