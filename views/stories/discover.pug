@@ -18,6 +18,20 @@ block content
           ul
             each story in stories
               li(class="story-container")
-                a(href=story.link class="story-title")=story.title
+                div(class="story-header-container")
+                  span(class="story-title")=story.title
+                  div(class="story-button-container")
+                    span(class=`fas fa-chevron-circle-left toggle-${idx}`)
+                    span(class="fas fa-arrow-circle-right")
+                div(class=`story-details-container container-${idx}`)
+                  div(class="story-details-top")
+                    div(class="story-details-top-left")
+                      a(href=story.link class="link") Link to Story
+                    div(class="story-details-top-right")
+                      span(class="subscribe") Subscribe
+                  div(class="story-details-bottom")
+                    div(class="description-container")
+                      span(id=`${idx}` class="reveal") Description
+                      p(class=`description-text-${idx} hidden`)= story.description
       include nav-section
       

@@ -51,12 +51,125 @@ h1 {
   background: var(--white);
   color: var(--teal);
   z-index: 1;
-  padding: 30px;
-  margin-bottom: 50px;
+  padding: 10px 5px;
   border: 2px solid var(--light-border-gray);
   border-top: none;
 }
 
-.story-container{
-  list-style: none;
+/* STORY DISCOVER */
+.story-container {
+  overflow: hidden;
+  display:flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 5px;
+  background: var(--white);
+}
+
+.story-header-container{
+  border: 2px solid var(--light-border-gray);
+  padding: 10px 5px;
+  display:flex;
+  justify-content: space-between;
+  background: var(--teal);
+  color: white;
+}
+
+.story-button-container {
+  display:flex;
+}
+
+.story-button-container span {
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.5s ease-in-out;
+}
+
+.fa-chevron-circle-left {
+  margin-right: 10px;
+}
+.opening {
+  transform: rotate(-90deg);
+}
+
+.fa-chevron-circle-left:hover {
+  transition-delay: 0.2s;
+  transform: rotate(-90deg) scale(1.2);
+}
+
+.opening:hover {
+  transition-delay: 0.2s;
+  transform: rotate(0deg) scale(1.2);
+}
+
+.fa-arrow-circle-right:hover {
+  transform: scale(1.2);
+}
+
+.story-details-container{
+  display: none;
+}
+
+.story-details-container.open{
+  border: 2px solid var(--light-border-gray);
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-details-top {
+  display: flex;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 2px solid var(--light-border-gray);
+  padding: 10px 5px;
+}
+
+.story-details-top-left{
+  width: 70%;
+}
+
+.detail-container {
+  overflow: wrap;
+}
+
+.detail-label {
+  margin-right: 5px;
+}
+
+.detail-value {
+  margin: 5px;
+}
+
+.story-details-top-right{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fas.fa-star {
+  color: var(--reg-red);
+}
+
+.fa-star {
+  cursor: pointer;
+}
+
+.story-details-bottom {
+  padding: 10px 5px;
+}
+
+.reveal {
+  cursor: pointer;
+}
+
+.reveal:hover, .link:hover {
+  color: var(--darker-blue)
+}
+
+.hidden {
+  display: none;
+  transition: 1s ease-in-out;
 }

@@ -127,7 +127,7 @@ h1 {
 }
 
 .reveal:hover, .link:hover {
-  color: var(--dark-blue)
+  color: var(--darker-blue)
 }
 
 .hidden {

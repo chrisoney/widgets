@@ -33,7 +33,7 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
     const user = await User.findOne({
         where: { id: req.session.auth.userId },
         include: {
-            model:Story,
+            model: Story,
             as: 'subscribedStories',
             through: {
                 attributes: ["book", "chapter"]
@@ -41,8 +41,13 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
             include: {
                 model: Recommendation,
                 as: 'recommendation'
-            }
-        }
+            },
+        },
+        order: [[ 
+            {model: Story, as: 'subscribedStories'}, 
+            "id",
+            "ASC" 
+        ]],
     })
     const stories = user.subscribedStories;
     res.render("stories/dashboard", { title:"Dashboard", stories })
