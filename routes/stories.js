@@ -136,7 +136,7 @@ router.get("/discover-users", asyncHandler( async (req, res) => {
         {
             model: Story,
             as: 'recommendedStories',
-            through: { attributes: ["rating"]}
+            through: { attributes: ["rating", "review"]}
         }]
     }).filter(user => {
         const users = user.followers.map(user => user.id);
@@ -153,11 +153,12 @@ router.get("/discover-follows", asyncHandler( async (req,res) =>{
         include: { 
             model:User,
             as: 'followings',
+            attributes: ["id","username"],
             through: { attributes: [] },
             include: { 
                 model: Story,
                 as: 'recommendedStories',
-                through: { attributes: [] }
+                through: { attributes: ["rating", "review"] }
             }
         }
     });

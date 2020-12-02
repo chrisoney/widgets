@@ -13,6 +13,19 @@ function storyEventListeners(){
       text.classList.toggle("hidden");
     }))
 }
+
+function populateRating(rating, container){
+  const result = [];
+  rating = parseInt(rating, 10);
+  for (let i = 0; i < rating; i++) {
+    result.push(`<span id=${i+1} class="fas fa-star"></span>`)
+  }
+  for (let j = rating + 1; j <= 5; j++){
+    result.push(`<span id=${j} class="far fa-star"></span>`)
+  }
+  return result.join("")
+}
+
 window.addEventListener("DOMContentLoaded", (e)=> {
   storyEventListeners()
 })
@@ -75,10 +88,34 @@ document.querySelector("#users").addEventListener("click", async e =>{
     const result = [];
 
     data.forEach(following => {
-      const stories = following.recommendedStories.map(story => {
+      const stories = following.recommendedStories.map((story, idx) => {
+        const rating = populateRating(story.Recommendation.rating);
         return `
-          <span class="following-story-title">${story.title}</span>
-          <a href=${story.link}>Link to Story</a>
+        <li class="story-container">
+          <div class="story-header-container">
+            <span class="story-title">${story.title}</span>
+            <div class="story-button-container">
+              <span class="fas fa-chevron-circle-left toggle-${idx}"></span>
+              <span class="fas fa-arrow-circle-right"></span>
+            </div>
+          </div>
+          <div class="story-details-container container-${idx}">
+            <div class="story-details-top">
+              <div class="story-details-top-left">
+                <a href=${story.link} class="link">Link to Story</a>
+              </div>
+              <div class="story-details-top-right">
+                <div class="stars">${rating}</div>
+              </div>
+            </div>
+            <div class="story-details-bottom">
+              <div class="description-container">
+                <span id="${idx}" class="reveal">Description</span>
+                <p class="description-text-${idx} hidden">${story.description}</p>
+              </div>
+            </div>
+          </div>
+        </li>
         `
       })
       result.push(`
@@ -92,6 +129,7 @@ document.querySelector("#users").addEventListener("click", async e =>{
       
     })
     document.querySelector(".tab-content").innerHTML = result.join("");
+    storyEventListeners()
   } catch (e){
     throw new Error('Uh oh. Something went wrong...');
   }
@@ -105,10 +143,34 @@ document.querySelector("#follows").addEventListener("click", async e =>{
     const result = [];
     
     data.forEach(following => {
-      const stories = following.recommendedStories.map(story => {
+      const stories = following.recommendedStories.map((story, idx) => {
+        const rating = populateRating(story.Recommendation.rating);
         return `
-          <span class="following-story-title">${story.title}</span>
-          <a href=${story.link}>Link to Story</a>
+        <li class="story-container">
+          <div class="story-header-container">
+            <span class="story-title">${story.title}</span>
+            <div class="story-button-container">
+              <span class="fas fa-chevron-circle-left toggle-${idx}"></span>
+              <span class="fas fa-arrow-circle-right"></span>
+            </div>
+          </div>
+          <div class="story-details-container container-${idx}">
+            <div class="story-details-top">
+              <div class="story-details-top-left">
+                <a href=${story.link} class="link">Link to Story</a>
+              </div>
+              <div class="story-details-top-right">
+                <div class="stars">${rating}</div>
+              </div>
+            </div>
+            <div class="story-details-bottom">
+              <div class="description-container">
+                <span id="${idx}" class="reveal">Description</span>
+                <p class="description-text-${idx} hidden">${story.description}</p>
+              </div>
+            </div>
+          </div>
+        </li>
         `
       })
       result.push(`
@@ -122,6 +184,7 @@ document.querySelector("#follows").addEventListener("click", async e =>{
       
     })
     document.querySelector(".tab-content").innerHTML = result.join("");
+    storyEventListeners()
   } catch (e){
     throw new Error('Uh oh. Something went wrong...');
   }
