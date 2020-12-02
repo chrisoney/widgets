@@ -57,6 +57,17 @@ h1 {
 }
 
 /* STORY DISCOVER */
+/* no story */
+.empty-container {
+  list-style: none;
+}
+
+.empty-message {
+  font-size: 12px;
+  text-align: center;
+  color: var(--emphasis-red)
+}
+/* existing story */
 .story-container {
   overflow: hidden;
   display:flex;
