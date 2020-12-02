@@ -118,6 +118,12 @@ document.querySelector("#users").addEventListener("click", async e =>{
         </li>
         `
       })
+      if (stories.length === 0){
+        stories.push(`
+          <li class="empty-container">
+            <div class="empty-message">This user hasn't recommended any stories</div>
+          </li>`);
+      }
       result.push(`
         <div class="following-container">
           <div class="following-header">
