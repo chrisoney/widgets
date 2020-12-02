@@ -24,6 +24,7 @@ h1 {
   width: 100%;
   flex-direction: column;
   margin-bottom: 5px;
+  background: var(--white);
 }
 
 .story-header-container{
@@ -31,7 +32,8 @@ h1 {
   padding: 10px 5px;
   display:flex;
   justify-content: space-between;
-  background: yellow;
+  background: var(--teal);
+  color: white;
 }
 
 .story-button-container {
@@ -109,7 +111,7 @@ h1 {
 }
 
 .fas.fa-star {
-  color: gold;
+  color: var(--reg-red);
 }
 
 .fa-star {

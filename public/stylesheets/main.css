@@ -62,5 +62,11 @@
   --dark-gray: #525E64;
   /* hover lightmode button */
   --darker-gray: #3B4448;
+}
 
+body {
+  position: relative;
+  width:100vw;
+  height: 100vh;
+  background: var(--light-blue)
 }

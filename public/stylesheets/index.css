@@ -9,11 +9,14 @@ h1 {
 
 .preview-container {
     display: flex;
-    border: 1px solid black;
-    padding: 5px;
-    border-radius: 10px;
-    width: 500px;
+    border: 2px solid var(--light-border-gray);
+    width: 90%;
     cursor: pointer;
+    background: var(--white);
+}
+
+.preview-container p {
+    padding: 5px;
 }
 
 .splash-details {
@@ -25,23 +28,20 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid grey;
+    border-bottom: 2px solid var(--light-border-gray);
 }
 
 .preview-title p {
     margin-left: 5px;
-    padding-bottom: 1px;
 }
 .splash-image-container {
     display: flex;
     align-items: center;
-    border-left: 1px solid grey;
+    border-left: 2px solid var(--light-border-gray);
     overflow: none;
 }
 
 .splash-image-container img {
     width: 200px;
     height: 100%;
-    padding-left: 4px;
-    border-radius: 5px;
 }
