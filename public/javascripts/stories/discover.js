@@ -12,6 +12,23 @@ function storyEventListeners(){
       const text = document.querySelector(`.description-text-${e.target.id}`);
       text.classList.toggle("hidden");
     }))
+  
+  document.querySelectorAll(".subscribe-button")
+    .forEach(ele => ele.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const oldStoryId = e.target.classList[1].split("-")[1];
+      let res = await fetch("http://localhost:8080/stories/subscriptions/toggle", {
+        credentials: 'same-origin',
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ oldStoryId }),
+      });
+      res = await res.json();
+      console.log(res.message);
+      e.target.innerHTML = e.target.innerHTML === 'Subscribe' ? 'Unsubscribe' : 'Subscribe'
+    }))
 }
 
 function followEventListeners(){
@@ -77,7 +94,7 @@ document.querySelector("#stories").addEventListener("click", async e =>{
               <a href=${story.link} class="link">Link to Story</a>
             </div>
             <div class="story-details-top-right">
-              <span class="subscribe-button">Subscribe</span>
+              <span class="subscribe-button sub-${idx}">Subscribe</span>
             </div>
           </div>
           <div class="story-details-bottom">

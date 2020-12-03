@@ -4,16 +4,16 @@ const { csrfProtection, asyncHandler } = require('../utils');
 const { Subscription } = require('../../db/models');
 
 router.post("/toggle", asyncHandler( async (req, res) => {
-  const { followedId } = req.body;
-  const followingId = parseInt(followedId, 10)
-  const followerId = req.session.auth.userId;
-  const follow = await Follow.findOne({
-    where: {followerId, followingId}
+  const { oldStoryId } = req.body;
+  const storyId = parseInt(oldStoryId, 10);
+  const userId = req.session.auth.userId;
+  const subscription = await Subscription.findOne({
+    where: {userId, storyId}
   })
-  if (follow){
-    await follow.destroy();
+  if (subscription){
+    await subscription.destroy();
   } else {
-    await Follow.create({followerId, followingId});
+    await Subscription.create({ userId, storyId });
   }
   res.send({ message: 'Success!' })
  }))
