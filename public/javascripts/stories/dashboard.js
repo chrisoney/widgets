@@ -9,6 +9,12 @@ document.querySelectorAll(".fa-chevron-circle-left")
     document.querySelector(`.container-${num}`).classList.toggle("open")
   }))
 
+document.querySelectorAll(".fa-arrow-circle-right")
+  .forEach(button => button.addEventListener("click", (e)=> {
+    const id = e.target.classList[2].split("-")[1];
+    window.location.href = `/stories/${id}`;
+  }))
+
 document.querySelectorAll(".reveal")
   .forEach(ele => ele.addEventListener("click", (e) => {
     e.preventDefault();
