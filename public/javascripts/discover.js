@@ -136,8 +136,9 @@ document.querySelector("#users").addEventListener("click", async e =>{
         <div class="following-container">
           <div class="following-header">
             <div class="following-name">${following.username}</div>
-            ${stories.join('')}
+            <div class="subscribe-button sub-${following.id}">Subscribe</div>
           </div>
+          ${stories.join('')}
         </div>
       `);
       
@@ -205,8 +206,9 @@ document.querySelector("#follows").addEventListener("click", async e =>{
         <div class="following-container">
           <div class="following-header">
             <div class="following-name">${following.username}</div>
-            ${stories.join('')}
+            <div class="subscribe-button sub-${following.id}">Unsubscribe</div>
           </div>
+          ${stories.join('')}
         </div>
       `);
       

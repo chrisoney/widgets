@@ -3,8 +3,16 @@ extends ../layout
 include ../utils
 
 append head
-  link(rel="stylesheet" href="/stylesheets/stories/add-story.css")
-  script(src="/javascripts/stories/add-story.js" type="module" defer)
+  link(rel="stylesheet" href="/stylesheets/stories/dummy.css")
+  //- script(src="/javascripts/stories/add-story.js" type="module" defer)
 
 block content
-  h1 Hey dummy
+  nav
+    div(class="nav-links")
+        a(href="/") HOME
+        if user
+            a(href="/my-routes") MY ROUTES
+        a(href="/") BROWSE
+    div(class="search")
+      div(class="search-bar")
+      div(class="search-bar-button")

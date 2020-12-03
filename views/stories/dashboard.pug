@@ -44,5 +44,8 @@ block content
                       p(class="description-text hidden")= story.description
                     div(class="review-container")
                       div(class="reveal") Review
-                      p(class="review-text hidden")= recommendation.review
+                      if (recommendation.review)
+                        p(class="review-text hidden")= recommendation.review
+                      else
+                        p(class="review-text none hidden") No review yet
       include nav-section
