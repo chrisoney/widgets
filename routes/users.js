@@ -99,9 +99,14 @@ router.post('/register', csrfProtection, userValidators,
   }));
 
 router.get('/login', csrfProtection, (req, res) => {
+  const errors = [];
+  if(req.query.redir){
+    errors.push('Please log in first')
+  }
   res.render('auth/login', {
     title: 'Login',
     csrfToken: req.csrfToken(),
+    errors
   });
 });
 

@@ -21,7 +21,7 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
-.nav-item{
+.nav-item {
   display:flex;
   justify-content: center;
   list-style: none;
@@ -29,6 +29,13 @@ h1 {
   cursor: pointer;
   border: 2px solid var(--light-border-gray);
 }
+
+.nav-item.dm {
+  border: 2px solid var(--dark-border-gray);
+}
+
+/* this is where the darkmode changes stop */
+
 .discover-nav .nav-item{
   font-weight: bold;
   text-align: center;
@@ -38,6 +45,7 @@ h1 {
   border-top-right-radius: 10px;
   padding: 5px 0px;
 }
+
 .discover-nav .nav-item.active{
   background: var(--white);
   color: var(--teal);

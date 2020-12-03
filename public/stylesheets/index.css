@@ -15,6 +15,11 @@ h1 {
     background: var(--white);
 }
 
+.preview-container.dm {
+    border: 2px solid var(--dark-border-gray);
+    background: var(--darker-black);
+}
+
 .preview-container p {
     padding: 5px;
 }
@@ -31,6 +36,10 @@ h1 {
     border-bottom: 2px solid var(--light-border-gray);
 }
 
+.preview-title.dm {
+    border: 2px solid var(--dark-border-gray);
+}
+
 .preview-title p {
     margin-left: 5px;
 }
@@ -39,6 +48,10 @@ h1 {
     align-items: center;
     border-left: 2px solid var(--light-border-gray);
     overflow: none;
+}
+
+.splash-image-container.dm {
+    border: 2px solid var(--dark-border-gray);
 }
 
 .splash-image-container img {
