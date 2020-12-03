@@ -1,12 +1,14 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
-const { csrfProtection, asyncHandler } = require('./utils');
-const { Story, User, Subscription, Recommendation } = require('../db/models');
+const { csrfProtection, asyncHandler } = require('../utils');
+const { Story, User, Subscription, Recommendation } = require('../../db/models');
 const followsRouter = require('./follows');
+const subscriptionsRouter = require('./subscriptions');
 
 const router = express.Router();
 
 router.use("/follows", followsRouter);
+router.use("/subscriptions", subscriptionsRouter);
 
 router.get("/", (req, res) => {
     res.redirect('/stories/dashboard');
