@@ -17,7 +17,7 @@ router.post("/toggle", asyncHandler( async (req, res) => {
   if (follow){
     await follow.destroy();
   } else {
-    follow.create({followerId, followingId});
+    await Follow.create({followerId, followingId});
   }
   res.send({ message: 'Success!' })
  }))
