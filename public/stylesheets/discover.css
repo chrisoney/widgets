@@ -214,7 +214,7 @@ h1 {
   font-size: 28px;
 }
 
-.subscribe-button {
+.subscribe-button, .follow-button {
   border: 1px solid var(--light-border-gray);
   padding: 8px 8px;
   color: white;
@@ -222,10 +222,10 @@ h1 {
   cursor: pointer;
 }
 
-.subscribe-button.dm {
+.subscribe-button.dm, .follow-button.dm {
   border: 1px solid var(--dark-border-gray);
 }
 
-.subscribe-button:hover {
+.subscribe-button:hover, .follow-button:hover {
   background: var(--darker-orange);
 }
