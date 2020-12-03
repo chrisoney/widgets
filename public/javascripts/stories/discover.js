@@ -1,3 +1,5 @@
+import { subscribeButtons } from './story-utils.js'
+
 function storyEventListeners(){
   document.querySelectorAll(".fa-chevron-circle-left")
     .forEach(button=> button.addEventListener("click", (e)=>{
@@ -13,22 +15,7 @@ function storyEventListeners(){
       text.classList.toggle("hidden");
     }))
   
-  document.querySelectorAll(".subscribe-button")
-    .forEach(ele => ele.addEventListener("click", async (e) => {
-      e.preventDefault();
-      const oldStoryId = e.target.classList[1].split("-")[1];
-      let res = await fetch("http://localhost:8080/stories/subscriptions/toggle", {
-        credentials: 'same-origin',
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ oldStoryId }),
-      });
-      res = await res.json();
-      console.log(res.message);
-      e.target.innerHTML = e.target.innerHTML === 'Subscribe' ? 'Unsubscribe' : 'Subscribe'
-    }))
+  subscribeButtons();
 }
 
 function followEventListeners(){
