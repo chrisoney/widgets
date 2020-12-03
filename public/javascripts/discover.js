@@ -14,6 +14,15 @@ function storyEventListeners(){
     }))
 }
 
+function followEventListeners(){
+  document.querySelectorAll(".follow-button")
+    .forEach(ele => ele.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const followId = e.target.classList[1].split("-")[1];
+      e.target.innerHTML = e.target.innerHTML === 'Follow' ? 'Unfollow' : 'Follow'
+    }))
+}
+
 function populateRating(rating, container){
   const result = [];
   rating = parseInt(rating, 10);
@@ -144,7 +153,8 @@ document.querySelector("#users").addEventListener("click", async e =>{
       
     })
     document.querySelector(".tab-content").innerHTML = result.join("");
-    storyEventListeners()
+    storyEventListeners();
+    followEventListeners();
   } catch (e){
     throw new Error('Uh oh. Something went wrong...');
   }
@@ -214,7 +224,8 @@ document.querySelector("#follows").addEventListener("click", async e =>{
       
     })
     document.querySelector(".tab-content").innerHTML = result.join("");
-    storyEventListeners()
+    storyEventListeners();
+    followEventListeners();
   } catch (e){
     throw new Error('Uh oh. Something went wrong...');
   }
