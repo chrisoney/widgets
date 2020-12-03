@@ -192,3 +192,40 @@ h1 {
   display: none;
   transition: 1s ease-in-out;
 }
+
+/* FOLLOWING DISCOVER */
+
+.following-container {
+  border: 2px solid var(--light-border-gray);
+}
+
+.following-container.dm {
+  border: 2px solid var(--dark-border-gray);
+}
+
+.following-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.following-name {
+  font-size: 28px;
+}
+
+.subscribe-button {
+  border: 1px solid var(--light-border-gray);
+  padding: 8px 8px;
+  color: white;
+  background: var(--reg-orange);
+  cursor: pointer;
+}
+
+.subscribe-button.dm {
+  border: 1px solid var(--dark-border-gray);
+}
+
+.subscribe-button:hover {
+  background: var(--darker-orange);
+}
