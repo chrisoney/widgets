@@ -1,0 +1,20 @@
+.back-button-container {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.fa-caret-left {
+  color: var(--reg-blue);
+}
+
+.back-text {
+  color: var(--reg-blue);
+  padding: 5px;
+}
+
+.back-button-container:hover span {
+  color: var(--darker-blue);
+}

@@ -1,5 +1,17 @@
 extends ../layout
 
+append head
+  link(rel="stylesheet" href="/stylesheets/stories/story.css")
+  //- add page specific js
+  script(src="/javascripts/stories/story.js" type="module" defer)
+
+
 block content
-  h1 Story view
+  div(class="main-container")
+    div(class="back-button-container")
+      span(class="fas fa-caret-left")
+      span(class="back-text") Back
+    h1 Story view
+    div(class="story-container")
+
   
