@@ -11,11 +11,11 @@ html
     nav(class="top-nav")
       img(src="/images/widget-white.png" class="widget-icon")
       if locals.authenticated
-        form(class='form-inline pr-4' action='/users/logout' method='post')
-          input(class='logout-button' type='submit' value='Logout')
+        form(class='nav-button logout' action='/users/logout' method='post')
+          input(class='' type='submit' value='Logout')
       else
         span(class='navbar-text px-4')
-          a(class='login-button' href='/users/login') Login
-          a(class='register-button' href='/users/register') Register
+          a(class='nav-button' href='/users/login') Login
+          a(class='nav-button' href='/users/register') Register
 
     block content

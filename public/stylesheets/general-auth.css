@@ -78,14 +78,6 @@ img {
   background: var(--darker-blue);
 }
 
-.cancel {
-  background: var(--reg-red);
-}
-
-.cancel:hover {
-  background: var(--darker-red);
-}
-
 .redirect {
   text-align: center;
 }
