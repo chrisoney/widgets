@@ -14,6 +14,29 @@ router.get("/", (req, res) => {
     res.redirect('/stories/dashboard');
 })
 
+router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
+    const storyId = req.params.id;
+    const story = await Story.findOne({
+        where: { id: storyId },
+        include: [{
+            model: Subscription,
+            as: 'subscription',
+            where: {
+                userId: req.session.auth.userId
+            },
+        },
+        {
+            model: Recommendation,
+            as: 'recommendation',
+            where: {
+                userId: req.session.auth.userId
+            }
+        }
+        ]
+    })
+    res.json( { story });
+}))
+
 router.get("/create", csrfProtection, asyncHandler( async (req, res) => {
     const errors = [];
     res.render('stories/add-story', { token: req.csrfToken(), errors });
