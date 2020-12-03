@@ -27,6 +27,7 @@ block content
                     div(class="story-details-top-left")
                       +dashStoryDetail("Book:", story.Subscription.book, story.id)
                       +dashStoryDetail("Chapter:", story.Subscription.chapter, story.id)
+                      a(href=story.link class="link") Link to Story
                     div(class="story-details-top-right")
                       div(id=story.id class="stars")
                         - var i = 0, j = recommendation.rating + 1
@@ -36,8 +37,7 @@ block content
                         while j <= 5
                           span(id=j class="far fa-star")
                           - j++
-                      a(href=story.link class="link") Link to Story
-
+                      div(class=`subscribe-button sub-${story.id}`) Unsubscribe
                   div(class="story-details-bottom")
                     div(class="description-container")
                       div(class="reveal") Description

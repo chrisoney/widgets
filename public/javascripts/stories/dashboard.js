@@ -1,3 +1,7 @@
+import { subscribeButtons } from './story-utils.js'
+
+
+
 document.querySelectorAll(".fa-chevron-circle-left")
   .forEach(button=> button.addEventListener("click", (e)=>{
     e.target.classList.toggle("opening")
@@ -79,4 +83,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
   event.preventDefault();
   changeRating();
   resetRating();
+  subscribeButtons();
 });

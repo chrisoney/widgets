@@ -124,6 +124,24 @@ h1 {
   cursor: pointer;
 }
 
+
+.subscribe-button {
+  font-size: 12px;
+  border: 1px solid var(--light-border-gray);
+  padding: 8px 8px;
+  color: white;
+  background: var(--reg-orange);
+  cursor: pointer;
+}
+
+.subscribe-button.dm {
+  border: 1px solid var(--dark-border-gray);
+}
+
+.subscribe-button:hover {
+  background: var(--darker-orange);
+}
+
 .reveal {
   cursor: pointer;
   margin: 10px;

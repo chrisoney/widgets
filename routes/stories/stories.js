@@ -15,7 +15,8 @@ router.get("/", (req, res) => {
 })
 
 router.get("/create", csrfProtection, asyncHandler( async (req, res) => {
-    res.render('stories/add-story', { token: req.csrfToken() });
+    const errors = [];
+    res.render('stories/add-story', { token: req.csrfToken(), errors });
 }))
 
 router.post("/create", asyncHandler( async (req, res) => {
@@ -44,7 +45,9 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
             },
             include: {
                 model: Recommendation,
-                as: 'recommendation'
+                as: 'recommendation',
+                where: { userId: req.session.auth.userId },
+                required: false
             },
         },
         order: [[ 

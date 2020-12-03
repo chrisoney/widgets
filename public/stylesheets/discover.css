@@ -223,6 +223,10 @@ h1 {
   cursor: pointer;
 }
 
+.subscribe-button {
+  font-size: 12px;
+}
+
 .subscribe-button.dm, .follow-button.dm {
   border: 1px solid var(--dark-border-gray);
 }
