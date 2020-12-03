@@ -1,10 +1,12 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 const { csrfProtection, asyncHandler } = require('./utils');
-const { Story, User, Subscription, Recommendation, Follow } = require('../db/models');
-const { restElement } = require('babel-types');
+const { Story, User, Subscription, Recommendation } = require('../db/models');
+const followsRouter = require('./follows');
 
 const router = express.Router();
+
+router.use("/follows", followsRouter);
 
 router.get("/", (req, res) => {
     res.redirect('/stories/dashboard');
@@ -169,4 +171,5 @@ router.get("/discover-follows", asyncHandler( async (req,res) =>{
     });
     res.json(user.followings);
 }));
+
 module.exports = router;

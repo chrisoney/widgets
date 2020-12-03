@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const { restoreUser } = require('../auth');
 
 
 /* GET home page. */
