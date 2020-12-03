@@ -7,12 +7,18 @@ append head
   //- script(src="/javascripts/stories/add-story.js" type="module" defer)
 
 block content
-  nav
-    div(class="nav-links")
-        a(href="/") HOME
-        if user
-            a(href="/my-routes") MY ROUTES
-        a(href="/") BROWSE
-    div(class="search")
-      div(class="search-bar")
-      div(class="search-bar-button")
+  div let's try this
+    tbody(class='TDB')
+      tr(class="TBD2")
+        td(class="task-td")
+          span One
+          input(type="checkbox" class="completed-checkbox")
+      tr(class="TBD2")
+        td(class="task-td")
+          span 
+            input(type="checkbox" class="completed-checkbox")
+      tr(class="TBD2")
+        td(class="task-td") 
+          span Three
+          input(type="checkbox" class="completed-checkbox")
+      

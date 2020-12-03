@@ -34,7 +34,7 @@ router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
         }
         ]
     })
-    res.json( { story });
+    res.render("stories/story", { story });
 }))
 
 router.get("/create", csrfProtection, asyncHandler( async (req, res) => {

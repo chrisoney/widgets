@@ -54,3 +54,7 @@ nav {
   margin: 0 10px;
   border: 1px solid white;
 }
+
+span + input[type=checkbox]:checked {
+  text-decoration: line-through;
+}
