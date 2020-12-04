@@ -1,18 +1,15 @@
-import { subscribeButtons } from './story-utils.js'
+import { subscribeToggle } from './story-utils.js'
 
-document.querySelector(".modal-button").addEventListener("click", (e)=> {
+function closeModal(){
   document.querySelectorAll(".modal")
-    .forEach(ele => {
-      ele.classList.add("open-modal");
-    })
-})
+  .forEach(ele => {
+    ele.classList.remove("open-modal");
+  })
+}
 
 document.querySelector(".modal-background").addEventListener("click", (e)=> {
   e.preventDefault()
-  document.querySelectorAll(".modal")
-    .forEach(ele => {
-      ele.classList.remove("open-modal");
-    })
+  closeModal();
 })
 
 document.querySelector(".modal-container")
@@ -30,6 +27,25 @@ document.querySelectorAll(".fa-arrow-circle-right")
     const id = e.target.classList[2].split("-")[1];
     window.location.href = `/stories/${id}`;
   }))
+
+document.querySelectorAll(".subscribe-button")
+  .forEach(ele => ele.addEventListener("click", (e) => {
+    e.preventDefault();
+    const storyId = e.target.classList[1].split("-")[1];
+    document.querySelectorAll(".modal")
+      .forEach(ele => {
+        ele.classList.add("open-modal");
+      })
+    document.querySelector(".confirm-button")
+      .addEventListener("click", (e) => {
+        e.preventDefault();
+        subscribeToggle(storyId);
+        closeModal();
+      })
+    
+    e.target.innerHTML = e.target.innerHTML === 'Subscribe' ? 'Unsubscribe' : 'Subscribe';
+  }))
+
 
 document.querySelectorAll(".fa-minus-circle")
   .forEach(button => button.addEventListener("click", (e)=> {
@@ -111,5 +127,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
   event.preventDefault();
   changeRating();
   resetRating();
-  subscribeButtons();
 });

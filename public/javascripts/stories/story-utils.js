@@ -19,7 +19,7 @@ if (logout) {
     })
 }
 
-function subscribeButtons(){
+function subscribeButtons(oldStoryId){
     document.querySelectorAll(".subscribe-button")
         .forEach(ele => ele.addEventListener("click", async (e) => {
         e.preventDefault();
@@ -38,4 +38,19 @@ function subscribeButtons(){
         }))
 }
 
-export { subscribeButtons }
+const subscribeToggle = async (oldStoryId) => {
+   
+    let res = await fetch("http://localhost:8080/stories/subscriptions/toggle", {
+        credentials: 'same-origin',
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ oldStoryId }),
+    });
+    res = await res.json();
+    console.log(res.message);
+
+}
+
+export { subscribeToggle, subscribeButtons }
