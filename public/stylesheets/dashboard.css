@@ -224,6 +224,12 @@ h1 {
   background: var(--white);
   min-width: 250px;
   padding: 20px;
+  border: var(--light-border-gray);
+}
+
+.modal-container.dm {
+  border: var(--dark-border-gray);
+  background: var(--darker-black);
 }
 
 .modal-content {
