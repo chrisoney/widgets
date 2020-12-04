@@ -70,6 +70,7 @@ function changeRating(){
       const cls = ["fas", "far"]
       for (let i = 0; i < e.target.parentElement.children.length; i++){
         const ele = e.target.parentElement.children[i];
+        const full = e.target.parentElement.classList;
         if (ele.id <= e.target.id){
           ele.classList.remove(...cls);
           ele.classList.add("fas")

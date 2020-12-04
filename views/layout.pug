@@ -12,9 +12,9 @@ html
     nav(class="top-nav")
       img(src="/images/widget-white.png" class="widget-icon")
       if locals.authenticated
-        //- form(class='nav-button logout' action='/users/logout' method='post')
-        //-   input(class='' type='submit' value='Logout')
-        button(class='nav-button logout') Logout
+        form(class='nav-button logout' action='/users/logout' method='post')
+          input(class='' type='submit' value='Logout')
+        //- button(class='nav-button logout') Logout
       else
         span(class='navbar-text px-4')
           a(class='nav-button' href='/users/login') Login
