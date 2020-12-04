@@ -1,4 +1,4 @@
-import { subscribeButtons } from './story-utils.js'
+import { subscribeToggle } from './story-utils.js'
 
 function storyEventListeners(){
   document.querySelectorAll(".fa-chevron-circle-left")
@@ -15,7 +15,13 @@ function storyEventListeners(){
       text.classList.toggle("hidden");
     }))
   
-  subscribeButtons();
+  document.querySelectorAll(".subscribe-button")
+    .forEach(button=> button.addEventListener("click", (e)=> {
+      e.preventDefault();
+      const storyId = e.target.classList[1].split("-")[1];
+      subscribeToggle(storyId);
+      e.target.innerHTML = e.target.innerHTML === 'Subscribe' ? 'Unsubscribe' : 'Subscribe';
+    }))
 }
 
 function followEventListeners(){

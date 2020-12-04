@@ -5,10 +5,9 @@ function closeModal(){
   .forEach(ele => {
     ele.classList.remove("open-modal");
   })
-  document.removeEventListener(closeModalEvent);
 }
 
-const closeModalEvent = document.querySelector(".modal-background").addEventListener("click", (e)=> {
+document.querySelector(".modal-background").addEventListener("click", (e)=> {
   e.preventDefault()
   closeModal();
 })
@@ -93,16 +92,15 @@ function populateRating(rating, container){
   changeRating();
 }
 
-function resetRating(){
-  document.querySelectorAll(".stars")
-    .forEach(star => star.addEventListener("mouseleave", async (e)=> {
-      const storyId = e.currentTarget.id;
-      const res = await fetch(`/stories/${storyId}/recommendation/`);
-      const data = await res.json()
-      console.log("hello");
-      populateRating(data.recommendation.rating, e.currenTarget)
-    }))
-}
+document.querySelectorAll(".stars")
+  .forEach(star => star.addEventListener("mouseleave", async (e)=> {
+    const targetEle = e.currentTarget;
+    const storyId = targetEle.id;
+    const res = await fetch(`/stories/${storyId}/recommendation/`);
+    const data = await res.json()
+    populateRating(data.recommendation.rating, targetEle)
+  }))
+
 
 function newRating(){
   document.querySelectorAll(".fa-star")
@@ -125,5 +123,5 @@ function newRating(){
 window.addEventListener('DOMContentLoaded', (event) => {
   event.preventDefault();
   changeRating();
-  resetRating();
+  newRating();
 });
