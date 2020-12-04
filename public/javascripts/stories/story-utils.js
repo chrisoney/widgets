@@ -7,6 +7,18 @@ if (storiesContainer){
     })
 }
 
+const logout = document.querySelector(".logout")
+if (logout) {
+    logout.addEventListener("click", async (e) => {
+        e.preventDefault()
+        const res = await fetch("/users/logout", {
+            method: "POST",
+
+        })
+        window.location.href = "/";
+    })
+}
+
 function subscribeButtons(){
     document.querySelectorAll(".subscribe-button")
         .forEach(ele => ele.addEventListener("click", async (e) => {

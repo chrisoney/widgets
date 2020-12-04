@@ -9,10 +9,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       book: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: '0',
       },
       chapter: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: '0',
       },
       userId: {
         allowNull: false,

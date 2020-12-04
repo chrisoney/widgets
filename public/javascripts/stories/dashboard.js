@@ -1,6 +1,22 @@
 import { subscribeButtons } from './story-utils.js'
 
+document.querySelector(".modal-button").addEventListener("click", (e)=> {
+  document.querySelectorAll(".modal")
+    .forEach(ele => {
+      ele.classList.add("open-modal");
+    })
+})
 
+document.querySelector(".modal-background").addEventListener("click", (e)=> {
+  e.preventDefault()
+  document.querySelectorAll(".modal")
+    .forEach(ele => {
+      ele.classList.remove("open-modal");
+    })
+})
+
+document.querySelector(".modal-container")
+  .addEventListener("click", (e)=> e.stopPropagation())
 
 document.querySelectorAll(".fa-chevron-circle-left")
   .forEach(button=> button.addEventListener("click", (e)=>{
@@ -13,6 +29,12 @@ document.querySelectorAll(".fa-arrow-circle-right")
   .forEach(button => button.addEventListener("click", (e)=> {
     const id = e.target.classList[2].split("-")[1];
     window.location.href = `/stories/${id}`;
+  }))
+
+document.querySelectorAll(".fa-minus-circle")
+  .forEach(button => button.addEventListener("click", (e)=> {
+    
+    changeSubscribeAttribute(ele, -1, id, attr)
   }))
 
 document.querySelectorAll(".reveal")

@@ -27,7 +27,7 @@ mixin preview(id, icon, name, description, imgSrc)
 mixin dashStoryDetail(label, value, id)
   - var num = parseInt(value, 10)
   div(class="detail-container")
-    if num
+    if (num >= 0)
       span(class="detail-label")=label
       span(id=id class="fas fa-minus-circle")
       span(class="detail-value")=value

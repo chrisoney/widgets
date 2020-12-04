@@ -55,6 +55,13 @@ nav {
   border: 1px solid white;
 }
 
-span + input[type=checkbox]:checked {
-  text-decoration: line-through;
+.picture {
+  background-image:
+  linear-gradient(to left bottom, #ed684b, #f0813a, #ec9a29, #e1b520, #cfce2b, #abdb48, #81e66b, #45ee92, #00e9be, #00e1e2, #00d6f8, #00c8ff ),
+  url('/images/elephant.jpg');
+  width: 80%;
+  height: 400px;
+  background-size: cover;
+  color: white;
+  padding: 20px;
 }

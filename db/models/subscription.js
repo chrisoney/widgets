@@ -2,10 +2,12 @@
 module.exports = (sequelize, DataTypes) => {
   const Subscription = sequelize.define('Subscription', {
     book: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: '0',
     },
     chapter: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: '0',
     },
     userId: {
       allowNull: false,

@@ -98,6 +98,8 @@ h1 {
 
 .detail-container {
   overflow: wrap;
+  display:flex;
+  align-items: center;
 }
 
 .detail-label {
@@ -106,6 +108,16 @@ h1 {
 
 .detail-value {
   margin: 5px;
+}
+
+.fa-minus-circle, .fa-plus-circle {
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--reg-blue);
+}
+
+.fa-minus-circle:hover, .fa-plus-circle:hover {
+  color: var(--darker-blue);
 }
 
 .story-details-top-right{
@@ -125,7 +137,7 @@ h1 {
 }
 
 
-.subscribe-button {
+.subscribe-button, .confirm-button {
   font-size: 12px;
   border: 1px solid var(--light-border-gray);
   padding: 8px 8px;
@@ -134,11 +146,11 @@ h1 {
   cursor: pointer;
 }
 
-.subscribe-button.dm {
+.subscribe-button.dm, .confirm-button.dm {
   border: 1px solid var(--dark-border-gray);
 }
 
-.subscribe-button:hover {
+.subscribe-button:hover, .confirm-button:hover {
   background: var(--darker-orange);
 }
 
@@ -171,4 +183,51 @@ h1 {
 
 .review-text.none.dm {
   color: var(--golden);
+}
+
+/* MODAL STUFF */
+.modal-button {
+  font-size: 12px;
+  border: 1px solid var(--light-border-gray);
+  padding: 8px 8px;
+  color: white;
+  background: var(--reg-orange);
+  cursor: pointer;
+}
+
+.modal-background {
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  background: rgba(0,0,0,0.5);
+  display: none;
+}
+
+.modal-container {
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: none;
+  background: var(--white);
+}
+
+.modal-content {
+  color: var(--emphasis-red)
+}
+
+.modal-content.dm {
+  color: var(--golden)
+}
+
+.modal-background.open-modal, .modal-container.open-modal, modal-content.open-modal {
+  display: flex;
 }

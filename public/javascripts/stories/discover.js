@@ -24,7 +24,7 @@ function followEventListeners(){
       e.preventDefault();
       const followedId = e.target.classList[1].split("-")[1];
 
-      let res = await fetch("http://localhost:8080/stories/follows/toggle", {
+      let res = await fetch("/stories/follows/toggle", {
         credentials: 'same-origin',
         method: "POST",
         headers: {

@@ -139,7 +139,7 @@ router.get("/discover", asyncHandler( async (req,res) =>{
     res.render("stories/discover", { title:"Discover", stories })
 }))
 
-router.get("/discover/:id/dummy", asyncHandler( async (req,res) =>{
+router.get("/dummy", asyncHandler( async (req,res) =>{
 
     res.render("stories/dummy", { title:"Dummy" })
 }))

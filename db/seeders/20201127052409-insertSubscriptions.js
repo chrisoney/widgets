@@ -22,6 +22,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
+        book: '0',
         chapter: '335',
         userId: 1,
         storyId: 2,
@@ -29,6 +30,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
+        book: '0',
         chapter: 'Food and Growth',
         userId: 1,
         storyId: 3,
