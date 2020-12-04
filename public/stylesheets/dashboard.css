@@ -222,16 +222,28 @@ h1 {
   position: absolute;
   display: none;
   background: var(--white);
+  min-width: 250px;
+  padding: 20px;
 }
 
 .modal-content {
-  color: var(--emphasis-red)
+  color: var(--emphasis-red);
+  width: 200px;
+
 }
 
 .modal-content.dm {
-  color: var(--golden)
+  color: var(--golden);
 }
 
-.modal-background.open-modal, .modal-container.open-modal, modal-content.open-modal {
+.confirm-button {
+  margin-top: 10px;
+  width: 100px;
+  text-align: center;
+}
+
+.modal-background.open-modal, .modal-container.open-modal {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }

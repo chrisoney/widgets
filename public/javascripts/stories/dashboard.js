@@ -28,23 +28,27 @@ document.querySelectorAll(".fa-arrow-circle-right")
     window.location.href = `/stories/${id}`;
   }))
 
-document.querySelectorAll(".subscribe-button")
-  .forEach(ele => ele.addEventListener("click", (e) => {
-    e.preventDefault();
+function handleSubscriptionConfirm(e, element, storyId) {
+  e.preventDefault();
+  subscribeToggle(storyId);
+  closeModal();
+  element.innerHTML = element.innerHTML === 'Subscribe' ? 'Unsubscribe' : 'Subscribe';
+}
+
+function handleSubscriptionClick(e){
+  e.preventDefault();
+    const buttonHolder = e.target
     const storyId = e.target.classList[1].split("-")[1];
     document.querySelectorAll(".modal")
       .forEach(ele => {
         ele.classList.add("open-modal");
       })
     document.querySelector(".confirm-button")
-      .addEventListener("click", (e) => {
-        e.preventDefault();
-        subscribeToggle(storyId);
-        closeModal();
-      })
-    
-    e.target.innerHTML = e.target.innerHTML === 'Subscribe' ? 'Unsubscribe' : 'Subscribe';
-  }))
+      .addEventListener("click", (e) => handleSubscriptionConfirm(e, buttonHolder,storyId), {once:true})
+}
+
+document.querySelectorAll(".subscribe-button")
+  .forEach(ele => ele.addEventListener("click", (e) => handleSubscriptionClick(e)))
 
 
 document.querySelectorAll(".fa-minus-circle")
