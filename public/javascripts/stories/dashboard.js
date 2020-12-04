@@ -5,9 +5,10 @@ function closeModal(){
   .forEach(ele => {
     ele.classList.remove("open-modal");
   })
+  document.removeEventListener(closeModalEvent);
 }
 
-document.querySelector(".modal-background").addEventListener("click", (e)=> {
+const closeModalEvent = document.querySelector(".modal-background").addEventListener("click", (e)=> {
   e.preventDefault()
   closeModal();
 })
@@ -74,8 +75,6 @@ function changeRating(){
           ele.classList.add("far")
         }
       }
-      resetRating();
-      newRating();
     }))
 }
 
@@ -95,13 +94,13 @@ function populateRating(rating, container){
 }
 
 function resetRating(){
-  document.querySelectorAll(".fa-star")
-    .forEach(star => star.addEventListener("mouseout", async (e)=> {
-      const storyId = e.target.parentElement.id;
+  document.querySelectorAll(".stars")
+    .forEach(star => star.addEventListener("mouseleave", async (e)=> {
+      const storyId = e.currentTarget.id;
       const res = await fetch(`/stories/${storyId}/recommendation/`);
       const data = await res.json()
-
-      populateRating(data.recommendation.rating, e.target.parentElement)
+      console.log("hello");
+      populateRating(data.recommendation.rating, e.currenTarget)
     }))
 }
 

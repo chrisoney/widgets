@@ -128,6 +128,10 @@ h1 {
   align-items: center;
 }
 
+.stars {
+  padding: 10px 5px;
+}
+
 .fas.fa-star {
   color: var(--reg-red);
 }
