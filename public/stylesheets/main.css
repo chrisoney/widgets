@@ -74,3 +74,25 @@ body {
 body.dm {
   background: var(--light-gray);
 }
+
+.error-container {
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.error-title {
+  color: var(--emphasis-red);
+}
+
+.error-title.dm {
+  color: var(--golden)
+}
+
+.error-message {
+  list-style: none;
+  color: var(--emphasis-red);
+}
+
+.error-message.dm {
+  color: var(--golden)
+}

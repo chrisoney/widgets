@@ -45,7 +45,7 @@ router.get("/create", csrfProtection, asyncHandler( async (req, res) => {
 const storyValidators = [
     check('title')
     .exists({ checkFalsy: true })
-    .withMessage('Please provide a value for username')
+    .withMessage('Please provide a value for title')
 ]
 
 router.post("/create", csrfProtection, storyValidators, asyncHandler( async (req, res) => {
@@ -58,7 +58,7 @@ router.post("/create", csrfProtection, storyValidators, asyncHandler( async (req
             description,
             link
         });
-        const newSubscription = await Subscription.create({
+        await Subscription.create({
             userId: req.session.auth.userId,
             storyId: newStory.id
         })
