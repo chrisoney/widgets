@@ -4,11 +4,13 @@ const { csrfProtection, asyncHandler } = require('../utils');
 const { Story, User, Subscription, Recommendation } = require('../../db/models');
 const followsRouter = require('./follows');
 const subscriptionsRouter = require('./subscriptions');
+const recommendationsRouter = require('./recommendations')
 
 const router = express.Router();
 
 router.use("/follows", followsRouter);
 router.use("/subscriptions", subscriptionsRouter);
+router.use("/recommendations", recommendationsRouter);
 
 router.get("/", (req, res) => {
     res.redirect('/stories/dashboard');
@@ -84,7 +86,8 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
                 model: Recommendation,
                 as: 'recommendation',
                 where: { userId: req.session.auth.userId },
-                required: false
+                required: false,
+                attributes: ["id", "rating", "review", "userId", "storyId"]
             },
         },
         order: [[ 
@@ -95,6 +98,7 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
     })
     const stories = user.subscribedStories;
     res.render("stories/dashboard", { title:"Dashboard", stories })
+    // res.json({ stories })
 }))
 
 router.get("/:storyId/recommendation/", asyncHandler( async (req,res) => {

@@ -18,7 +18,7 @@ block content
       div(class="stories-container")
           ul
             each story, idx in stories
-              - var recommendation = story.recommendation[0] || { rating: 0, review: ''}
+              - var recommendation = story.recommendation[0] || { id:null, rating: 0, review: ''}
               li(class="story-container")
                 div(class="story-header-container")
                   span(class="story-title")=story.title
@@ -45,10 +45,10 @@ block content
                     div(class="description-container")
                       div(class="reveal") Description
                       p(class="description-text hidden")= story.description
-                    div(class="review-container")
+                    div(id=story.id class="review-container")
                       div(class="reveal") Review
                       if (recommendation.review)
-                        p(class="review-text hidden")= recommendation.review
+                        p(id=recommendation.id class="review-text hidden")= recommendation.review
                       else
-                        p(class="review-text none hidden") No review yet
+                        p(id=recommendation.id class="review-text none hidden") No review yet
       include nav-section

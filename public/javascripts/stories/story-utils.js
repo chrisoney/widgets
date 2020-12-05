@@ -73,4 +73,19 @@ const setNewAttribute = async (ele, change, id, attr) => {
    
 }
 
-export { subscribeToggle, subscribeButtons, setNewAttribute }
+const reviewUpdate = async (review, recommendationId, storyId) => {
+    const id = recommendationId;
+    const res = await fetch(`/stories/recommendations/review/update`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+          },
+        body: JSON.stringify({ id, storyId, review }),
+    })
+}
+
+export { 
+    subscribeToggle, 
+    subscribeButtons, 
+    setNewAttribute,
+    reviewUpdate }

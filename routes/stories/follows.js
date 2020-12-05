@@ -3,9 +3,6 @@ var router = express.Router();
 const { csrfProtection, asyncHandler } = require('../utils');
 const { Follow } = require('../../db/models');
 
-router.get("/toggle", (req, res) => {
-  res.send("hello there");
-})
 
 router.post("/toggle", asyncHandler( async (req, res) => {
   const { followedId } = req.body;

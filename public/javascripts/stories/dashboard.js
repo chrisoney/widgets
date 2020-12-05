@@ -1,4 +1,4 @@
-import { subscribeToggle, setNewAttribute } from './story-utils.js'
+import { subscribeToggle, setNewAttribute, reviewUpdate } from './story-utils.js'
 
 function closeModal(){
   document.querySelectorAll(".modal")
@@ -73,6 +73,35 @@ document.querySelectorAll(".reveal")
     text.classList.toggle("hidden");
   }))
 
+function reviewEvent(){
+  document.querySelectorAll(".review-text")
+    .forEach(ele => ele.addEventListener("click", (e) => {
+      const oldText = e.target.innerHTML;
+      const recommendationId = e.target.id;
+      const storyId = e.target.parentElement.id;
+      let none = false;
+      if (e.target.classList[1] === "none") none = true;
+      e.target.classList.remove("none");
+      e.target.innerHTML = `
+        <div class="new-review">
+          <textarea class="new-review-textarea"></textarea>
+          <button class="submit">Submit</button>
+          <button class="cancel">Cancel</button>
+        </div>
+      `
+      document.querySelector(".review-text .submit").addEventListener("click", (e) => {
+        const newText = document.querySelector(".new-review-textarea").value
+        reviewUpdate(newText, recommendationId, storyId);
+        e.target.parentElement.innerHTML = newText;
+      })
+      document.querySelector(".review-text .cancel").addEventListener("click", (e) => {
+        e.target.parentElement.innerHTML = oldText;
+        if (none) e.target.parentElement.classList.add("none");
+      })
+
+    }, {once: true }))
+}
+
 function changeRating(){
   document.querySelectorAll(".fa-star")
   .forEach(star => star.addEventListener("mouseover", (e)=> {
@@ -139,4 +168,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
   event.preventDefault();
   changeRating();
   newRating();
+  reviewEvent();
 });
