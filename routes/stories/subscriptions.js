@@ -18,5 +18,21 @@ router.post("/toggle", asyncHandler( async (req, res) => {
   res.send({ message: 'Success!' })
  }))
 
+ router.put("/update", asyncHandler( async (req, res) => {
+   const { book, chapter, id } = req.body;
+   const subscription = await Subscription.findOne({
+     where: { userId: req.session.auth.userId, storyId: id}
+   });
+   if (book !== '') {
+    subscription.book = book;
+   }
+   if (chapter !== '') {
+    subscription.chapter = chapter;
+   }
+   await subscription.save();
+
+   res.json({ subscription })
+ }))
+
 
 module.exports = router;

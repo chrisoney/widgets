@@ -1,4 +1,4 @@
-import { subscribeToggle } from './story-utils.js'
+import { subscribeToggle, setNewAttribute } from './story-utils.js'
 
 function closeModal(){
   document.querySelectorAll(".modal")
@@ -53,8 +53,17 @@ document.querySelectorAll(".subscribe-button")
 
 document.querySelectorAll(".fa-minus-circle")
   .forEach(button => button.addEventListener("click", (e)=> {
-    
-    changeSubscribeAttribute(ele, -1, id, attr)
+    const ele = e.target.nextSibling;
+    const id = parseInt(e.target.id, 10);
+    const attr = e.target.classList[2];
+    setNewAttribute(ele, -1, id, attr)
+  }))
+document.querySelectorAll(".fa-plus-circle")
+  .forEach(button => button.addEventListener("click", (e)=> {
+    const ele = e.target.previousSibling;
+    const id = parseInt(e.target.id, 10);
+    const attr = e.target.classList[2];
+    setNewAttribute(ele, 1, id, attr)
   }))
 
 document.querySelectorAll(".reveal")

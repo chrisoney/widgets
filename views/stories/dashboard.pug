@@ -28,8 +28,8 @@ block content
                 div(class=`story-details-container container-${idx}`)
                   div(class="story-details-top")
                     div(class="story-details-top-left")
-                      +dashStoryDetail("Book:", story.Subscription.book, story.id)
-                      +dashStoryDetail("Chapter:", story.Subscription.chapter, story.id)
+                      +dashStoryDetail("Book:", story.Subscription.book, story.id, "book")
+                      +dashStoryDetail("Chapter:", story.Subscription.chapter, story.id, "chapter")
                       a(href=story.link class="link") Link to Story
                     div(class="story-details-top-right")
                       div(id=story.id class="stars")

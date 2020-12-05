@@ -53,4 +53,24 @@ const subscribeToggle = async (oldStoryId) => {
 
 }
 
-export { subscribeToggle, subscribeButtons }
+const setNewAttribute = async (ele, change, id, attr) => {
+    const newNum = parseInt(ele.innerHTML, 10) + change;
+    let book = '';
+    let chapter = '';
+    if (attr === 'book') book = newNum.toString();
+    else if (attr === 'chapter') chapter = newNum.toString()
+
+    if (newNum >= 0){
+        ele.innerHTML = newNum;
+        const res = await fetch('/stories/subscriptions/update', {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+              },
+            body: JSON.stringify({ id, book, chapter }),
+        })
+    }
+   
+}
+
+export { subscribeToggle, subscribeButtons, setNewAttribute }
