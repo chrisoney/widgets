@@ -104,6 +104,7 @@ function populateRating(rating, container){
     container.innerHTML = result.join("")
   }
   changeRating();
+  newRating();
 }
 
 document.querySelectorAll(".stars")
@@ -131,7 +132,7 @@ function newRating(){
       const data = await res.json()
       
       populateRating(data.recommendation.rating, e.target.parentElement)
-    }))
+    }, {once: true}))
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
