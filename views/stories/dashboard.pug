@@ -48,7 +48,7 @@ block content
                     div(id=story.id class="review-container")
                       div(class="reveal") Review
                       if (recommendation.review)
-                        p(id=recommendation.id class="review-text hidden")= recommendation.review
+                        div(id=recommendation.id class="review-text hidden")= recommendation.review
                       else
-                        p(id=recommendation.id class="review-text none hidden") No review yet
+                        div(id=recommendation.id class="review-text none hidden") No review yet
       include nav-section

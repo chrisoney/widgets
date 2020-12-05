@@ -73,14 +73,13 @@ const setNewAttribute = async (ele, change, id, attr) => {
    
 }
 
-const reviewUpdate = async (review, recommendationId, storyId) => {
-    const id = recommendationId;
-    const res = await fetch(`/stories/recommendations/review/update`, {
+const reviewUpdate = async (review, storyId) => {
+    await fetch(`/stories/recommendations/review/update`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
           },
-        body: JSON.stringify({ id, storyId, review }),
+        body: JSON.stringify({ storyId, review }),
     })
 }
 

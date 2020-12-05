@@ -4,7 +4,7 @@ const { csrfProtection, asyncHandler } = require('../utils');
 const { Recommendation } = require('../../db/models');
 
 router.post("/review/update", asyncHandler (async (req, res) => {
-  const { id, review, storyId } = req.body;
+  const { review, storyId } = req.body;
   const recommendation = await Recommendation.findOne({
     where: {
       userId: req.session.auth.userId,

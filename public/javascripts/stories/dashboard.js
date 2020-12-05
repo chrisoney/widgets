@@ -77,26 +77,35 @@ function reviewEvent(){
   document.querySelectorAll(".review-text")
     .forEach(ele => ele.addEventListener("click", (e) => {
       const oldText = e.target.innerHTML;
-      const recommendationId = e.target.id;
       const storyId = e.target.parentElement.id;
+      const oldTarget = e.target;
       let none = false;
       if (e.target.classList[1] === "none") none = true;
       e.target.classList.remove("none");
       e.target.innerHTML = `
         <div class="new-review">
           <textarea class="new-review-textarea"></textarea>
-          <button class="submit">Submit</button>
-          <button class="cancel">Cancel</button>
+          <div class="new-review-buttons">
+            <button class="submit-review">Submit</button>
+            <button class="delete-review">Delete</button>
+            <button class="cancel-review">Cancel</button>
+          </div>
         </div>
       `
-      document.querySelector(".review-text .submit").addEventListener("click", (e) => {
+      document.querySelector(".new-review-buttons .submit-review").addEventListener("click", (e) => {
         const newText = document.querySelector(".new-review-textarea").value
-        reviewUpdate(newText, recommendationId, storyId);
+        reviewUpdate(newText, storyId);
         e.target.parentElement.innerHTML = newText;
       })
-      document.querySelector(".review-text .cancel").addEventListener("click", (e) => {
-        e.target.parentElement.innerHTML = oldText;
-        if (none) e.target.parentElement.classList.add("none");
+      document.querySelector(".new-review-buttons .cancel-review").addEventListener("click", (e) => {
+        oldTarget.innerHTML = oldText;
+        if (none) oldTarget.classList.add("none");
+      })
+
+      document.querySelector(".new-review-buttons .delete-review").addEventListener("click", (e) => {
+        reviewUpdate(null, storyId);
+        oldTarget.innerHTML = 'No review yet';
+        oldTarget.classList.add("none");
       })
 
     }, {once: true }))

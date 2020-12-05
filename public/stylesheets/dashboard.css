@@ -189,6 +189,73 @@ h1 {
   color: var(--golden);
 }
 
+.new-review {
+  display: flex;
+}
+
+.new-review-textarea {
+  width: 85%;
+}
+
+.new-review-buttons {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.new-review-buttons button {
+  width: 100%;
+}
+
+.submit-review{
+  border: 1px solid var(--light-border-gray);
+  padding: 8px 8px;
+  color: white;
+  background: var(--reg-blue);
+  cursor: pointer;
+}
+
+.submit-review.dm {
+  border: 1px solid var(--dark-border-gray);
+}
+
+.submit-review:hover {
+  background: var(--darker-blue);
+}
+
+.delete-review{
+  border: 1px solid var(--light-border-gray);
+  padding: 8px 8px;
+  color: white;
+  background: var(--reg-red);
+  cursor: pointer;
+}
+
+.delete-review.dm {
+  border: 1px solid var(--dark-border-gray);
+}
+
+.delete-review:hover {
+  background: var(--darker-red);
+}
+
+.cancel-review{
+  border: 1px solid var(--light-border-gray);
+  padding: 8px 8px;
+  color: white;
+  background: var(--reg-orange);
+  cursor: pointer;
+}
+
+.cancel-review.dm {
+  border: 1px solid var(--dark-border-gray);
+}
+
+.cancel-review:hover {
+  background: var(--darker-orange);
+}
+
 /* MODAL STUFF */
 .modal-button {
   font-size: 12px;
