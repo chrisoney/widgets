@@ -40,21 +40,35 @@ router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
 router.get("/create", csrfProtection, asyncHandler( async (req, res) => {
     const errors = [];
     res.render('stories/add-story', { token: req.csrfToken(), errors });
-}))
+}));
 
-router.post("/create", asyncHandler( async (req, res) => {
+const storyValidators = [
+    check('title')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for username')
+]
+
+router.post("/create", csrfProtection, storyValidators, asyncHandler( async (req, res) => {
+    const errors = []
+    const validationErrors = validationResult(req);
     const { title, description, link } = req.body;
-    const newStory = await Story.create({
-        title,
-        description,
-        link
-    });
-    const newSubscription = await Subscription.create({
-        userId: req.session.auth.userId,
-        storyId: newStory.id
-    })
+    if (validationErrors.isEmpty()){
+        const newStory = await Story.create({
+            title,
+            description,
+            link
+        });
+        const newSubscription = await Subscription.create({
+            userId: req.session.auth.userId,
+            storyId: newStory.id
+        })
+        res.redirect("/stories/dashboard")
+    } else {
+        errors.push(...validationErrors.array().map(err => err.msg));
+        console.log(errors);
+        res.render('stories/add-story', { token: req.csrfToken(), errors });
+    }
 
-    res.redirect("/stories/dashboard")
 }))
 
 router.get("/dashboard", asyncHandler( async (req,res) =>{
