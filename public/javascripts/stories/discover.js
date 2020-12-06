@@ -39,7 +39,6 @@ function followEventListeners(){
         body: JSON.stringify({ followedId }),
       });
       res = await res.json();
-      console.log(res.message);
       e.target.innerHTML = e.target.innerHTML === 'Follow' ? 'Unfollow' : 'Follow'
     }))
 }

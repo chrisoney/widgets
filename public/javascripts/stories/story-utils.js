@@ -33,7 +33,6 @@ function subscribeButtons(oldStoryId){
             body: JSON.stringify({ oldStoryId }),
         });
         res = await res.json();
-        console.log(res.message);
         e.target.innerHTML = e.target.innerHTML === 'Subscribe' ? 'Unsubscribe' : 'Subscribe'
         }))
 }
@@ -49,7 +48,6 @@ const subscribeToggle = async (oldStoryId) => {
         body: JSON.stringify({ oldStoryId }),
     });
     res = await res.json();
-    console.log(res.message);
 
 }
 

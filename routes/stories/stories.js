@@ -67,7 +67,6 @@ router.post("/create", csrfProtection, storyValidators, asyncHandler( async (req
         res.redirect("/stories/dashboard")
     } else {
         errors.push(...validationErrors.array().map(err => err.msg));
-        console.log(errors);
         res.render('stories/add-story', { token: req.csrfToken(), errors });
     }
 
