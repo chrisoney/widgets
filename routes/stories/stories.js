@@ -2,6 +2,7 @@ const express = require('express');
 const { check, validationResult } = require('express-validator');
 const { csrfProtection, asyncHandler } = require('../utils');
 const { Story, User, Subscription, Recommendation } = require('../../db/models');
+const { Op } = require('../../db/models').Sequelize;
 const followsRouter = require('./follows');
 const subscriptionsRouter = require('./subscriptions');
 const recommendationsRouter = require('./recommendations')
@@ -36,16 +37,28 @@ router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
         }
         ]
     })
-    const subs = Subscriptions.findAll({
+    const subs = await Subscription.findAll({
+        where: {
+            storyId,
+            userId: {
+                [Op.ne]: req.session.auth.userId
+            }
+        },
         include: {
-            model: Story,
-            as: 'story',
+            model: User,
+            attributes: ["username"]
         }
     })
-    const recs = Recommendations.findAll({
+    const recs = await Recommendation.findAll({
+        where: {
+            storyId,
+            userId: {
+                [Op.ne]: req.session.auth.userId
+            }
+        },
         include: {
-            model: Story,
-            as: 'story',
+            model: User,
+            attributes: ["username"]
         }
     })
     res.render("stories/story", { story, subs, recs });
