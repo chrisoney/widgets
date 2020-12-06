@@ -9,7 +9,9 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const storiesRouter = require('./routes/stories/stories');
+const dummyRouter = require('./routes/stories/dummy');
 const { restoreUser, requireAuth } = require('./auth');
+const methodOverride = require('method-override')
 
 const app = express();
 
@@ -21,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'));
-
+app.use(methodOverride('_method'));
 // set up session middleware
 const store = new SequelizeStore({ db: sequelize });
 
@@ -40,6 +42,7 @@ store.sync();
 app.use(restoreUser)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/dummy', dummyRouter)
 app.use(requireAuth)
 app.use('/stories', storiesRouter);
 
