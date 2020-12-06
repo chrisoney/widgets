@@ -36,7 +36,19 @@ router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
         }
         ]
     })
-    res.render("stories/story", { story });
+    const subs = Subscriptions.findAll({
+        include: {
+            model: Story,
+            as: 'story',
+        }
+    })
+    const recs = Recommendations.findAll({
+        include: {
+            model: Story,
+            as: 'story',
+        }
+    })
+    res.render("stories/story", { story, subs, recs });
 }))
 
 router.get("/create", csrfProtection, asyncHandler( async (req, res) => {
