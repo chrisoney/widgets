@@ -11,8 +11,24 @@ module.exports = {
         name: 'John Doe',
         isBetaMember: false
       }], {});
+
+      {
+        title: title,
+        description: description,
+        link: link,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+
     */
     return queryInterface.bulkInsert('Stories', [
+      {
+        title: title,
+        description: description,
+        link: link,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
       {
         title: 'The Wandering Inn',
         description: `An inn is a place to rest, a place to talk and share stories, or a place to find adventures, a starting ground for quests and legends.
