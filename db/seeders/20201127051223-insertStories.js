@@ -14,7 +14,7 @@ module.exports = {
 
       {
         title: '',
-        Description: ``,
+        description: ``,
         link: '',
         createdAt: new Date(),
         updatedAt: new Date()
@@ -183,56 +183,65 @@ module.exports = {
       },
       {
         title: 'Brian the Drow',
-        Description: ``,
-        link: '',
+        description: `Brian is miserable.
+        Most of his friends and fellow gamers have long ago moved away, leaving him stuck in a dreary life lamenting the loss of his favorite past time. And so he simply plods along with not much hope for escapism. With nowhere else to turn he finally breaks down and commits to try out some Online Gaming.
+        Now, sucked into a fantasy world he will have to call upon all his GameMaster and Player experience not only to survive, but to become the hero, and ladies man, he has only played in his imagination.`,
+        link: 'https://www.royalroad.com/fiction/15521/brian-the-drow-a-worldshapers-realmbreakers-litrpg',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         title: 'Azarinth Healer',
-        Description: ``,
-        link: '',
+        description: `A new world with nearly unlimited possibilities. A status, classes, magic and monsters. Sounds good? Well, for Ilea it didn't come quite as expected as for some other protagonists, nor was there a king or god to welcome her.
+        The grand quest? Well, she might figure that out someday but for now, a new world with new food is prize enough. Her fists at the ready, she's prepared to punch and get punched, however long it takes and however many limbs she might have to regrow.
+        A story I've started writing now quite a while ago. Transported to another world, somewhat standard fantasy setting with my beginner attempts to make it dark but funny. There are Litrpg elements here but I do hope it's not too heavy and annoying. The fights should be interesting and aren't just numbers vs numbers.`,
+        link: 'https://www.royalroad.com/fiction/16946/azarinth-healer',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         title: 'Evil Overlord: The Makening',
-        Description: ``,
-        link: '',
+        description: `If evil was easy, everybody would be doing it, and there would be more Dark Lords running around than you could shake a stick at. But the road to Utter Domination isn't easy, smooth or straight, as the boy who will one day become Gar the Pitiless will discover.`,
+        link: 'https://www.royalroad.com/fiction/29540/evil-overlord-the-makening',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         title: 'Savage Divinity',
-        Description: ``,
-        link: '',
+        description: `A modern man finds himself reincarnated in the body of a young slave with no skills and quickly fading memories. Follow his journey to find normalcy while living in a savage world, filled with myth and legends, monsters and Demons. In a land where the strong rule, the weak serve, and bloodshed is a way of life, peace is a luxury few can afford.`,
+        link: 'https://www.royalroad.com/fiction/5701/savage-divinity',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         title: 'Wake of the Ravager',
-        Description: ``,
-        link: '',
+        description: `On the world of Marconen, your first Break determines the trajectory of your life. Calvin chose magic. Without proper schooling or a mentor, the boy is dragged by the whims of fate across the face of the planet, blending together different schools of magic and powerful abilities to create something new.
+        But there's a deeper secret behind his success. Why was he born an exile from his country? Why is his System so strange, and why does it keep talking to him?
+        And as the march of time continues, something evil grows in power across the ocean.`,
+        link: 'https://www.royalroad.com/fiction/25878/wake-of-the-ravager',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         title: 'The Humble Life of a Skill Trainer',
-        Description: ``,
-        link: '',
+        description: `On the world of Marconen, your first Break determines the trajectory of your life. Calvin chose magic. Without proper schooling or a mentor, the boy is dragged by the whims of fate across the face of the planet, blending together different schools of magic and powerful abilities to create something new.
+        But there's a deeper secret behind his success. Why was he born an exile from his country? Why is his System so strange, and why does it keep talking to him?
+        And as the march of time continues, something evil grows in power across the ocean.`,
+        link: 'https://www.royalroad.com/fiction/25878/wake-of-the-ravager',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         title: 'Ultimate Power: The Arcane Path',
-        Description: ``,
-        link: '',
+        description: ` A college student was returning home after studying abroad for several years when the end of the world happened. A dragon appeared out of nowhere and attacked the plane he was in, thanks to an incredible amount of luck and his quick-thinking, he managed to survive the plane crash only to get stuck on a tropical island.
+        A weird system took over the world and brought monsters to Earth. While nations collapsed and the world as a whole was being destroyed by ridiculous monsters, Leon was stuck in a godforsaken island with no chances of being rescued. What will happen to him? How will the world change while he is away? Will he even manage to return?`,
+        link: 'https://www.royalroad.com/fiction/32458/unlimited-power-the-arcane-path',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         title: 'The Menocht Loop',
-        Description: `Ian Dunai entered a time loop filled with contagion and captives over three years ago. It turned him into a master of decemancy with domain over dead matter, but he still hasn't found a way to escape.
+        description: `Ian Dunai entered a time loop filled with contagion and captives over three years ago. It turned him into a master of decemancy with domain over dead matter, but he still hasn't found a way to escape.
         Little does he know, he's just been stuck on layer one.`,
         link: 'https://www.royalroad.com/fiction/31514/the-menocht-loop',
         createdAt: new Date(),
@@ -240,7 +249,7 @@ module.exports = {
       },
       {
         title: 'Chrysalis',
-        Description: `Anthony has been reborn! Placed into the remarkable game-like world of Pangera.
+        description: `Anthony has been reborn! Placed into the remarkable game-like world of Pangera.
         However, something seems a little off. What's with these skills? Bite? Dig?
         Wait....
         I've been reborn as a WHAT?!
@@ -251,7 +260,7 @@ module.exports = {
       },
       {
         title: 'Castle Kingside',
-        Description: `A puzzling encounter leaves Dimitry a beggar with a strange emblem on his wrist. Around him, the people suffer as ruthless organizations, opportunistic nobles, and an overly pious church vie for power in a land under constant siege by some unknown threat. He quickly learns the difficulty of life in this new world.
+        description: `A puzzling encounter leaves Dimitry a beggar with a strange emblem on his wrist. Around him, the people suffer as ruthless organizations, opportunistic nobles, and an overly pious church vie for power in a land under constant siege by some unknown threat. He quickly learns the difficulty of life in this new world.
         Even upon acclimating to a ruthless society and finding his footing in the unsavory lands, Dimitry discovers that havens don't remain safe for long. He will have to manipulate limited resources and integrate modern scientific understanding with obscure magics to ensure the survival of a crumbling city.
         Can a displaced surgeon become the leader a struggling people need him to be?`,
         link: 'https://www.royalroad.com/fiction/27456/castle-kingside',
@@ -260,7 +269,7 @@ module.exports = {
       },
       {
         title: 'This Quest Is Bullshit',
-        Description: `The Questing Stones have come to Nowherested, and Evelia Greene is finally ready to receive her life's quest.  Perhaps she'll be a great warrior, or a wealthy merchant, or a brilliant mage.  Perhaps her quest is simply to live a quiet life, constantly honing a craft to the heights of perfection.  
+        description: `The Questing Stones have come to Nowherested, and Evelia Greene is finally ready to receive her life's quest.  Perhaps she'll be a great warrior, or a wealthy merchant, or a brilliant mage.  Perhaps her quest is simply to live a quiet life, constantly honing a craft to the heights of perfection.  
         Or perhaps the Questing Stones will grant her the legendary mission of popping over to the next village to pick up a loaf of bread.  
         Either way, adventure is out there, and Eve is determined to have one.  `,
         link: 'https://www.royalroad.com/fiction/33801/this-quest-is-bullshit',
@@ -269,7 +278,7 @@ module.exports = {
       },
       {
         title: 'Just A Bystander',
-        Description: `Everyone wants to believe they are the hero of their own story. But in a world where prophecies are real, what happens if you're not the Chosen One?
+        description: `Everyone wants to believe they are the hero of their own story. But in a world where prophecies are real, what happens if you're not the Chosen One?
         A budding arcanist named Caden enrols in the Academy, entering the same cohort as one of the legendary Chosen Ones, and finds himself caught in a tangle of fate that threatens to unravel the entire Empire. `,
         link: 'https://www.royalroad.com/fiction/32123/just-a-bystander',
         createdAt: new Date(),
@@ -277,14 +286,14 @@ module.exports = {
       },
       {
         title: 'Artificial Jelly',
-        Description: `Born to die and be born again, Gell, the Jellyfae must discover her strange connection to the horrible monsters called humans, that speak with words she understands, but seem to want nothing but her death. Driven by a desire for safety and freedom, she ventures forth to Tread the Sky, and finds more worlds than one.`,
+        description: `Born to die and be born again, Gell, the Jellyfae must discover her strange connection to the horrible monsters called humans, that speak with words she understands, but seem to want nothing but her death. Driven by a desire for safety and freedom, she ventures forth to Tread the Sky, and finds more worlds than one.`,
         link: 'https://www.royalroad.com/fiction/34030/artificial-jelly',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         title: 'The Gilded Hero',
-        Description: `To be summoned to another world, arriving in plane of existence filled with magic and potential! Already, you've been given the great privilege of becoming a [Hero] and the honored task of defeating the demon king! Some people might call that the opportunity of a lifetime!
+        description: `To be summoned to another world, arriving in plane of existence filled with magic and potential! Already, you've been given the great privilege of becoming a [Hero] and the honored task of defeating the demon king! Some people might call that the opportunity of a lifetime!
         With the chance to learn to become a master of the sword, to grow more powerful than anyone on Earth could ever dream, what's not to love about being a hero? It's just like the King said: this is destiny calling! This is what you were born to become!
         Or... not.`,
         link: 'https://www.royalroad.com/fiction/29286/the-gilded-hero',
@@ -293,7 +302,7 @@ module.exports = {
       },
       {
         title: 'Stranger Than Fiction',
-        Description: `Faith is like ice-cream. It comes in all flavors. Greek, Norse, Sumerian, Christian— just name it and it's there. Adventures, on the other hand, are like credit cards. The first taste is free, but the price only goes up from there. Family heirlooms, now those are true evil. You get burdened with them for sentimental reasons even if they’re icky. 
+        description: `Faith is like ice-cream. It comes in all flavors. Greek, Norse, Sumerian, Christian— just name it and it's there. Adventures, on the other hand, are like credit cards. The first taste is free, but the price only goes up from there. Family heirlooms, now those are true evil. You get burdened with them for sentimental reasons even if they’re icky. 
         For Lukas Aguilar, it was a pendant. A small, weird metal nib that, while irritating, seemed harmless. Such convictions are put to test when a ruined goddess stretches her hands from beyond the Sands of Time and grasps his fate, blurring the line between fact and fiction. Now torn away from his former life on Earth, Lukas finds himself trapped in an underground cavern with no escape in sight and hundreds of questions...
         "Am I still alive? What is this place? Why am I here?"`,
         link: 'https://www.royalroad.com/fiction/37283/stranger-than-fiction',
@@ -302,7 +311,7 @@ module.exports = {
       },
       {
         title: 'Seaborn',
-        Description: `Domenic is a sailor who just wants a life at sea. A brewing war between nations turn the already dangerous seas into something perilous. Domenic is forced into an untenable position, one he escapes with his life – though there is a greater cost he’ll have to pay after his deal with the devil.
+        description: `Domenic is a sailor who just wants a life at sea. A brewing war between nations turn the already dangerous seas into something perilous. Domenic is forced into an untenable position, one he escapes with his life – though there is a greater cost he’ll have to pay after his deal with the devil.
         Join Domenic as he explores the meaning and cost of both servitude and freedom!`,
         link: 'https://www.royalroad.com/fiction/30131/seaborn',
         createdAt: new Date(),
@@ -310,7 +319,7 @@ module.exports = {
       },
       {
         title: 'I Became a [Biologist] in a Fantasy World',
-        Description: `I loved Biology - always have, and always will. Unfortunately for me, years of fruitless research whittled away what little joy I had left in what I did. Escapism came in the form of reading isekai works, where the stresses of real life seemed so far away.
+        description: `I loved Biology - always have, and always will. Unfortunately for me, years of fruitless research whittled away what little joy I had left in what I did. Escapism came in the form of reading isekai works, where the stresses of real life seemed so far away.
         Luckily, I was summoned to a fantasy world of magic, dragons, and other mythical beasts. I didn't even need to deal with the Demon Lord threat, since it seemed that my summoning was a mistake, and all they needed was the Hero who was coincidentally summoned together with me! There was no revenge subplot, no hidden trap directed against me, and they even paid me compensation for their mistake. At long last, I could finally do what I ever wanted to do - experiment for the fun of it!
         With my new class as a [Biologist], none of this fantasy world's mysteries will be left untouched. Even if the Demon Lord himself comes knocking, nothing will stop me from researching every nook and cranny there is to discover of the magical biology of this world!`,
         link: 'https://www.royalroad.com/fiction/33378/i-became-a-biologist-in-a-fantasy-world',
@@ -319,7 +328,7 @@ module.exports = {
       },
       {
         title: "In Loki's Honor",
-        Description: `Earth is in turmoil. Fiction of travel to other worlds through the use of magic take on airs of prophecy as youngsters all around the world disappear. Amidst this turmoil, one New Yorker is caught in a traffic accident and chosen by Loki to travel to another world. The god's offer was not a fair one.
+        description: `Earth is in turmoil. Fiction of travel to other worlds through the use of magic take on airs of prophecy as youngsters all around the world disappear. Amidst this turmoil, one New Yorker is caught in a traffic accident and chosen by Loki to travel to another world. The god's offer was not a fair one.
         But they came not as the Trickster's champion. Their purpose, a sinister one. One that will earn them the enmity of the world. A Heroic destiny is not in their future.
         Their only ally is the impartial and pervasive System. Unable to be purged, they came to stay.
         Thrown in a barbaric world where life is a dime a dozen, the intruder tries to survive and escape the wrath of the native deities. All the while burdened by divine curses imposed upon them by Loki.
@@ -330,7 +339,7 @@ module.exports = {
       },
       {
         title: 'A Journey of Black and Red',
-        Description: `Where am I? What is this! I... I don't remember anything. I am in chains? Why am I in chains?! And why am I so very...
+        description: `Where am I? What is this! I... I don't remember anything. I am in chains? Why am I in chains?! And why am I so very...
         Thirsty.
         
         This is a story of vampires as I believe they should be, with their strengths and weaknesses, with their remnants of humanity and the beast inside.`,
@@ -340,7 +349,7 @@ module.exports = {
       },
       {
         title: 'Leaves of Terranthir',
-        Description: `Leaves of Terranthir is a gamelit blend of ARPG, action, fantasy, and slice of life.
+        description: `Leaves of Terranthir is a gamelit blend of ARPG, action, fantasy, and slice of life.
         It's inspired in part by some of my favourite games, borrowing in themes, sense of exploration, and aesthetics from the Soulsborne and soulslike genre, mixed heavily with arpg itemization from Diablo/PoE style games.
         While many may remember their Soulslike experiences as nothing more than suffering, I personally loved the sense of progression, to prevail over challenges and monsters that seemed impossible to defeat at first.
         If any of that seems interesting to you, do check out the first chapter and let me know what you think.
@@ -351,7 +360,7 @@ module.exports = {
       },
       {
         title: 'Onward to Providence',
-        Description: `Pylo was a woman of trade and travel!
+        description: `Pylo was a woman of trade and travel!
         She had set out for a life of adventure and exchange with strange new life. She would make deals and exchanges with new fools and new civilizations. She would boldly swindle like no one had swindled before.`,
         link: 'https://www.royalroad.com/fiction/34353/onward-to-providence',
         createdAt: new Date(),
@@ -359,14 +368,14 @@ module.exports = {
       },
       {
         title: 'Melas',
-        Description: `A young woman finds herself dead and is given the chance to reincarnate in another world with cheat-like magic powers. She accepts, only to find that this world treats magic users the same way hers did— by hunting them down for heresy.`,
+        description: `A young woman finds herself dead and is given the chance to reincarnate in another world with cheat-like magic powers. She accepts, only to find that this world treats magic users the same way hers did— by hunting them down for heresy.`,
         link: 'https://www.royalroad.com/fiction/34798/melas',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         title: 'The Perfect Run',
-        Description: `Ryan "Quicksave" Romano is an eccentric adventurer with a strange power: he can create a save-point in time and redo his life whenever he dies. Arriving in New Rome, the glitzy capital of sin of a rebuilding Europe, he finds the city torn between mega-corporations, sponsored heroes, superpowered criminals, and true monsters. It's a time of chaos, where potions can grant the power to rule the world and dangers lurk everywhere. 
+        description: `Ryan "Quicksave" Romano is an eccentric adventurer with a strange power: he can create a save-point in time and redo his life whenever he dies. Arriving in New Rome, the glitzy capital of sin of a rebuilding Europe, he finds the city torn between mega-corporations, sponsored heroes, superpowered criminals, and true monsters. It's a time of chaos, where potions can grant the power to rule the world and dangers lurk everywhere. 
         Ryan only sees different routes; and from Hero to Villain, he has to try them all. Only then will he achieve his perfect ending... no matter how many loops it takes.`,
         link: 'https://www.royalroad.com/fiction/36735/the-perfect-run',
         createdAt: new Date(),
@@ -374,7 +383,7 @@ module.exports = {
       },
       {
         title: 'Apocalypse: Generic System',
-        Description: `Jeb Trapper tried to kill himself. The gun jammed.
+        description: `Jeb Trapper tried to kill himself. The gun jammed.
         Two months later the vet is participating in underground trials of ecstacy to treat his PTSD.
         Everything seemed to be going great until...
         
@@ -387,7 +396,7 @@ module.exports = {
       },
       {
         title: 'Prophecy Approved Companion',
-        Description: `Qube is an NPC in an AI-driven VR-RPG who avoids her scripted death and blithely continues following the Player, trying to make sense of the normalised nonsense of Fantasy RPGs and accidentally glitching out the world in stranger and stranger ways as she seeks to be the very best Childhood Companion ever.
+        description: `Qube is an NPC in an AI-driven VR-RPG who avoids her scripted death and blithely continues following the Player, trying to make sense of the normalised nonsense of Fantasy RPGs and accidentally glitching out the world in stranger and stranger ways as she seeks to be the very best Childhood Companion ever.
         It’s a loving parody of old school RPGs, high fantasy, and every gamer who has ever thought “what happens if I do this...”`,
         link: 'https://www.royalroad.com/fiction/35549/prophecy-approved-companion',
         createdAt: new Date(),
@@ -395,7 +404,7 @@ module.exports = {
       },
       {
         title: 'The Primal Hunter',
-        Description: `On just another normal Monday, the world changed. The universe had reached a threshold humanity didn’t even know existed, and it was time to finally be integrated into the vast multiverse. A world where power is the only thing that one can truly rely on.
+        description: `On just another normal Monday, the world changed. The universe had reached a threshold humanity didn’t even know existed, and it was time to finally be integrated into the vast multiverse. A world where power is the only thing that one can truly rely on.
         Jake, a seemingly average office worker, finds himself thrust into this new world. Into a tutorial filled with dangers and opportunities. In a world that should breed fear and concern, an environment that makes his fellow coworkers falter, Jake instead finds himself thriving.
         Perhaps… Jake was born for this kind of world, to begin with.`,
         link: 'https://www.royalroad.com/fiction/36049/the-primal-hunter',
