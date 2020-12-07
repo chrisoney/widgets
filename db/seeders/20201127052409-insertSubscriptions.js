@@ -366,22 +366,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
-        book: '0',
-        chapter: 'Food and Growth pt.2',
-        userId: 2,
-        storyId: 3,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        book: '2',
-        chapter: '112',
-        userId: 3,
-        storyId: 4,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
+      
     ], {});
   },
 
