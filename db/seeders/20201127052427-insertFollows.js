@@ -11,6 +11,13 @@ module.exports = {
         name: 'John Doe',
         isBetaMember: false
       }], {});
+
+      {
+        followerId: num,
+        followingId: num,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
     */
     return queryInterface.bulkInsert('Follows', [
       {

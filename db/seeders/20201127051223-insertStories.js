@@ -23,13 +23,6 @@ module.exports = {
     */
     return queryInterface.bulkInsert('Stories', [
       {
-        title: title,
-        description: description,
-        link: link,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
         title: 'The Wandering Inn',
         description: `An inn is a place to rest, a place to talk and share stories, or a place to find adventures, a starting ground for quests and legends.
         In this world, at least. To Erin Solstice, an inn seems like a medieval relic from the past. But here she is, running from Goblins and trying to survive in a world full of monsters and magic. She’d be more excited about all of this if everything wasn’t trying to kill her.

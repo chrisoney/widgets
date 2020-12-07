@@ -11,6 +11,15 @@ module.exports = {
         name: 'John Doe',
         isBetaMember: false
       }], {});
+
+      {
+        rating: num,
+        review: '',
+        userId: num,
+        storyId: num,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     */
     return queryInterface.bulkInsert('Recommendations', [
       {
