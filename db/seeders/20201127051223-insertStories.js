@@ -103,6 +103,72 @@ module.exports = {
         updatedAt: new Date()
       },
       {
+        title: 'Slime and Punishment',
+        description: `Waking up in a white room, surrounded by bones wasn't how Chris planned on spending the rest of his life. He hadn't planned on ending up in an alien laboratory full of caged monsters either.
+        Inducted into a world with strange blue screens that hint at a world of fantasy, magic, and danger, Chris must survive until the System whisks him away for the promised Tutorial. If help comes too late, Chris risks becoming something less than human, or something more...`,
+        link: 'https://www.royalroad.com/fiction/28174/slime-and-punishment',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Deeper Darker',
+        description: `Sci-fi dungeon crawler.
+        Set in the far future when humanity has reached the stars and finds it is not the first to do so. Alien technology has been left behind by a long dead race. Ancient cities, abandoned starships, temples and fortified bunkers all contain artefacts and devices far in advance of what humans have been able to produce. Technology that feels more akin to magic, so powerful it can allow a single person to dominate a star system. But these relics of another time have been left well-defended and behind bewildering and impenetrable security measures. 
+        There are those who are compatible with the alien technology, who can augment themselves to face the evermore extreme protocols in the depths of the alien ruins, and by doing so attain greater power. And there are those who just want to sell what they find to the highest bidder.
+        The rewards are high, but you have to be prepared to go further and risk more to discover the greatest secrets of a civilisation that vanished long before the first human walked upright. Secrets that could irrevocably change humanity's future, or end it.`,
+        link: 'https://www.royalroad.com/fiction/23290/deeper-darker',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Inexorable Chaos',
+        description: `What happens when a summoned hero completes their task given by those from up above? When a summoned hero returns back to earth after having saved the world, do they still get to live a normal life? 
+        The answer is actually yes, they usually do. They get married to the one they love, have kids, and then death takes them away. 
+        Of course, that is only usually. There are a select few who choose not to... think the same way. 
+        Some of them find such a life boring, dull even. 
+        They want to taste for adventure once more, feed their drive for exploration! Power, wealth, another life, they want it all. So, what do they do? Why, they do what Quasi does... 
+        They sell themselves to the gods.`,
+        link: 'https://www.royalroad.com/fiction/22546/inexorable-chaos',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Undermind',
+        description: `Saskia thought her life was finally getting back on track after the accident. Then she got trolled.
+        Now she's up a tree the size of a planet, and all who meet her either run screaming or attack on sight. If everyone would just calm down and stop trying to kill her for one moment, she might get a chance to explain that this has all been a horrible misunderstanding.`,
+        link: 'https://www.royalroad.com/fiction/22019/undermind',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: "BeastBorne",
+        description: `A new Founder Marked with otherworldly power. An epic quest to build a Sanctum settlement. A fabled class that wields monstrous magics.`,
+        link: 'https://www.amazon.com/Beastborne-Founder-Portal-Fantasy-Chronicles-ebook/dp/B08BYZ1BGD',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'Blue Core',
+        description: `Dungeon: A place full of monsters, traps, treasure, and death. Those are the Great Dungeons, with unplumbed depths below the roots of the mountains.
+        That's not for me.
+        Dungeon: A place of rape, torture, and death, to control and corral enemies and slaves. These are the Red Cores, from which the mage-kings draw their power.
+        That's also not for me.
+        I don't like monsters. I don't want adventurers. I want to stay well away from enemies and slaves.
+        Fortunately, there are alternatives...`,
+        link: 'https://www.royalroad.com/fiction/25082/blue-core',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: 'There Is No Epic Loot Here, Only Puns',
+        description: `She became a dungeon core.
+        Everything pointed Delta to murdering her way to success. People were just mana farms, right?
+        No, that was wrong. Delta refused. Then everything became odd.`,
+        link: 'https://www.royalroad.com/fiction/15935/there-is-no-epic-loot-here-only-puns',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
         title: "Dungeon Crawler Carl",
         description: `A man. His ex-girlfriend's cat. A sadistic game show unlike anything in the universe: a dungeon crawl where survival depends on killing your prey in the most entertaining way possible.
         In a flash, every human-erected construction on Earth—from Buckingham Palace to the tiniest of sheds—collapses in a heap, sinking into the ground.
@@ -112,13 +178,6 @@ module.exports = {
         You gotta fight with vigor, with excitement. You gotta make them stand up and cheer. And if you do have that "it" factor, you may just find yourself with a following. That's the only way to truly survive in this game—with the help of the loot boxes dropped upon you by the generous benefactors watching from across the galaxy.
         They call it Dungeon Crawler World. But for Carl, it's anything but a game.`,
         link: 'https://www.royalroad.com/fiction/29358/dungeon-crawler-carl-book-2-carls-doomsday-scenario',
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        title: "BeastBorne",
-        description: `A new Founder Marked with otherworldly power. An epic quest to build a Sanctum settlement. A fabled class that wields monstrous magics.`,
-        link: 'https://www.amazon.com/Beastborne-Founder-Portal-Fantasy-Chronicles-ebook/dp/B08BYZ1BGD',
         createdAt: new Date(),
         updatedAt: new Date()
       },
