@@ -184,7 +184,7 @@ module.exports = {
       },
       {
         book: '0',
-        chapter: '657',
+        chapter: '658',
         userId: 1, // Chris
         storyId: 21, // Savage Divinty
         createdAt: new Date(),
@@ -360,13 +360,13 @@ module.exports = {
       },
       {
         book:'0',
-        chapter:'33',
+        chapter:'74',
         userId: 1, // Chris
         storyId: 43, // The Primal Hunter
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      
+
     ], {});
   },
 
