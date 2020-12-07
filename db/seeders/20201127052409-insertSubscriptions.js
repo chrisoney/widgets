@@ -360,7 +360,7 @@ module.exports = {
       },
       {
         book:'0',
-        chapter:'63',
+        chapter:'33',
         userId: 1, // Chris
         storyId: 43, // The Primal Hunter
         createdAt: new Date(),

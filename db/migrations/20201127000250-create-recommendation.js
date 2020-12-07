@@ -17,6 +17,7 @@ module.exports = {
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        unique: 'actions_unique',
         references: {
           model: "Users",
           key: "id"
@@ -25,6 +26,7 @@ module.exports = {
       storyId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        unique: 'actions_unique',
         references: {
           model: "Stories",
           key: "id"
@@ -38,7 +40,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    }, {
+        uniqueKeys: {
+          actions_unique: {
+              fields: ['userId', 'storyId']
+          }
+      }
+  });
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Recommendations');
