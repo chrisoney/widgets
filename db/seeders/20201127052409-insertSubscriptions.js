@@ -56,7 +56,7 @@ module.exports = {
       },
       {
         book: '0',
-        chapter: '496',
+        chapter: '497',
         userId: 1, // Chris
         storyId: 5, // Defiance of the Fall
         createdAt: new Date(),

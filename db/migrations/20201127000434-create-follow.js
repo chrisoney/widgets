@@ -11,6 +11,7 @@ module.exports = {
       followerId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        unique: 'actions_unique',
         references: {
           model: "Users",
           key: "id"
@@ -19,6 +20,7 @@ module.exports = {
       followingId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        unique: 'actions_unique',
         references: {
           model: "Users",
           key: "id"
@@ -31,6 +33,13 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      }
+    },
+    {
+      uniqueKeys: {
+        actions_unique: {
+            fields: ['followerId', 'followingId']
+        }
       }
     });
   },

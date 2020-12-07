@@ -25,7 +25,19 @@ module.exports = {
         followingId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
-      }
+      },
+      {
+        followerId: 1,
+        followingId: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        followerId: 1,
+        followingId: 4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 
