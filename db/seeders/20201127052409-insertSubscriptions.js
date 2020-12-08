@@ -88,7 +88,7 @@ module.exports = {
       },
       {
         book: '0',
-        chapter: '340',
+        chapter: '341',
         userId: 1, // Chris
         storyId: 9, // He Who Fights With Monsters
         createdAt: new Date(),
