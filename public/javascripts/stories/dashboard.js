@@ -7,10 +7,13 @@ import {
 
 // Search Event Listeners
 
-document.querySelector(".search").addEventListener("focusout", (e) => {
+document.querySelector(".search").addEventListener("keypress", (e) => {
   e.preventDefault();
-  const term = e.target.innerText;
-  console.log(e.target.value)
+  if(e.code !== 'Enter'){
+    e.target.value += e.key;
+  } else if (e.code === 'Enter'){
+    console.log(e.target.value)
+  }
 })
 
 // Details & Recommendation Event Listeners
