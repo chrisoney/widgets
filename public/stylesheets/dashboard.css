@@ -12,6 +12,20 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
 }
+
+.search {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 75px;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  transition: all .5s ease; 
+ }
+ .search:focus {
+  width: 200px;
+}
+
 .stories-container{
   display:flex;
   width: 70%;

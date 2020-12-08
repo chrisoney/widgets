@@ -13,8 +13,10 @@ block content
       span(class="modal modal-content") Are you sure you want to unsubscribe? It will remove your Book and Chapter permanently.
       span(class="confirm-button") Confirm
   div(class="main-container")
-    h1 Stories dashboard
+    h1=title
     div(class="dashboard-container")
+      div(class="search-container")
+        input(class="search" type="search" placeholder="Search")
       div(class="stories-container")
           ul
             each story, idx in stories
