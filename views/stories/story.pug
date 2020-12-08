@@ -14,13 +14,48 @@ block content
     h1(class="story-title")= story.title
     div(class="story-container")
       div(class="subscribe-container")
+        span(class="sub-list-title")
+        each sub in subs
+          div(class="sub-top")
+            span(class="sub-list-username")= sub.User.username
+            button(class="follow-button") Follow
+          div(class="sub-bottom")
+            span=`Book: ${sub.book}`
+            span=`Chapter: ${sub.chapter}`
       div(class="details-container")
         div(class="top-details")
           div(class="top-right-details")
-            span(class="link fas fa-link")
-            a(href=story.link)
+              a(class="link fas fa-link" href=story.link)
         div(class="bottom-details")
           div(class="details-description")= story.description
+          div(class="subscribe-user")
+            span(class="subscribe-user-title") Your Subscription
+            div(class="subscribe-user-container")
+              span(class="label") Book:
+              span(class="value")=story.subscription[0].book
+            div(class="subscribe-user-container")
+              span(class="label") Chapter:
+              span(class="value")=story.subscription[0].chapter
+          div(class="recommend-user")
+            span(class="recommend-user-title") Your Recommendation
+            div(class="recommend-user-container")
+              span(class="label") Rating:
+              div(id=story.id class="stars")
+                - var i = 0, j = story.recommendation[0].rating + 1
+                while i < story.recommendation[0].rating
+                  span(id=(i+1) class="fas fa-star")
+                  - i++
+                while j <= 5
+                  span(id=j class="far fa-star")
+                  - j++
+            div(class="recommend-user-container")
+              span(class="label") Review:
+              span(class="value")=story.recommendation[0].review
       div(class="recommend-container")
-
-  
+        each rec in recs
+          div(class="rec-top")
+            span(class="sub-list-username")= rec.User.username
+            button(class="follow-button") Follow
+          div(class="rec-bottom")
+            span= rec.rating
+            span= rec.review

@@ -25,6 +25,46 @@
   color: var(--darker-blue);
 }
 
+.story-container {
+  display: flex;
+}
+
 .story-title {
+  text-align: center;
+}
+
+.subscribe-container{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.subscribe-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.subscribe-user-title {
+  text-align: center;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.recommend-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.recommend-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.recommend-user-title {
   text-align: center;
 }

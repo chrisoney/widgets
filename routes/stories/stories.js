@@ -46,7 +46,7 @@ router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
         },
         include: {
             model: User,
-            attributes: ["username"]
+            attributes: ["username", "id"]
         }
     })
     const recs = await Recommendation.findAll({
@@ -58,9 +58,10 @@ router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
         },
         include: {
             model: User,
-            attributes: ["username"]
+            attributes: ["username", "id"]
         }
     })
+    // res.json({ recs })
     res.render("stories/story", { story, subs, recs });
 }))
 
