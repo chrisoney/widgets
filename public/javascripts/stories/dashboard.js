@@ -1,23 +1,11 @@
-import { subscribeToggle, setNewAttribute, reviewUpdate } from './story-utils.js'
+import { reviewUpdate } from './story-utils.js';
+import { 
+  modalEvents, 
+  storyDropdownEvents,
+  subscribeEvents,
+ } from './story-events.js';
 
-// Modal
-
-function closeModal(){
-  document.querySelectorAll(".modal")
-  .forEach(ele => {
-    ele.classList.remove("open-modal");
-  })
-}
-
-document.querySelector(".modal-background").addEventListener("click", (e)=> {
-  e.preventDefault()
-  closeModal();
-})
-
-document.querySelector(".modal-container")
-  .addEventListener("click", (e)=> e.stopPropagation())
-
-// Search
+// Search Event Listeners
 
 document.querySelector(".search").addEventListener("focusout", (e) => {
   e.preventDefault();
@@ -25,59 +13,7 @@ document.querySelector(".search").addEventListener("focusout", (e) => {
   console.log(e.target.value)
 })
 
-// Stories labels
-
-
-document.querySelectorAll(".fa-chevron-circle-left")
-  .forEach(button=> button.addEventListener("click", (e)=>{
-    e.target.classList.toggle("opening")
-    const num = e.target.classList[2].split("-")[1];
-    document.querySelector(`.container-${num}`).classList.toggle("open")
-  }))
-
-document.querySelectorAll(".fa-arrow-circle-right")
-  .forEach(button => button.addEventListener("click", (e)=> {
-    const id = e.target.classList[2].split("-")[1];
-    window.location.href = `/stories/${id}`;
-  }))
-
-function handleSubscriptionConfirm(e, element, storyId) {
-  e.preventDefault();
-  subscribeToggle(storyId);
-  closeModal();
-  element.innerHTML = element.innerHTML === 'Subscribe' ? 'Unsubscribe' : 'Subscribe';
-}
-
-function handleSubscriptionClick(e){
-  e.preventDefault();
-    const buttonHolder = e.target
-    const storyId = e.target.classList[1].split("-")[1];
-    document.querySelectorAll(".modal")
-      .forEach(ele => {
-        ele.classList.add("open-modal");
-      })
-    document.querySelector(".confirm-button")
-      .addEventListener("click", (e) => handleSubscriptionConfirm(e, buttonHolder,storyId), {once:true})
-}
-
-document.querySelectorAll(".subscribe-button")
-  .forEach(ele => ele.addEventListener("click", (e) => handleSubscriptionClick(e)))
-
-
-document.querySelectorAll(".fa-minus-circle")
-  .forEach(button => button.addEventListener("click", (e)=> {
-    const ele = e.target.nextSibling;
-    const id = parseInt(e.target.id, 10);
-    const attr = e.target.classList[2];
-    setNewAttribute(ele, -1, id, attr)
-  }))
-document.querySelectorAll(".fa-plus-circle")
-  .forEach(button => button.addEventListener("click", (e)=> {
-    const ele = e.target.previousSibling;
-    const id = parseInt(e.target.id, 10);
-    const attr = e.target.classList[2];
-    setNewAttribute(ele, 1, id, attr)
-  }))
+// Details & Recommendation Event Listeners
 
 document.querySelectorAll(".reveal")
   .forEach(ele => ele.addEventListener("click", (e) => {
@@ -85,6 +21,17 @@ document.querySelectorAll(".reveal")
     const text = e.target.parentElement.lastChild;
     text.classList.toggle("hidden");
   }))
+
+document.querySelectorAll(".stars")
+  .forEach(star => star.addEventListener("mouseleave", async (e)=> {
+    const targetEle = e.currentTarget;
+    const storyId = targetEle.id;
+    const res = await fetch(`/stories/${storyId}/recommendation/`);
+    const data = await res.json()
+    populateRating(data.recommendation.rating, targetEle)
+  }))
+
+// Review functions
 
 function reviewEvent(){
   document.querySelectorAll(".review-text")
@@ -158,16 +105,6 @@ function populateRating(rating, container){
   newRating();
 }
 
-document.querySelectorAll(".stars")
-  .forEach(star => star.addEventListener("mouseleave", async (e)=> {
-    const targetEle = e.currentTarget;
-    const storyId = targetEle.id;
-    const res = await fetch(`/stories/${storyId}/recommendation/`);
-    const data = await res.json()
-    populateRating(data.recommendation.rating, targetEle)
-  }))
-
-
 function newRating(){
   document.querySelectorAll(".fa-star")
     .forEach(star => star.addEventListener("click", async (e)=> {
@@ -191,4 +128,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   changeRating();
   newRating();
   reviewEvent();
+  modalEvents();
+  storyDropdownEvents();
+  subscribeEvents()
 });

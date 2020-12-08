@@ -38,7 +38,6 @@ function subscribeButtons(oldStoryId){
 }
 
 const subscribeToggle = async (oldStoryId) => {
-   
     let res = await fetch("http://localhost:8080/stories/subscriptions/toggle", {
         credentials: 'same-origin',
         method: "POST",
