@@ -1,26 +1,37 @@
 .main-container {
   display:flex;
-  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  overflow: scroll;
+  height: 90%;
 }
 
 .dashboard-container {
   display:flex;
-  justify-content: space-around;
+  flex-direction: column;
+  width: 70%;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.search-container {
+  align-self: center;
+  margin-bottom: 5px;
 }
 
 .search {
   border-radius: 5px;
   border: 1px solid #ccc;
   padding: 5px;
-  width: 75px;
+  height: 40px;
+  width: 100px;
+  transition: all .5s ease; 
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
-  transition: all .5s ease; 
  }
  .search:focus {
   width: 200px;
@@ -28,7 +39,7 @@ h1 {
 
 .stories-container{
   display:flex;
-  width: 70%;
+  width: 100%;
   flex-direction: column;
 }
 

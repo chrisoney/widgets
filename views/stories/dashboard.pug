@@ -13,44 +13,44 @@ block content
       span(class="modal modal-content") Are you sure you want to unsubscribe? It will remove your Book and Chapter permanently.
       span(class="confirm-button") Confirm
   div(class="main-container")
-    h1=title
     div(class="dashboard-container")
-      div(class="search-container")
-        input(class="search" type="search" placeholder="Search")
+      h1=title
       div(class="stories-container")
-          ul
-            each story, idx in stories
-              - var recommendation = story.recommendation[0] || { id:null, rating: 0, review: ''}
-              li(class="story-container")
-                div(class="story-header-container")
-                  span(class="story-title")=story.title
-                  div(class="story-button-container")
-                    span(class=`fas fa-chevron-circle-left toggle-${idx}`)
-                    span(class=`fas fa-arrow-circle-right id-${story.id}`)
-                div(class=`story-details-container container-${idx}`)
-                  div(class="story-details-top")
-                    div(class="story-details-top-left")
-                      +dashStoryDetail("Book:", story.Subscription.book, story.id, "book")
-                      +dashStoryDetail("Chapter:", story.Subscription.chapter, story.id, "chapter")
-                      a(href=story.link class="link") Link to Story
-                    div(class="story-details-top-right")
-                      div(id=story.id class="stars")
-                        - var i = 0, j = recommendation.rating + 1
-                        while i < recommendation.rating
-                          span(id=(i+1) class="fas fa-star")
-                          - i++
-                        while j <= 5
-                          span(id=j class="far fa-star")
-                          - j++
-                      div(class=`subscribe-button sub-${story.id}`) Unsubscribe
-                  div(class="story-details-bottom")
-                    div(class="description-container")
-                      div(class="reveal") Description
-                      p(class="description-text hidden")= story.description
-                    div(id=story.id class="review-container")
-                      div(class="reveal") Review
-                      if (recommendation.review)
-                        div(id=recommendation.id class="review-text hidden")= recommendation.review
-                      else
-                        div(id=recommendation.id class="review-text none hidden") No review yet
-      include nav-section
+        div(class="search-container")
+          input(class="search" type="search" placeholder="Search")
+        ul
+          each story, idx in stories
+            - var recommendation = story.recommendation[0] || { id:null, rating: 0, review: ''}
+            li(class="story-container")
+              div(class="story-header-container")
+                span(class="story-title")=story.title
+                div(class="story-button-container")
+                  span(class=`fas fa-chevron-circle-left toggle-${idx}`)
+                  span(class=`fas fa-arrow-circle-right id-${story.id}`)
+              div(class=`story-details-container container-${idx}`)
+                div(class="story-details-top")
+                  div(class="story-details-top-left")
+                    +dashStoryDetail("Book:", story.Subscription.book, story.id, "book")
+                    +dashStoryDetail("Chapter:", story.Subscription.chapter, story.id, "chapter")
+                    a(href=story.link class="link") Link to Story
+                  div(class="story-details-top-right")
+                    div(id=story.id class="stars")
+                      - var i = 0, j = recommendation.rating + 1
+                      while i < recommendation.rating
+                        span(id=(i+1) class="fas fa-star")
+                        - i++
+                      while j <= 5
+                        span(id=j class="far fa-star")
+                        - j++
+                    div(class=`subscribe-button sub-${story.id}`) Unsubscribe
+                div(class="story-details-bottom")
+                  div(class="description-container")
+                    div(class="reveal") Description
+                    p(class="description-text hidden")= story.description
+                  div(id=story.id class="review-container")
+                    div(class="reveal") Review
+                    if (recommendation.review)
+                      div(id=recommendation.id class="review-text hidden")= recommendation.review
+                    else
+                      div(id=recommendation.id class="review-text none hidden") No review yet
+    include nav-section
