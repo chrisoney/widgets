@@ -13,6 +13,7 @@
 }
 
 h1 {
+  font-family: 'Cabin', sans-serif;;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -21,20 +22,51 @@ h1 {
 .search-container {
   align-self: center;
   margin-bottom: 5px;
+  display: flex;
 }
 
 .search {
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 5px;
+  border: 2px solid var(--light-border-gray);
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 5px 10px 0px 10px;
   height: 40px;
   width: 100px;
   transition: all .5s ease; 
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
- }
- .search:focus {
+}
+
+.search.dm {
+  border: 2px solid var(--dark-border-gray);
+  border-right: none;
+}
+.search:focus {
   width: 200px;
+  outline: none;
+}
+
+.search-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background: white;
+  border: 2px solid var(--light-border-gray);
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.search-icon.dm {
+  border: 2px solid var(--dark-border-gray);
+  border-left: none;
+}
+
+.fa-search {
+  color: gray;
 }
 
 .stories-container{

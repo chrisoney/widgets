@@ -18,6 +18,8 @@ block content
       div(class="stories-container")
         div(class="search-container")
           input(class="search" type="search" placeholder="Search")
+          div(class="search-icon")
+            span(class="fas fa-search")
         ul
           each story, idx in stories
             - var recommendation = story.recommendation[0] || { id:null, rating: 0, review: ''}
