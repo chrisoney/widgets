@@ -12,7 +12,7 @@ const storiesRouter = require('./routes/stories/stories');
 const dummyRouter = require('./routes/stories/dummy');
 const { restoreUser, requireAuth } = require('./auth');
 const methodOverride = require('method-override')
-
+const { session_secret } = require('./config')
 const app = express();
 
 // view engine setup
@@ -29,7 +29,7 @@ const store = new SequelizeStore({ db: sequelize });
 
 app.use(
   session({
-    secret: 'superSecret',
+    secret: session_secret,
     store,
     saveUninitialized: false,
     resave: false,
