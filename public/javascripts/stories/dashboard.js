@@ -1,5 +1,7 @@
 import { subscribeToggle, setNewAttribute, reviewUpdate } from './story-utils.js'
 
+// Modal
+
 function closeModal(){
   document.querySelectorAll(".modal")
   .forEach(ele => {
@@ -14,6 +16,17 @@ document.querySelector(".modal-background").addEventListener("click", (e)=> {
 
 document.querySelector(".modal-container")
   .addEventListener("click", (e)=> e.stopPropagation())
+
+// Search
+
+document.querySelector(".search").addEventListener("focusout", (e) => {
+  e.preventDefault();
+  const term = e.target.innerText;
+  console.log(e.target.value)
+})
+
+// Stories labels
+
 
 document.querySelectorAll(".fa-chevron-circle-left")
   .forEach(button=> button.addEventListener("click", (e)=>{
