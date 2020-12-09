@@ -94,6 +94,7 @@ const submitSearch = async (searchEle, dashListEle) => {
     `
   })
   dashListEle.innerHTML = stories.join('');
+  callEvents();
 }
 
 // Search Event Listeners
@@ -115,21 +116,25 @@ document.querySelector(".fa-search").addEventListener("click", (e)=> {
 
 // Details & Recommendation Event Listeners
 
-document.querySelectorAll(".reveal")
-  .forEach(ele => ele.addEventListener("click", (e) => {
-    e.preventDefault();
-    const text = e.target.parentElement.lastChild;
-    text.classList.toggle("hidden");
-  }))
+function recDetailsEvents(){
+  document.querySelectorAll(".reveal")
+    .forEach(ele => ele.addEventListener("click", (e) => {
+      e.preventDefault();
+      const text = e.target.parentElement.lastChild;
+      text.classList.toggle("hidden");
+    }))
 
-document.querySelectorAll(".stars")
-  .forEach(star => star.addEventListener("mouseleave", async (e)=> {
-    const targetEle = e.currentTarget;
-    const storyId = targetEle.id;
-    const res = await fetch(`/stories/${storyId}/recommendation/`);
-    const data = await res.json()
-    populateRating(data.recommendation.rating, targetEle)
-  }))
+  document.querySelectorAll(".stars")
+    .forEach(star => star.addEventListener("mouseleave", async (e)=> {
+      const targetEle = e.currentTarget;
+      const storyId = targetEle.id;
+      const res = await fetch(`/stories/${storyId}/recommendation/`);
+      const data = await res.json()
+      populateRating(data.recommendation.rating, targetEle)
+    }))
+}
+
+
 
 // Review functions
 
@@ -225,10 +230,15 @@ function newRating(){
 
 window.addEventListener('DOMContentLoaded', (event) => {
   event.preventDefault();
+  callEvents();
+});
+
+function callEvents(){
   changeRating();
   newRating();
   reviewEvent();
   modalEvents();
   storyDropdownEvents();
   subscribeEvents()
-});
+  recDetailsEvents()
+}

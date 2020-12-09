@@ -48,14 +48,14 @@ function subscribeEvents(){
   
   document.querySelectorAll(".fa-minus-circle")
     .forEach(button => button.addEventListener("click", (e)=> {
-      const ele = e.target.nextSibling;
+      const ele = e.target.parentElement.children[2];
       const id = parseInt(e.target.id, 10);
       const attr = e.target.classList[2];
       setNewAttribute(ele, -1, id, attr)
     }))
   document.querySelectorAll(".fa-plus-circle")
     .forEach(button => button.addEventListener("click", (e)=> {
-      const ele = e.target.previousSibling;
+      const ele = e.target.parentElement.children[2];
       const id = parseInt(e.target.id, 10);
       const attr = e.target.classList[2];
       setNewAttribute(ele, 1, id, attr)

@@ -51,6 +51,7 @@ const subscribeToggle = async (oldStoryId) => {
 }
 
 const setNewAttribute = async (ele, change, id, attr) => {
+    // console.log(ele, change, id, attr)
     const newNum = parseInt(ele.innerHTML, 10) + change;
     let book = '';
     let chapter = '';
