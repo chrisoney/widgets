@@ -120,7 +120,7 @@ function recDetailsEvents(){
   document.querySelectorAll(".reveal")
     .forEach(ele => ele.addEventListener("click", (e) => {
       e.preventDefault();
-      const text = e.target.parentElement.lastChild;
+      const text = e.target.parentElement.children[1];
       text.classList.toggle("hidden");
     }))
 
