@@ -5,16 +5,113 @@ import {
   subscribeEvents,
  } from './story-events.js';
 
+// Search Functions
+
+const searchBar = document.querySelector(".search");
+const dashList = document.querySelector(".stories-container ul");
+
+function dashStoryDetail(label, value, id, attr){
+  const num = parseInt(value, 10);
+  const content = (num >= 0) ?
+    `
+      <span class="detail-label">${label}</span>
+      <span id=${id} class="fas fa-minus-circle ${attr}"></span>
+      <span class="detail-value">${value}</span>
+      <span id=${id} class="fas fa-plus-circle ${attr}"></span>
+    ` :
+    `
+      <span class="detail-label">${label}</span>
+      <span class="detail-value">${value}</span>
+    ` ;
+  return `
+    <div class="detail-container">
+      ${content}
+    </div>
+  `
+}
+
+function DashSearchRating(recommendation){
+  let i = 0, j = recommendation.rating + 1;
+  let results = []
+  while (i < recommendation.rating){
+    results.push(`<span id=${i+1} class="fas fa-star")></span>`);
+    i++;
+  }
+  while (j <= 5){
+    results.push(`<span id=${j} class="far fa-star")></span>`);
+    j++;
+  }
+  return results.join('');
+}
+
+function DashSearchReview(recommendation){
+  if (recommendation.review)
+    return `<div id=${recommendation.id} class="review-text hidden")>${recommendation.review}</div>`;
+  else
+    return `<div id=${recommendation.id} class="review-text none hidden">No review yet</div>`;
+}
+
+const submitSearch = async (searchEle, dashListEle) => {
+  const res = await fetch(`/stories/search?term=${searchEle.value}`, {})
+  const data = await res.json();
+  const stories = data.stories.map((story, idx)=> {
+    let recommendation = story.recommendation[0] || { id: null, rating: 0, review: ''}
+    return `
+    <li class="story-container">
+      <div class="story-header-container">
+        <span class="story-title")>${story.title}</span>
+        <div class="story-button-container">
+          <span class="fas fa-chevron-circle-left toggle-${idx}"></span>
+          <span class="fas fa-arrow-circle-right id-${story.id}"></span>
+        </div>
+      </div>
+      <div class="story-details-container container-${idx}">
+        <div class="story-details-top">
+          <div class="story-details-top-left">
+            ${dashStoryDetail("Book:", story.Subscription.book, story.id, "book")}
+            ${dashStoryDetail("Chapter:", story.Subscription.chapter, story.id, "chapter")}
+            <a href=${story.link} class="link">Link to Story</a>
+          </div>
+          <div class="story-details-top-right">
+            <div id=${story.id} class="stars">
+              ${DashSearchRating(recommendation)}
+            </div>
+            <div class="subscribe-button sub-${story.id}">Unsubscribe</div>
+          </div>
+        </div>
+        <div class="story-details-bottom">
+          <div class="description-container">
+            <div class="reveal">Description</div>
+            <p class="description-text hidden">${story.description}</p> 
+          </div>
+          <div id=${story.id} class="review-container">
+            <div class="reveal">Review</div>
+            ${DashSearchReview(recommendation)}
+          </div>
+        </div>
+      </div>
+    </li>
+    `
+  })
+  dashListEle.innerHTML = stories.join('');
+}
+
 // Search Event Listeners
 
-document.querySelector(".search").addEventListener("keypress", (e) => {
+searchBar.addEventListener("search", (e) => {
   e.preventDefault();
-  if(e.code !== 'Enter'){
-    e.target.value += e.key;
-  } else if (e.code === 'Enter'){
-    console.log(e.target.value)
-  }
+  submitSearch(e.target, dashList)
 })
+
+searchBar.addEventListener("input", (e) => {
+  e.preventDefault();
+  submitSearch(e.target, dashList)
+})
+
+document.querySelector(".fa-search").addEventListener("click", (e)=> {
+  e.preventDefault();
+  submitSearch(searchBar, dashList);
+});
 
 // Details & Recommendation Event Listeners
 

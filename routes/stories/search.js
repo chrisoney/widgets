@@ -37,8 +37,8 @@ router.get("/", asyncHandler( async (req,res) =>{
   if (user){
     stories = user.subscribedStories;
   }
-  res.render("stories/dashboard", { title:"Dashboard", stories })
-  // res.json({ stories })
+  // res.render("stories/dashboard", { title:"Dashboard", stories })
+  res.json({ stories })
 }))
 
 module.exports = router;
