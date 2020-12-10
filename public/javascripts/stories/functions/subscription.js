@@ -1,4 +1,5 @@
 import { subscribeToggle } from '../story-utils.js';
+import { closeModal } from '../story-events.js'
 
 function handleSubscriptionConfirm(e, element, storyId) {
   e.preventDefault();

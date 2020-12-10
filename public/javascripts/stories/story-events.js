@@ -67,4 +67,5 @@ export {
   modalEvents,
   storyDropdownEvents,
   subscribeEvents,
+  closeModal
  }

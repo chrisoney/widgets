@@ -5,6 +5,20 @@ import {
   subscribeEvents,
  } from './story-events.js';
 
+//
+
+function detailEventListeners() {
+  document.querySelectorAll(".detail-value")
+    .forEach(ele => ele.addEventListener("click", (e) => {
+      const oldEle = e.target.parentElement.children[0].innerHTML;
+      const oldValue = e.target.innerHTML;
+      e.target.parentElement.innerHTML = `
+        <span class="detail-label">${oldEle}</span>
+        <input class="detail-value-input" type="text" placeholder="${oldValue}"/>
+      `
+  }))
+}
+
 // Search Functions
 
 const searchBar = document.querySelector(".search");
@@ -241,4 +255,5 @@ function callEvents(){
   storyDropdownEvents();
   subscribeEvents()
   recDetailsEvents()
+  detailEventListeners()
 }

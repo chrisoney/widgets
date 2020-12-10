@@ -28,13 +28,13 @@ mixin dashStoryDetail(label, value, id, attr)
   - var num = parseInt(value, 10)
   div(class="detail-container")
     if (num >= 0)
-      span(class="detail-label")=label
-      span(id=id class=`fas fa-minus-circle ${attr}`)
-      span(class="detail-value")=value
-      span(id=id class=`fas fa-plus-circle ${attr}`)
+      div(class="detail-label")=label
+      div(id=id class=`fas fa-minus-circle ${attr}`)
+      div(class="detail-value")=value
+      div(id=id class=`fas fa-plus-circle ${attr}`)
     else
-      span(class="detail-label")=label
-      span(class="detail-value")=value
+      div(class="detail-label")=label
+      div(class="detail-value")=value
 
 
 
