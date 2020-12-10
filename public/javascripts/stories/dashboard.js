@@ -21,9 +21,10 @@ function detailEventListeners() {
       const input = document.querySelector('.detail-value-input')
       input.addEventListener("keypress", (e)=> {
         if (e.key === "Enter"){
-          // This is where we change the value
+          console.log(e.target.value)
         }
       })
+      console.log(e);
 
       input.addEventListener("blur", (e) => {
         e.target.parentElement.innerHTML = oldChildren;
