@@ -1,5 +1,6 @@
 import { reviewUpdate } from './story-utils.js';
 import { 
+  detailChangeEvents,
   modalEvents, 
   storyDropdownEvents,
   subscribeEvents,
@@ -10,12 +11,24 @@ import {
 function detailEventListeners() {
   document.querySelectorAll(".detail-value")
     .forEach(ele => ele.addEventListener("click", (e) => {
+      const oldChildren = e.target.parentElement.innerHTML;
       const oldEle = e.target.parentElement.children[0].innerHTML;
       const oldValue = e.target.innerHTML;
       e.target.parentElement.innerHTML = `
         <span class="detail-label">${oldEle}</span>
         <input class="detail-value-input" type="text" placeholder="${oldValue}"/>
       `
+      const input = document.querySelector('.detail-value-input')
+      input.addEventListener("keypress", (e)=> {
+        if (e.key === "Enter"){
+          // This is where we change the value
+        }
+      })
+
+      input.addEventListener("blur", (e) => {
+        e.target.parentElement.innerHTML = oldChildren;
+        detailChangeEvents();
+      })
   }))
 }
 
@@ -255,5 +268,6 @@ function callEvents(){
   storyDropdownEvents();
   subscribeEvents()
   recDetailsEvents()
+  detailChangeEvents()
   detailEventListeners()
 }

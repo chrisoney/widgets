@@ -44,7 +44,9 @@ function storyDropdownEvents(){
 function subscribeEvents(){
   document.querySelectorAll(".subscribe-button")
     .forEach(ele => ele.addEventListener("click", (e) => handleSubscriptionClick(e)))
-  
+}
+
+function detailChangeEvents(){
   
   document.querySelectorAll(".fa-minus-circle")
     .forEach(button => button.addEventListener("click", (e)=> {
@@ -67,5 +69,6 @@ export {
   modalEvents,
   storyDropdownEvents,
   subscribeEvents,
+  detailChangeEvents,
   closeModal
  }
