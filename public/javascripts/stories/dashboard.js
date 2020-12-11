@@ -40,6 +40,11 @@ function detailInputChange(e){
       if (type === 'book') elements = dashStoryDetail('Book:', data.subscription.book, id, type);
       if (type === 'chapter') elements = dashStoryDetail('Chapter:', data.subscription.chapter, id, type);
       parent.innerHTML = elements;
+      if(parent.children[2]){
+        parent.children[2].addEventListener("click", (e) => detailInputChange(e));
+      } else {
+        parent.children[1].addEventListener("click", (e) => detailInputChange(e));
+      }
       detailChangeEvents();
     }
   })
@@ -62,7 +67,7 @@ const dashList = document.querySelector(".stories-container ul");
 
 function dashStoryDetail(label, value, id, attr){
   const num = parseInt(value, 10);
-  const content = (num >= 0) ?
+  return (num >= 0) ?
     `
       <span class="detail-label">${label}</span>
       <span id=${id} class="fas fa-minus-circle ${attr}"></span>
@@ -73,11 +78,11 @@ function dashStoryDetail(label, value, id, attr){
       <span class="detail-label">${label}</span>
       <span id=${id} class="detail-value ${attr}">${value}</span>
     ` ;
-  return `
-    <div class="detail-container">
-      ${content}
-    </div>
-  `
+  // return `
+  //   <div class="detail-container">
+  //     ${content}
+  //   </div>
+  // `
 }
 
 function DashSearchRating(recommendation){
@@ -118,8 +123,12 @@ const submitSearch = async (searchEle, dashListEle) => {
       <div class="story-details-container container-${idx}">
         <div class="story-details-top">
           <div class="story-details-top-left">
-            ${dashStoryDetail("Book:", story.Subscription.book, story.id, "book")}
-            ${dashStoryDetail("Chapter:", story.Subscription.chapter, story.id, "chapter")}
+            <div class="detail-container">
+              ${dashStoryDetail("Book:", story.Subscription.book, story.id, "book")}
+            </div>
+            <div class="detail-container">
+              ${dashStoryDetail("Chapter:", story.Subscription.chapter, story.id, "chapter")}
+            </div>
             <a href=${story.link} class="link">Link to Story</a>
           </div>
           <div class="story-details-top-right">
