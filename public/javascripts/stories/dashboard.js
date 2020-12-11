@@ -14,7 +14,8 @@ function detailInputChange(e){
   const oldValue = e.target.innerHTML;
   const type = e.target.classList[1];
   const id = e.target.id;
-  e.target.parentElement.innerHTML = `
+  const parent = e.target.parentElement;
+  parent.innerHTML = `
     <span class="detail-label">${oldEle}</span>
     <input class="detail-value-input" type="text" placeholder="${oldValue}"/>
   `
@@ -35,6 +36,11 @@ function detailInputChange(e){
       })
       const data = await res.json();
       console.log(data);
+      let elements = '';
+      if (type === 'book') elements = dashStoryDetail('Book:', data.subscription.book, id, type);
+      if (type === 'chapter') elements = dashStoryDetail('Chapter:', data.subscription.chapter, id, type);
+      parent.innerHTML = elements;
+      detailChangeEvents();
     }
   })
 
@@ -65,7 +71,7 @@ function dashStoryDetail(label, value, id, attr){
     ` :
     `
       <span class="detail-label">${label}</span>
-      <span class="detail-value">${value}</span>
+      <span id=${id} class="detail-value ${attr}">${value}</span>
     ` ;
   return `
     <div class="detail-container">
