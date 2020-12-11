@@ -35,7 +35,6 @@ function detailInputChange(e){
         body: JSON.stringify({ id, book, chapter }),
       })
       const data = await res.json();
-      console.log(data);
       let elements = '';
       if (type === 'book') elements = dashStoryDetail('Book:', data.subscription.book, id, type);
       if (type === 'chapter') elements = dashStoryDetail('Chapter:', data.subscription.chapter, id, type);
@@ -71,7 +70,7 @@ function dashStoryDetail(label, value, id, attr){
     `
       <span class="detail-label">${label}</span>
       <span id=${id} class="fas fa-minus-circle ${attr}"></span>
-      <span class="detail-value">${value}</span>
+      <span id=${id} class="detail-value ${attr}">${value}</span>
       <span id=${id} class="fas fa-plus-circle ${attr}"></span>
     ` :
     `
