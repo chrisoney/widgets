@@ -8,29 +8,45 @@ import {
 
 //
 
+function detailInputChange(e){
+  const oldChildren = e.target.parentElement.innerHTML;
+  const oldEle = e.target.parentElement.children[0].innerHTML;
+  const oldValue = e.target.innerHTML;
+  const type = e.target.classList[1];
+  const id = e.target.id;
+  e.target.parentElement.innerHTML = `
+    <span class="detail-label">${oldEle}</span>
+    <input class="detail-value-input" type="text" placeholder="${oldValue}"/>
+  `
+  const input = document.querySelector('.detail-value-input')
+  
+  input.addEventListener("keypress", async (e)=> {
+    let book = '';
+    let chapter = '';
+    if (type === 'book') book = e.target.value;
+    else if (type === 'chapter') chapter = e.target.value;
+    if (e.key === "Enter"){
+      const res = await fetch('/stories/subscriptions/update', {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+          },
+        body: JSON.stringify({ id, book, chapter }),
+      })
+      const data = await res.json();
+      console.log(data);
+    }
+  })
+
+  input.addEventListener("blur", (e) => {
+    e.target.parentElement.innerHTML = oldChildren;
+    detailChangeEvents();
+  })
+}
+
 function detailEventListeners() {
   document.querySelectorAll(".detail-value")
-    .forEach(ele => ele.addEventListener("click", (e) => {
-      const oldChildren = e.target.parentElement.innerHTML;
-      const oldEle = e.target.parentElement.children[0].innerHTML;
-      const oldValue = e.target.innerHTML;
-      e.target.parentElement.innerHTML = `
-        <span class="detail-label">${oldEle}</span>
-        <input class="detail-value-input" type="text" placeholder="${oldValue}"/>
-      `
-      const input = document.querySelector('.detail-value-input')
-      input.addEventListener("keypress", (e)=> {
-        if (e.key === "Enter"){
-          console.log(e.target.value)
-        }
-      })
-      console.log(e);
-
-      input.addEventListener("blur", (e) => {
-        e.target.parentElement.innerHTML = oldChildren;
-        detailChangeEvents();
-      })
-  }))
+    .forEach(ele => ele.addEventListener("click", (e) => detailInputChange(e)))
 }
 
 // Search Functions
