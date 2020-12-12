@@ -9,9 +9,9 @@ import {
  } from './story-events.js';
 
 
-let currStories = document.querySelector('.currStories').innerHTML;
-currStories = JSON.parse(currStories);
-console.log(currStories[0]);
+// let currStories = document.querySelector('.currStories').innerHTML;
+// currStories = JSON.parse(currStories);
+// console.log(currStories[0]);
 
 //
 
