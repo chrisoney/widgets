@@ -52,6 +52,24 @@
   border: 2px solid var(--dark-border-gray);
 }
 
+.single-sub-container {
+  border-bottom: 2px solid var(--light-border-gray);
+}
+.single-sub-container:last-child {
+  border-top: none;
+}
+
+.sub-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sub-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
 .subscribe-user {
   display: flex;
   flex-direction: column;
@@ -90,4 +108,21 @@
 
 .recommend-user-title {
   text-align: center;
+}
+
+.rec-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.fas.fa-star {
+  color: var(--reg-red);
+}
+
+.follow-button {
+  border: 1px solid var(--light-border-gray);
+  padding: 8px 8px;
+  color: white;
+  background: var(--reg-orange);
+  cursor: pointer;
 }

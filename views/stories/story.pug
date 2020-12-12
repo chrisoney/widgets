@@ -16,12 +16,13 @@ block content
       div(class="subscribe-container")
         span(class="sub-list-title")
         each sub in subs
-          div(class="sub-top")
-            span(class="sub-list-username")= sub.User.username
-            button(class="follow-button") Follow
-          div(class="sub-bottom")
-            span=`Book: ${sub.book}`
-            span=`Chapter: ${sub.chapter}`
+          div(class="single-sub-container")
+            div(class="sub-top")
+              span(class="sub-list-username")= sub.User.username
+              button(class="follow-button") Follow
+            div(class="sub-bottom")
+              span=`Book: ${sub.book}`
+              span=`Chapter: ${sub.chapter}`
       div(class="details-container")
         div(class="top-details")
         div(class="bottom-details")
@@ -55,5 +56,12 @@ block content
             span(class="sub-list-username")= rec.User.username
             button(class="follow-button") Follow
           div(class="rec-bottom")
-            span= rec.rating
+            div(class="rec-review")
+              - var i = 0, j = rec.rating + 1
+                while i < rec.rating
+                  span(id=(i+1) class="fas fa-star")
+                  - i++
+                while j <= 5
+                  span(id=j class="far fa-star")
+                  - j++
             span= rec.review
