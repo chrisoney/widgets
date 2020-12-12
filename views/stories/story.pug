@@ -11,7 +11,7 @@ block content
     div(class="back-button-container")
       span(class="fas fa-caret-left")
       span(class="back-text") Back
-    h1(class="story-title")= story.title
+    a(href=story.link class="story-title")= story.title
     div(class="story-container")
       div(class="subscribe-container")
         span(class="sub-list-title")
@@ -24,8 +24,6 @@ block content
             span=`Chapter: ${sub.chapter}`
       div(class="details-container")
         div(class="top-details")
-          div(class="top-right-details")
-              a(class="link fas fa-link" href=story.link)
         div(class="bottom-details")
           div(class="details-description")= story.description
           div(class="subscribe-user")

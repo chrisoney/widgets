@@ -31,12 +31,25 @@
 
 .story-title {
   text-align: center;
+  color: var(--reg-blue);
+  font-size: 2.5em;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.story-title:hover {
+  color: var(--darker-blue);
 }
 
 .subscribe-container{
   display: flex;
   flex-direction: column;
   width: 30%;
+  border: 2px solid var(--light-border-gray);
+}
+
+.subscribe-container.dm{
+  border: 2px solid var(--dark-border-gray);
 }
 
 .subscribe-user {
@@ -52,12 +65,22 @@
   display: flex;
   flex-direction: column;
   width: 40%;
+  border: 2px solid var(--light-border-gray);
+}
+
+.details-container.dm {
+  border: 2px solid var(--dark-border-gray);
 }
 
 .recommend-container {
   display: flex;
   flex-direction: column;
   width: 30%;
+  border: 2px solid var(--light-border-gray);
+}
+
+.recommend-container.dm {
+  border: 2px solid var(--dark-border-gray);
 }
 
 .recommend-user {
