@@ -118,6 +118,11 @@
   text-align: center;
 }
 
+.rec-top {
+  display: flex;
+  justify-content: space-between;
+}
+
 .rec-bottom {
   display: flex;
   flex-direction: column;
