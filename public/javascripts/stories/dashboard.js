@@ -1,10 +1,17 @@
 import { reviewUpdate } from './story-utils.js';
+
+
 import { 
   detailChangeEvents,
   modalEvents, 
   storyDropdownEvents,
   subscribeEvents,
  } from './story-events.js';
+
+
+let currStories = document.querySelector('.currStories').innerHTML;
+currStories = JSON.parse(currStories);
+console.log(currStories[0]);
 
 //
 
