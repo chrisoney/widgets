@@ -19,7 +19,7 @@ block content
           div(class="single-sub-container")
             div(class="sub-top")
               span(class="sub-list-username")= sub.User.username
-              button(class="follow-button") Follow
+              button(class=`follow-button follow-${sub.User.id}`) Follow
             div(class="sub-bottom")
               span=`Book: ${sub.book}`
               span=`Chapter: ${sub.chapter}`
