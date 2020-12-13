@@ -19,7 +19,10 @@ block content
           div(class="single-sub-container")
             div(class="sub-top")
               span(class="sub-list-username")= sub.User.username
-              button(class=`follow-button follow-${sub.User.id}`) Follow
+              if (sub.User.followers.length > 0)
+                button(class=`follow-button follow-${sub.User.id}`) Unfollow
+              else
+                button(class=`follow-button follow-${sub.User.id}`) Follow
             div(class="sub-bottom")
               span=`Book: ${sub.book}`
               span=`Chapter: ${sub.chapter}`
@@ -54,7 +57,10 @@ block content
         each rec in recs
           div(class="rec-top")
             span(class="sub-list-username")= rec.User.username
-            button(class=`follow-button follow-${rec.User.id}`) Follow
+            if (rec.User.followers.length > 0)
+              button(class=`follow-button follow-${rec.User.id}`) Unfollow
+            else
+              button(class=`follow-button follow-${rec.User.id}`) Follow
           div(class="rec-bottom")
             div(class="rec-review")
               - var i = 0, j = rec.rating + 1
