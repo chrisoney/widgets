@@ -54,7 +54,7 @@ block content
         each rec in recs
           div(class="rec-top")
             span(class="sub-list-username")= rec.User.username
-            button(class="follow-button") Follow
+            button(class=`follow-button follow-${rec.User.id}`) Follow
           div(class="rec-bottom")
             div(class="rec-review")
               - var i = 0, j = rec.rating + 1
