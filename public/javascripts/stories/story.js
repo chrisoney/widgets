@@ -21,3 +21,8 @@ function followEventListeners(){
       e.target.innerHTML = e.target.innerHTML === 'Follow' ? 'Unfollow' : 'Follow'
     }))
 }
+
+window.addEventListener("DOMContentLoaded", (e) => {
+  e.preventDefault();
+  followEventListeners()
+})
