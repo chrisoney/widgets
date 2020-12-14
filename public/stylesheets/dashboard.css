@@ -439,3 +439,9 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
+
+/* @media (max-width: 600px) { 
+  .story-header-container { 
+    background: var(--reg-blue);
+  } 
+} */
