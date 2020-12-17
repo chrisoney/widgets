@@ -57,6 +57,7 @@ function detailChangeEvents(){
     }))
   document.querySelectorAll(".fa-plus-circle")
     .forEach(button => button.addEventListener("click", (e)=> {
+      console.log("hello")
       const ele = e.target.parentElement.children[2];
       const id = parseInt(e.target.id, 10);
       const attr = e.target.classList[2];

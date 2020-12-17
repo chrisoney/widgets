@@ -51,7 +51,7 @@ function detailInputChange(e){
       } else {
         parent.children[1].addEventListener("click", (e) => detailInputChange(e));
       }
-      detailChangeEvents();
+      // detailChangeEvents();
     }
   })
 
@@ -73,12 +73,31 @@ const dashList = document.querySelector(".stories-container ul");
 
 function dashStoryDetail(label, value, id, attr){
   const num = parseInt(value, 10);
+  let minus = document.createElement("span");
+  minus.id = id;
+  minus.classList.add("fas").add("fa-minus-circle").add(attr);
+  let plus = document.createElement("span");
+  plus.id = id;
+  plus.classList.add("fas").add("fa-plus-circle").add(attr);
+  minus.addEventListener("click", (e)=> {
+    const ele = e.target.parentElement.children[2];
+    const id = parseInt(e.target.id, 10);
+    const attr = e.target.classList[2];
+    setNewAttribute(ele, -1, id, attr)
+  })
+  plus.addEventListener("click", (e)=> {
+    console.log("hello")
+    const ele = e.target.parentElement.children[2];
+    const id = parseInt(e.target.id, 10);
+    const attr = e.target.classList[2];
+    setNewAttribute(ele, 1, id, attr)
+  })
   return (num >= 0) ?
     `
       <span class="detail-label">${label}</span>
-      <span id=${id} class="fas fa-minus-circle ${attr}"></span>
+      ${minus}
       <span id=${id} class="detail-value ${attr}">${value}</span>
-      <span id=${id} class="fas fa-plus-circle ${attr}"></span>
+      ${plus}
     ` :
     `
       <span class="detail-label">${label}</span>
