@@ -75,10 +75,10 @@ function dashStoryDetail(label, value, id, attr){
   const num = parseInt(value, 10);
   let minus = document.createElement("span");
   minus.id = id;
-  minus.classList.add("fas").add("fa-minus-circle").add(attr);
+  minus.className = `fas fa-minus-circle ${attr}`;
   let plus = document.createElement("span");
   plus.id = id;
-  plus.classList.add("fas").add("fa-plus-circle").add(attr);
+  plus.className = `fas fa-plus-circle ${attr}`;
   minus.addEventListener("click", (e)=> {
     const ele = e.target.parentElement.children[2];
     const id = parseInt(e.target.id, 10);
