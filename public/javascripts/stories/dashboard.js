@@ -56,7 +56,6 @@ function detailInputChange(e){
 
   input.addEventListener("blur", (e) => {
     e.target.parentElement.innerHTML = oldChildren;
-    // detailChangeEvents();
   })
 }
 
@@ -85,12 +84,18 @@ function dashStoryDetail(label, value, id, attr){
     setNewAttribute(ele, -1, id, attr)
   })
   plus.addEventListener("click", (e)=> {
-    console.log("hello")
     const ele = e.target.parentElement.children[2];
     const id = parseInt(e.target.id, 10);
     const attr = e.target.classList[2];
     setNewAttribute(ele, 1, id, attr)
   })
+  let div = document.createElement("div");
+  div.appendChild(minus);
+  minus = div.innerHTML;
+  let div2 = document.createElement("div");
+  div2.appendChild(plus);
+  plus = div2.innerHTML;
+  
   return (num >= 0) ?
     `
       <span class="detail-label">${label}</span>
