@@ -29,9 +29,9 @@ mixin dashStoryDetail(label, value, id, attr)
   div(class="detail-container")
     if (num >= 0)
       span(class="detail-label")=label
-      span(id=id class=`fas fa-minus-circle ${attr}`)
+      span(id=`m-${attr}-${id}` class=`fas fa-minus-circle ${attr}`)
       span(id=id class=`detail-value ${attr}`)=value
-      span(id=id class=`fas fa-plus-circle ${attr}`)
+      span(id=`p-${attr}-${id}` class=`fas fa-plus-circle ${attr}`)
     else
       span(class="detail-label")=label
       span(id=id class=`detail-value ${attr}`)=value

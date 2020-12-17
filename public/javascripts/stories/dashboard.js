@@ -91,30 +91,6 @@ const dashList = document.querySelector(".stories-container ul");
 
 function dashStoryDetail(label, value, id, attr){
   const num = parseInt(value, 10);
-  // let minus = document.createElement("span");
-  // minus.id = id;
-  // minus.className = `fas fa-minus-circle ${attr}`;
-  // let plus = document.createElement("span");
-  // plus.id = id;
-  // plus.className = `fas fa-plus-circle ${attr}`;
-  // minus.addEventListener("click", (e)=> {
-  //   const ele = e.target.parentElement.children[2];
-  //   const id = parseInt(e.target.id, 10);
-  //   const attr = e.target.classList[2];
-  //   setNewAttribute(ele, -1, id, attr)
-  // })
-  // plus.addEventListener("click", (e)=> {
-  //   const ele = e.target.parentElement.children[2];
-  //   const id = parseInt(e.target.id, 10);
-  //   const attr = e.target.classList[2];
-  //   setNewAttribute(ele, 1, id, attr)
-  // })
-  // let div = document.createElement("div");
-  // div.appendChild(minus);
-  // minus = div.innerHTML;
-  // let div2 = document.createElement("div");
-  // div2.appendChild(plus);
-  // plus = div2.innerHTML;
   
   return (num >= 0) ?
     `
