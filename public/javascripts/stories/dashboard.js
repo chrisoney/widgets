@@ -51,13 +51,12 @@ function detailInputChange(e){
       } else {
         parent.children[1].addEventListener("click", (e) => detailInputChange(e));
       }
-      // detailChangeEvents();
     }
   })
 
   input.addEventListener("blur", (e) => {
     e.target.parentElement.innerHTML = oldChildren;
-    detailChangeEvents();
+    // detailChangeEvents();
   })
 }
 
