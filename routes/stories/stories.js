@@ -250,7 +250,7 @@ router.get("/discover-follows", asyncHandler( async (req,res) =>{
             include: { 
                 model: Story,
                 as: 'recommendedStories',
-                through: { attributes: ["rating", "review"] }
+                through: { attributes: ["id", "rating", "review"] }
             }
         }
     });

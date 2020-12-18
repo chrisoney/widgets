@@ -5,6 +5,7 @@ function storyEventListeners(){
   document.querySelectorAll(".fa-chevron-circle-left")
     .forEach(button=> button.addEventListener("click", (e)=>{
       e.target.classList.toggle("opening")
+      console.log(e.target)
       const num = e.target.classList[2].split("-")[1];
       document.querySelector(`.container-${num}`).classList.toggle("open")
     }))
@@ -184,11 +185,11 @@ document.querySelector("#follows").addEventListener("click", async e =>{
           <div class="story-header-container">
             <span class="story-title">${story.title}</span>
             <div class="story-button-container">
-              <span class="fas fa-chevron-circle-left toggle-${idx}"></span>
+              <span class="fas fa-chevron-circle-left toggle-${story.Recommendation.id}"></span>
               <span class="fas fa-arrow-circle-right"></span>
             </div>
           </div>
-          <div class="story-details-container container-${idx}">
+          <div class="story-details-container container-${story.Recommendation.id}">
             <div class="story-details-top">
               <div class="story-details-top-left">
                 <a href=${story.link} class="link">Link to Story</a>
