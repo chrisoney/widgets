@@ -5,7 +5,6 @@ function storyEventListeners(){
   document.querySelectorAll(".fa-chevron-circle-left")
     .forEach(button=> button.addEventListener("click", (e)=>{
       e.target.classList.toggle("opening")
-      console.log(e.target)
       const num = e.target.classList[2].split("-")[1];
       document.querySelector(`.container-${num}`).classList.toggle("open")
     }))
@@ -13,7 +12,7 @@ function storyEventListeners(){
   document.querySelectorAll(".reveal")
     .forEach(ele => ele.addEventListener("click", (e) => {
       e.preventDefault();
-      const text = document.querySelector(`.description-text-${e.target.id}`);
+      const text = e.target.nextElementSibling;
       text.classList.toggle("hidden");
     }))
   
@@ -92,6 +91,10 @@ document.querySelector("#stories").addEventListener("click", async e =>{
     throw new Error('Uh oh. Something went wrong...');
   }
 });
+
+function populateStories(following){
+  
+}
 
 document.querySelector("#users").addEventListener("click", async e =>{
   try {
@@ -177,7 +180,7 @@ document.querySelector("#follows").addEventListener("click", async e =>{
           `
           <div class="review-container">
             <span id=${story.Recommendation.id} class="reveal">Review</span>
-            <p class="description-text-${story.Recommendation.id} hidden">${story.Recommendation.review}</p>
+            <p class="review-text-${story.Recommendation.id} hidden">${story.Recommendation.review}</p>
           </div>
           `:``;
         return `
@@ -200,8 +203,8 @@ document.querySelector("#follows").addEventListener("click", async e =>{
             </div>
             <div class="story-details-bottom">
               <div class="description-container">
-                <span id="${idx}" class="reveal">Description</span>
-                <p class="description-text-${idx} hidden">${story.description}</p>
+                <span id="${story.Recommendation.id}" class="reveal">Description</span>
+                <p class="description-text-${story.Recommendation.id} hidden">${story.description}</p>
               </div>
               ${review}
             </div>
