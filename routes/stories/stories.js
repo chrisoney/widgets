@@ -228,7 +228,7 @@ router.get("/discover-users", asyncHandler( async (req, res) => {
         {
             model: Story,
             as: 'recommendedStories',
-            through: { attributes: ["rating", "review"]}
+            through: { attributes: ["id", "rating", "review"]}
         }]
     }).filter(user => {
         const users = user.followers.map(user => user.id);

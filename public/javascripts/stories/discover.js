@@ -105,8 +105,8 @@ document.querySelector("#users").addEventListener("click", async e =>{
         const review = story.Recommendation.review ?
           `
           <div class="review-container">
-            <span id="${idx}" class="reveal">Review</span>
-            <p class="review-text-${idx} hidden">${story.Recommendation.review}</p>
+            <span id="${story.Recommendation.id}" class="reveal">Review</span>
+            <p class="review-text-${story.Recommendation.id} hidden">${story.Recommendation.review}</p>
           </div>
           `:``;
         return `
@@ -114,11 +114,11 @@ document.querySelector("#users").addEventListener("click", async e =>{
           <div class="story-header-container">
             <span class="story-title">${story.title}</span>
             <div class="story-button-container">
-              <span class="fas fa-chevron-circle-left toggle-${idx}"></span>
+              <span class="fas fa-chevron-circle-left toggle-${story.Recommendation.id}"></span>
               <span class="fas fa-arrow-circle-right"></span>
             </div>
           </div>
-          <div class="story-details-container container-${idx}">
+          <div class="story-details-container container-${story.Recommendation.id}">
             <div class="story-details-top">
               <div class="story-details-top-left">
                 <a href=${story.link} class="link">Link to Story</a>
