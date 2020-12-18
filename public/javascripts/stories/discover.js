@@ -175,8 +175,8 @@ document.querySelector("#follows").addEventListener("click", async e =>{
         const review = story.Recommendation.review ?
           `
           <div class="review-container">
-            <span id="${idx}" class="reveal">Review</span>
-            <p class="review-text-${idx} hidden">${story.Recommendation.review}</p>
+            <span id=${story.Recommendation.id} class="reveal">Review</span>
+            <p class="description-text-${story.Recommendation.id} hidden">${story.Recommendation.review}</p>
           </div>
           `:``;
         return `
