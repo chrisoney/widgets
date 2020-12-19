@@ -102,6 +102,10 @@
   border: 2px solid var(--dark-border-gray);
 }
 
+.details-description {
+  padding: 5px;
+}
+
 .recommend-container {
   background: white;
   display: flex;
