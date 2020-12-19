@@ -67,6 +67,12 @@
   align-items: center;
 }
 
+.sub-list-username {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .sub-bottom {
   display: flex;
   flex-direction: column;
@@ -121,6 +127,7 @@
 .rec-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .rec-bottom {
