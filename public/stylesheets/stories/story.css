@@ -124,6 +124,13 @@
   text-align: center;
 }
 
+.single-rec-container {
+  border-bottom: 2px solid var(--light-border-gray);
+}
+.single-rec-container:last-child {
+  border-top: none;
+}
+
 .rec-top {
   display: flex;
   justify-content: space-between;

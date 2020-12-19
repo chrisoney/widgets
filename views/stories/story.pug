@@ -55,19 +55,20 @@ block content
               span(class="value")=story.recommendation[0].review
       div(class="recommend-container")
         each rec in recs
-          div(class="rec-top")
-            span(class="sub-list-username")= rec.User.username
-            if (rec.User.followers.length > 0)
-              button(class=`follow-button follow-${rec.User.id}`) Unfollow
-            else
-              button(class=`follow-button follow-${rec.User.id}`) Follow
-          div(class="rec-bottom")
-            div(class="rec-review")
-              - var i = 0, j = rec.rating + 1
-                while i < rec.rating
-                  span(id=(i+1) class="fas fa-star")
-                  - i++
-                while j <= 5
-                  span(id=j class="far fa-star")
-                  - j++
-            span= rec.review
+          div(class="single-rec-container")
+            div(class="rec-top")
+              span(class="sub-list-username")= rec.User.username
+              if (rec.User.followers.length > 0)
+                button(class=`follow-button follow-${rec.User.id}`) Unfollow
+              else
+                button(class=`follow-button follow-${rec.User.id}`) Follow
+            div(class="rec-bottom")
+              div(class="rec-review")
+                - var i = 0, j = rec.rating + 1
+                  while i < rec.rating
+                    span(id=(i+1) class="fas fa-star")
+                    - i++
+                  while j <= 5
+                    span(id=j class="far fa-star")
+                    - j++
+              span= rec.review
