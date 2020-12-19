@@ -45,7 +45,7 @@
   background: white;
   display: flex;
   flex-direction: column;
-  width: 32%;
+  width: 28%;
   border: 2px solid var(--light-border-gray);
 }
 
@@ -91,7 +91,7 @@
   background: white;
   display: flex;
   flex-direction: column;
-  width: 32%;
+  width: 40%;
   border: 2px solid var(--light-border-gray);
   margin-left: 1%;
   margin-right: 1%;
@@ -110,7 +110,7 @@
   background: white;
   display: flex;
   flex-direction: column;
-  width: 32%;
+  width: 28%;
   border: 2px solid var(--light-border-gray);
 }
 
@@ -148,6 +148,11 @@
 
 .fas.fa-star {
   color: var(--reg-red);
+}
+
+.no-review {
+  font-size: 12px;
+  color: var(--emphasis-red);
 }
 
 .follow-button {

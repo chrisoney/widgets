@@ -71,4 +71,7 @@ block content
                   while j <= 5
                     span(id=j class="far fa-star")
                     - j++
-              span= rec.review
+              if rec.review
+                span= rec.review
+              else
+                span.no-review No review yet
