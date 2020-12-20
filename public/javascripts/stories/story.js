@@ -1,4 +1,9 @@
-import { followEventListeners } from './story-events.js'
+import { 
+  followEventListeners,
+  changeRating,
+  newRating,
+  recDetailsEvents
+ } from './story-events.js'
 
 document.querySelector('.back-button-container')
   .addEventListener("click", () => {
@@ -8,4 +13,17 @@ document.querySelector('.back-button-container')
 window.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
   followEventListeners();
+  callEvents();
 })
+
+function callEvents(){
+  changeRating();
+  newRating();
+  // reviewEvent();
+  // modalEvents();
+  // storyDropdownEvents();
+  // subscribeEvents()
+  recDetailsEvents()
+  // detailChangeEvents()
+  // detailEventListeners()
+}
