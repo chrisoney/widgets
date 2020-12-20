@@ -117,11 +117,11 @@ function DashSearchRating(recommendation){
   let i = 0, j = recommendation.rating + 1;
   let results = []
   while (i < recommendation.rating){
-    results.push(`<span id=${i+1} class="fas fa-star")></span>`);
+    results.push(`<span id=${i+1} class="fas fa-star user-rating")></span>`);
     i++;
   }
   while (j <= 5){
-    results.push(`<span id=${j} class="far fa-star")></span>`);
+    results.push(`<span id=${j} class="far fa-star user-rating")></span>`);
     j++;
   }
   return results.join('');
@@ -160,7 +160,7 @@ const submitSearch = async (searchEle, dashListEle) => {
             <a href=${story.link} class="link">Link to Story</a>
           </div>
           <div class="story-details-top-right">
-            <div id=${story.id} class="stars">
+            <div id=${story.id} class="stars user-stars">
               ${DashSearchRating(recommendation)}
             </div>
             <div class="subscribe-button sub-${story.id}">Unsubscribe</div>

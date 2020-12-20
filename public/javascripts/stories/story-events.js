@@ -93,7 +93,7 @@ function recDetailsEvents(){
       text.classList.toggle("hidden");
     }))
 
-  document.querySelectorAll(".stars")
+  document.querySelectorAll(".user-stars")
     .forEach(star => star.addEventListener("mouseleave", async (e)=> {
       const targetEle = e.currentTarget;
       const storyId = targetEle.id;
@@ -107,10 +107,10 @@ function populateRating(rating, container){
   const result = [];
   rating = parseInt(rating, 10);
   for (let i = 0; i < rating; i++) {
-    result.push(`<span id=${i+1} class="fas fa-star"></span>`)
+    result.push(`<span id=${i+1} class="fas fa-star user-rating"></span>`)
   }
   for (let j = rating + 1; j <= 5; j++){
-    result.push(`<span id=${j} class="far fa-star"></span>`)
+    result.push(`<span id=${j} class="far fa-star user-rating"></span>`)
   }
   if (container){
     container.innerHTML = result.join("")
@@ -120,7 +120,7 @@ function populateRating(rating, container){
 }
 
 function changeRating(){
-  document.querySelectorAll(".fa-star")
+  document.querySelectorAll(".user-rating")
   .forEach(star => star.addEventListener("mouseover", (e)=> {
       const cls = ["fas", "far"]
       for (let i = 0; i < e.target.parentElement.children.length; i++){
@@ -138,7 +138,7 @@ function changeRating(){
 }
 
 function newRating(){
-  document.querySelectorAll(".fa-star")
+  document.querySelectorAll(".user-rating")
     .forEach(star => star.addEventListener("click", async (e)=> {
       const storyId = e.target.parentElement.id;
       const rating = e.target.id;

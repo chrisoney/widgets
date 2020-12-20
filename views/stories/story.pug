@@ -45,10 +45,10 @@ block content
               div(id=story.id class="stars")
                 - var i = 0, j = story.recommendation[0].rating + 1
                 while i < story.recommendation[0].rating
-                  span(id=(i+1) class="fas fa-star")
+                  span(id=(i+1) class="fas fa-star user-rating")
                   - i++
                 while j <= 5
-                  span(id=j class="far fa-star")
+                  span(id=j class="far fa-star user-rating")
                   - j++
             div(class="recommend-user-container")
               span(class="label") Review:
