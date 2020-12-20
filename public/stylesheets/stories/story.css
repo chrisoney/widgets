@@ -106,6 +106,10 @@
   padding: 5px;
 }
 
+.user-rating {
+  cursor: pointer;
+}
+
 .recommend-container {
   background: white;
   display: flex;
