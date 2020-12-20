@@ -83,6 +83,27 @@ function followEventListeners(){
     }))
 }
 
+// Details & Recommendation Event Listeners
+
+function recDetailsEvents(){
+  document.querySelectorAll(".reveal")
+    .forEach(ele => ele.addEventListener("click", (e) => {
+      e.preventDefault();
+      const text = e.target.parentElement.children[1];
+      text.classList.toggle("hidden");
+    }))
+
+  document.querySelectorAll(".stars")
+    .forEach(star => star.addEventListener("mouseleave", async (e)=> {
+      const targetEle = e.currentTarget;
+      const storyId = targetEle.id;
+      const res = await fetch(`/stories/${storyId}/recommendation/`);
+      const data = await res.json()
+      populateRating(data.recommendation.rating, targetEle)
+    }))
+}
+
+
 
 export { 
   modalEvents,
@@ -90,5 +111,6 @@ export {
   subscribeEvents,
   detailChangeEvents,
   closeModal,
-  followEventListeners
+  followEventListeners,
+  recDetailsEvents
  }
