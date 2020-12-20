@@ -36,7 +36,7 @@ block content
                     +dashStoryDetail("Chapter:", story.Subscription.chapter, story.id, "chapter")
                     a(href=story.link class="link") Link to Story
                   div(class="story-details-top-right")
-                    div(id=story.id class="stars")
+                    div(id=story.id class="stars user-stars")
                       - var i = 0, j = recommendation.rating + 1
                       while i < recommendation.rating
                         span(id=(i+1) class="fas fa-star user-rating")

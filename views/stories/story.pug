@@ -42,7 +42,7 @@ block content
             span(class="recommend-user-title") Your Recommendation
             div(class="recommend-user-container")
               span(class="label") Rating:
-              div(id=story.id class="stars")
+              div(id=story.id class="stars user-stars")
                 - var i = 0, j = story.recommendation[0].rating + 1
                 while i < story.recommendation[0].rating
                   span(id=(i+1) class="fas fa-star user-rating")
