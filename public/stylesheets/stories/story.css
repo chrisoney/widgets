@@ -95,6 +95,7 @@
   border: 2px solid var(--light-border-gray);
   margin-left: 1%;
   margin-right: 1%;
+  height: fit-content;
 }
 
 .details-container.dm {
@@ -111,7 +112,11 @@
   margin-top: 5px;
   border-top: 2px solid var(--light-border-gray);
   border-bottom: 2px solid var(--light-border-gray);
+}
 
+.recommend-user {
+  padding: 5px;
+  margin-top: 5px;
 }
 
 .user-rating {
