@@ -119,6 +119,11 @@
   margin-top: 5px;
 }
 
+.recommend-user-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .user-rating {
   cursor: pointer;
 }
