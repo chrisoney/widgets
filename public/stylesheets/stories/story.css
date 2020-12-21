@@ -102,8 +102,16 @@
   border: 2px solid var(--dark-border-gray);
 }
 
-.bottom-details {
+.story-description {
   padding: 5px;
+}
+
+.subscribe-user {
+  padding: 5px;
+  margin-top: 5px;
+  border-top: 2px solid var(--light-border-gray);
+  border-bottom: 2px solid var(--light-border-gray);
+
 }
 
 .user-rating {
