@@ -2,8 +2,8 @@
   display:flex;
   justify-content: space-around;
   position: relative;
+  max-height: 85%;
   overflow: scroll;
-  height: 90%;
 }
 
 .dashboard-container {

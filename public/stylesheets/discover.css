@@ -1,6 +1,8 @@
 .main-container {
   display:flex;
   flex-direction: column;
+  max-height: 80%;
+  overflow: scroll;
 }
 
 h1 {
@@ -54,14 +56,15 @@ h1 {
 .tab-content{
   position: absolute;
   width: inherit;
-  height: auto;
+  max-height: 70%;
   margin-top: 0px;
   background: var(--white);
   color: var(--teal);
-  z-index: 1;
+  /* z-index: 1; */
   padding: 10px 5px;
   border: 2px solid var(--light-border-gray);
   border-top: none;
+  overflow: scroll;
 }
 
 /* STORY DISCOVER */
