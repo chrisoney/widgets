@@ -25,7 +25,6 @@ function modalEvents(){
 // Stories Label Event Listeners
 
 function storyDropdownEvents(){
-  console.log("hello there")
   document.querySelectorAll(".fa-chevron-circle-left")
     .forEach(button=> button.addEventListener("click", (e)=>{
       e.target.classList.toggle("opening")

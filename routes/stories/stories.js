@@ -29,13 +29,15 @@ router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
             where: {
                 userId: req.session.auth.userId
             },
+            required: false,
         },
         {
             model: Recommendation,
             as: 'recommendation',
             where: {
                 userId: req.session.auth.userId
-            }
+            },
+            required: false,
         }
         ]
     })
@@ -75,7 +77,7 @@ router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
             }
         }
     })
-    // res.json({ recs })
+    // res.json({ story })
     res.render("stories/story", { story, subs, recs });
 }))
 
