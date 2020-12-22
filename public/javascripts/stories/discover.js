@@ -83,7 +83,8 @@ document.querySelector("#stories").addEventListener("click", async e =>{
         ${stories.join("")}
       </ul>
     `;
-    storyEventListeners()
+    storyEventListeners();
+    storyDropdownEvents();
   } catch (e){
     throw new Error('Uh oh. Something went wrong...');
   }
@@ -157,6 +158,7 @@ document.querySelector("#users").addEventListener("click", async e =>{
     const data = await res.json()
     populateStories(data);
     storyEventListeners();
+    storyDropdownEvents();
     followEventListeners();
   } catch (e){
     throw new Error('Uh oh. Something went wrong...');
@@ -170,6 +172,7 @@ document.querySelector("#follows").addEventListener("click", async e =>{
     const data = await res.json()
     populateStories(data);
     storyEventListeners();
+    storyDropdownEvents();
     followEventListeners();
   } catch (e){
     throw new Error('Uh oh. Something went wrong...');
