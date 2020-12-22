@@ -32,12 +32,15 @@ block content
           div(class="details-description")= story.description
           div(class="subscribe-user")
             span(class="subscribe-user-title") Your Subscription
-            div(class="subscribe-user-container")
-              span(class="label") Book:
-              span(class="value")=story.subscription[0].book
-            div(class="subscribe-user-container")
-              span(class="label") Chapter:
-              span(class="value")=story.subscription[0].chapter
+            if (story.subscription[0])
+              div(class="subscribe-user-container")
+                span(class="label") Book:
+                span(class="value")=story.subscription[0].book
+              div(class="subscribe-user-container")
+                span(class="label") Chapter:
+                span(class="value")=story.subscription[0].chapter
+            else
+              p.no-review You are not subscribed
           div(class="recommend-user")
             span(class="recommend-user-title") Your Recommendation
             div(class="recommend-user-container")
