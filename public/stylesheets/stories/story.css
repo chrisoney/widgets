@@ -180,6 +180,7 @@
 .no-review {
   font-size: 12px;
   color: var(--emphasis-red);
+  text-align: center;
 }
 
 .follow-button {
