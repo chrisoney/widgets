@@ -104,7 +104,7 @@
   border: 2px solid var(--dark-border-gray);
 }
 
-.story-description {
+.details-description {
   padding: 5px;
 }
 
@@ -123,6 +123,10 @@
 .recommend-user-container {
   display: flex;
   flex-direction: column;
+}
+
+.recommend-user-container:first-of-type {
+  margin-bottom: 10px;
 }
 
 .user-rating {
