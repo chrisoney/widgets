@@ -1,14 +1,10 @@
 import { subscribeToggle } from './story-utils.js'
-import { followEventListeners } from './story-events.js'
+import { 
+  followEventListeners,
+  storyDropdownEvents
+ } from './story-events.js'
 
 function storyEventListeners(){
-  document.querySelectorAll(".fa-chevron-circle-left")
-    .forEach(button=> button.addEventListener("click", (e)=>{
-      e.target.classList.toggle("opening")
-      const num = e.target.classList[2].split("-")[1];
-      document.querySelector(`.container-${num}`).classList.toggle("open")
-    }))
-
   document.querySelectorAll(".reveal")
     .forEach(ele => ele.addEventListener("click", (e) => {
       e.preventDefault();
@@ -38,7 +34,8 @@ function populateRating(rating, container){
 }
 
 window.addEventListener("DOMContentLoaded", (e)=> {
-  storyEventListeners()
+  storyEventListeners();
+  storyDropdownEvents();
 })
 
 const tabs = document.querySelectorAll(".nav-item")
@@ -58,17 +55,17 @@ document.querySelector("#stories").addEventListener("click", async e =>{
         <div class="story-header-container">
           <span class="story-title">${story.title}</span>
           <div class="story-button-container">
-            <span class="fas fa-chevron-circle-left toggle-${idx}"></span>
-            <span class="fas fa-arrow-circle-right"></span>
+            <span class="fas fa-chevron-circle-left toggle-${story.id}"></span>
+            <span class="fas fa-arrow-circle-right id-${story.id}"></span>
           </div>
         </div>
-        <div class="story-details-container container-${idx}">
+        <div class="story-details-container container-${story.id}">
           <div class="story-details-top">
             <div class="story-details-top-left">
               <a href=${story.link} class="link">Link to Story</a>
             </div>
             <div class="story-details-top-right">
-              <span class="subscribe-button sub-${idx}">Subscribe</span>
+              <span class="subscribe-button sub-${story.id}">Subscribe</span>
             </div>
           </div>
           <div class="story-details-bottom">
@@ -111,7 +108,7 @@ function populateStories(data){
           <span class="story-title">${story.title}</span>
           <div class="story-button-container">
             <span class="fas fa-chevron-circle-left toggle-${story.Recommendation.id}"></span>
-            <span class="fas fa-arrow-circle-right"></span>
+            <span class="fas fa-arrow-circle-right id-${story.id}"></span>
           </div>
         </div>
         <div class="story-details-container container-${story.Recommendation.id}">

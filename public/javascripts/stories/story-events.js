@@ -25,6 +25,7 @@ function modalEvents(){
 // Stories Label Event Listeners
 
 function storyDropdownEvents(){
+  console.log("hello there")
   document.querySelectorAll(".fa-chevron-circle-left")
     .forEach(button=> button.addEventListener("click", (e)=>{
       e.target.classList.toggle("opening")
@@ -34,6 +35,7 @@ function storyDropdownEvents(){
   
   document.querySelectorAll(".fa-arrow-circle-right")
     .forEach(button => button.addEventListener("click", (e)=> {
+      console.log("hello")
       const id = e.target.classList[2].split("-")[1];
       window.location.href = `/stories/${id}`;
     }))
