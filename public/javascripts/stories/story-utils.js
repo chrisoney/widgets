@@ -81,6 +81,43 @@ const reviewUpdate = async (review, storyId) => {
     })
 }
 
+function singleStoryDetail(id, attr){
+    const minus = document.querySelector(`#m-${attr}-${id}`)
+    if (minus){
+      minus.addEventListener("click", (e)=> {
+        const ele = e.target.parentElement.children[2];
+        const id = parseInt(e.target.id.split("-")[2], 10);
+        const attr = e.target.classList[2];
+        setNewAttribute(ele, -1, id, attr)
+      })
+    }
+    const plus = document.querySelector(`#p-${attr}-${id}`)
+    if (plus){
+      plus.addEventListener("click", (e)=> {
+        const ele = e.target.parentElement.children[2];
+        const id = parseInt(e.target.id.split("-")[2], 10);
+        const attr = e.target.classList[2];
+        setNewAttribute(ele, 1, id, attr)
+      })
+    }
+}
+
+function dashStoryDetail(label, value, id, attr){
+    const num = parseInt(value, 10);
+
+    return (num >= 0) ?
+        `
+        <span class="detail-label">${label}</span>
+        <span id="m-${attr}-${id}" class="fas fa-minus-circle ${attr}"></span>
+        <span id=${id} class="detail-value ${attr}">${value}</span>
+        <span id="p-${attr}-${id}" class="fas fa-plus-circle ${attr}"></span>
+        ` :
+        `
+        <span class="detail-label">${label}</span>
+        <span id=${id} class="detail-value ${attr}">${value}</span>
+        ` ;
+}
+
 function detailInputChange(e){
     const oldChildren = e.target.parentElement.innerHTML;
     const oldEle = e.target.parentElement.children[0].innerHTML;
@@ -132,4 +169,5 @@ export {
     setNewAttribute,
     reviewUpdate,
     detailInputChange,
+    dashStoryDetail
  }

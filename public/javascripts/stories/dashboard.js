@@ -1,4 +1,4 @@
-import { reviewUpdate, setNewAttribute } from './story-utils.js';
+import { reviewUpdate, setNewAttribute, dashStoryDetail } from './story-utils.js';
 
 
 import { 
@@ -12,26 +12,6 @@ import {
   newRating
  } from './story-events.js';
 
-function singleStoryDetail(id, attr){
-  const minus = document.querySelector(`#m-${attr}-${id}`)
-  if (minus){
-    minus.addEventListener("click", (e)=> {
-      const ele = e.target.parentElement.children[2];
-      const id = parseInt(e.target.id.split("-")[2], 10);
-      const attr = e.target.classList[2];
-      setNewAttribute(ele, -1, id, attr)
-    })
-  }
-  const plus = document.querySelector(`#p-${attr}-${id}`)
-  if (plus){
-    plus.addEventListener("click", (e)=> {
-      const ele = e.target.parentElement.children[2];
-      const id = parseInt(e.target.id.split("-")[2], 10);
-      const attr = e.target.classList[2];
-      setNewAttribute(ele, 1, id, attr)
-    })
-  }
-}
 // let currStories = document.querySelector('.currStories').innerHTML;
 // currStories = JSON.parse(currStories);
 // console.log(currStories[0]);
@@ -42,27 +22,6 @@ function singleStoryDetail(id, attr){
 
 const searchBar = document.querySelector(".search");
 const dashList = document.querySelector(".stories-container ul");
-
-function dashStoryDetail(label, value, id, attr){
-  const num = parseInt(value, 10);
-  
-  return (num >= 0) ?
-    `
-      <span class="detail-label">${label}</span>
-      <span id="m-${attr}-${id}" class="fas fa-minus-circle ${attr}"></span>
-      <span id=${id} class="detail-value ${attr}">${value}</span>
-      <span id="p-${attr}-${id}" class="fas fa-plus-circle ${attr}"></span>
-    ` :
-    `
-      <span class="detail-label">${label}</span>
-      <span id=${id} class="detail-value ${attr}">${value}</span>
-    ` ;
-  // return `
-  //   <div class="detail-container">
-  //     ${content}
-  //   </div>
-  // `
-}
 
 function DashSearchRating(recommendation){
   let i = 0, j = recommendation.rating + 1;
