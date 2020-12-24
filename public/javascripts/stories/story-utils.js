@@ -118,11 +118,6 @@ function dashStoryDetail(label, value, id, attr){
         ` ;
 }
 
-function blurEffect(e, oldChildren){
-    e.preventDefault();
-    e.target.parentElement.innerHTML = oldChildren;
-}
-
 function detailInputChange(e){
     const oldChildren = e.target.parentElement.innerHTML;
     const oldEle = e.target.parentElement.children[0].innerHTML;
@@ -163,7 +158,16 @@ function detailInputChange(e){
       }
     })
   
-    input.addEventListener("blur", (e) => blurEffect(e, oldChildren));
+    input.addEventListener("blur", (e) => {
+        let parent = e.target.parentElement;
+      parent.innerHTML = oldChildren;
+      if(parent.children[2]){
+        parent.children[2].addEventListener("click", (e) => detailInputChange(e));
+      } else {
+        parent.children[1].addEventListener("click", (e) => detailInputChange(e));
+      }
+      singleStoryDetail(id, type);
+    })
   }
 
 export { 
