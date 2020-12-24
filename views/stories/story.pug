@@ -33,12 +33,8 @@ block content
           div(class="subscribe-user")
             span(class="subscribe-user-title") Your Subscription
             if (story.subscription[0])
-              div(class="subscribe-user-container")
-                span(class="label") Book:
-                span(class="value")=story.subscription[0].book
-              div(class="subscribe-user-container")
-                span(class="label") Chapter:
-                span(class="value")=story.subscription[0].chapter
+              +dashStoryDetail("Book:", story.Subscription.book, story.id, "book")
+              +dashStoryDetail("Chapter:", story.Subscription.chapter, story.id, "chapter")
             else
               p.no-review You are not subscribed
           div(class="recommend-user")
