@@ -65,6 +65,11 @@ function detailChangeEvents(){
     }))
 }
 
+function detailEventListeners() {
+  document.querySelectorAll(".detail-value")
+    .forEach(ele => ele.addEventListener("click", (e) => detailInputChange(e)))
+}
+
 function followEventListeners(){
   document.querySelectorAll(".follow-button")
     .forEach(ele => ele.addEventListener("click", async (e) => {
@@ -166,5 +171,6 @@ export {
   followEventListeners,
   recDetailsEvents,
   changeRating,
-  newRating
+  newRating,
+  detailEventListeners
  }

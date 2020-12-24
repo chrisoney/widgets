@@ -3,6 +3,7 @@ import { reviewUpdate, setNewAttribute } from './story-utils.js';
 
 import { 
   detailChangeEvents,
+  detailEventListeners,
   modalEvents, 
   storyDropdownEvents,
   subscribeEvents,
@@ -80,11 +81,6 @@ function detailInputChange(e){
   input.addEventListener("blur", (e) => {
     e.target.parentElement.innerHTML = oldChildren;
   })
-}
-
-function detailEventListeners() {
-  document.querySelectorAll(".detail-value")
-    .forEach(ele => ele.addEventListener("click", (e) => detailInputChange(e)))
 }
 
 // Search Functions

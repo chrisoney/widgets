@@ -1,5 +1,6 @@
 import { 
   followEventListeners,
+  detailChangeEvents,
   changeRating,
   newRating,
   recDetailsEvents
@@ -24,6 +25,6 @@ function callEvents(){
   // storyDropdownEvents();
   // subscribeEvents()
   recDetailsEvents()
-  // detailChangeEvents()
+  detailChangeEvents()
   // detailEventListeners()
 }
