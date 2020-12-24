@@ -118,6 +118,11 @@ function dashStoryDetail(label, value, id, attr){
         ` ;
 }
 
+function blurEffect(e, oldChildren){
+    e.preventDefault();
+    e.target.parentElement.innerHTML = oldChildren;
+}
+
 function detailInputChange(e){
     const oldChildren = e.target.parentElement.innerHTML;
     const oldEle = e.target.parentElement.children[0].innerHTML;
@@ -158,9 +163,7 @@ function detailInputChange(e){
       }
     })
   
-    input.addEventListener("blur", (e) => {
-      e.target.parentElement.innerHTML = oldChildren;
-    })
+    input.addEventListener("blur", (e) => blurEffect(e, oldChildren));
   }
 
 export { 
