@@ -1,5 +1,6 @@
 import { 
   followEventListeners,
+  detailEventListeners,
   detailChangeEvents,
   changeRating,
   newRating,
@@ -26,5 +27,5 @@ function callEvents(){
   // subscribeEvents()
   recDetailsEvents()
   detailChangeEvents()
-  // detailEventListeners()
+  detailEventListeners()
 }
