@@ -1,5 +1,5 @@
 import { handleSubscriptionClick } from './functions/subscription.js';
-import { setNewAttribute } from './story-utils.js';
+import { setNewAttribute, detailInputChange } from './story-utils.js';
 
 // Modal Functions
 

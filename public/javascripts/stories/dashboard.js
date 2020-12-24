@@ -38,51 +38,6 @@ function singleStoryDetail(id, attr){
 
 //
 
-function detailInputChange(e){
-  const oldChildren = e.target.parentElement.innerHTML;
-  const oldEle = e.target.parentElement.children[0].innerHTML;
-  const oldValue = e.target.innerHTML;
-  const type = e.target.classList[1];
-  const id = e.target.id;
-  const parent = e.target.parentElement;
-  parent.innerHTML = `
-    <span class="detail-label">${oldEle}</span>
-    <input class="detail-value-input" type="text" placeholder="${oldValue}"/>
-  `
-  const input = document.querySelector('.detail-value-input')
-  
-  input.addEventListener("keypress", async (e)=> {
-    let book = '';
-    let chapter = '';
-    if (type === 'book') book = e.target.value;
-    else if (type === 'chapter') chapter = e.target.value;
-    if (e.key === "Enter"){
-      const res = await fetch('/stories/subscriptions/update', {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-          },
-        body: JSON.stringify({ id, book, chapter }),
-      })
-      const data = await res.json();
-      let elements = '';
-      if (type === 'book')elements = dashStoryDetail('Book:', data.subscription.book, id, type);
-      if (type === 'chapter') elements = dashStoryDetail('Chapter:', data.subscription.chapter, id, type);
-      parent.innerHTML = elements;
-      if(parent.children[2]){
-        parent.children[2].addEventListener("click", (e) => detailInputChange(e));
-      } else {
-        parent.children[1].addEventListener("click", (e) => detailInputChange(e));
-      }
-      singleStoryDetail(id, type);
-    }
-  })
-
-  input.addEventListener("blur", (e) => {
-    e.target.parentElement.innerHTML = oldChildren;
-  })
-}
-
 // Search Functions
 
 const searchBar = document.querySelector(".search");
