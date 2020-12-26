@@ -49,9 +49,9 @@ block content
                 while j <= 5
                   span(id=j class="far fa-star user-rating")
                   - j++
-            div(class="recommend-user-container")
-              span(class="label") Review:
-              span(class="value")=story.recommendation[0].review
+            div(class="review-container")
+              span(class="reveal") Review
+              span(class="revew-text hidden")=story.recommendation[0].review
       div(class="recommend-container")
         each rec in recs
           div(class="single-rec-container")
