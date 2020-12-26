@@ -120,6 +120,7 @@
   margin-top: 5px;
 }
 
+
 .recommend-user-container {
   display: flex;
   flex-direction: column;
@@ -131,6 +132,24 @@
 
 .user-rating {
   cursor: pointer;
+}
+
+.review-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.reveal {
+  cursor: pointer;
+}
+
+.reveal:hover {
+  color: var(--darker-blue)
+}
+
+.hidden {
+  display: none;
+  transition: 1s ease-in-out;
 }
 
 .recommend-container {
