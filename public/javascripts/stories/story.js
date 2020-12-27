@@ -4,7 +4,8 @@ import {
   detailChangeEvents,
   changeRating,
   newRating,
-  recDetailsEvents
+  recDetailsEvents,
+  reviewEvent
  } from './story-events.js'
 
 document.querySelector('.back-button-container')
@@ -21,7 +22,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
 function callEvents(){
   changeRating();
   newRating();
-  // reviewEvent();
+  reviewEvent();
   // modalEvents();
   // storyDropdownEvents();
   // subscribeEvents()
