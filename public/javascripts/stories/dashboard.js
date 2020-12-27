@@ -9,7 +9,8 @@ import {
   subscribeEvents,
   recDetailsEvents,
   changeRating,
-  newRating
+  newRating,
+  reviewEvent
  } from './story-events.js';
 
 // let currStories = document.querySelector('.currStories').innerHTML;
