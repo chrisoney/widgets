@@ -13,4 +13,9 @@
 
 .footer-container * {
   color: white;
+  font-size: 1.3em;
+}
+
+.icon {
+  margin-right: .1em;
 }
