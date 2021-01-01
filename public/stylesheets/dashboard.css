@@ -233,6 +233,10 @@ h1 {
   -moz-transition: all .5s ease;
 }
 
+.detail-value-input.dm {
+  border: 2px solid var(--dark-border-gray);
+}
+
 .detail-value-input:focus {
   outline:none;
   width: 75%;
@@ -306,6 +310,10 @@ h1 {
 
 .description-container {
   border-bottom: 2px solid var(--light-border-gray);
+}
+
+.description-container.dm {
+  border-bottom: 2px solid var(--dark-border-gray);
 }
 
 .description-text, .review-text {
@@ -400,6 +408,10 @@ h1 {
   color: white;
   background: var(--reg-orange);
   cursor: pointer;
+}
+
+.modal-button.dm {
+  border: 1px solid var(--dark-border-gray);
 }
 
 .modal-background {
