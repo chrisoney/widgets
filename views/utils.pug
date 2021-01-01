@@ -15,13 +15,13 @@ mixin field(labelText, fieldName, fieldValue, fieldType = 'text', placeholder = 
       input(type=fieldType id=fieldName name=fieldName value=fieldValue placeholder=placeholder class='form-control')
 
 mixin preview(id, icon, name, description, imgSrc)
-  div(id=id class="preview-container")
+  div(id=id class="preview-container theme")
     div(class="splash-details")
-      div(class="preview-title")
+      div(class="preview-title theme")
         span(class=icon)
         p= name
       p= description
-    div(class="splash-image-container")
+    div(class="splash-image-container theme")
       img(src=imgSrc)
 
 mixin dashStoryDetail(label, value, id, attr)
