@@ -48,11 +48,22 @@ h1 {
   padding: 5px 0px;
 }
 
+.discover-nav .nav-item.dm {
+  background: var(--white);
+  color: var(--teal);
+}
+
 .discover-nav .nav-item.active{
   background: var(--white);
   color: var(--teal);
   border-bottom: none;
 }
+
+.discover-nav .nav-item.dm.active{
+  background: var(--teal);
+  color: var(--white);
+}
+
 .tab-content{
   position: absolute;
   width: inherit;
@@ -67,6 +78,12 @@ h1 {
   overflow: scroll;
 }
 
+.tab-content.dm {
+  background: var(--teal);
+  color: var(--white);
+  border: 2px solid var(--dark-border-gray);
+}
+
 /* STORY DISCOVER */
 /* no story */
 .empty-container {
@@ -76,8 +93,13 @@ h1 {
 .empty-message {
   font-size: 12px;
   text-align: center;
-  color: var(--emphasis-red)
+  color: var(--emphasis-red);
 }
+
+.empty-message.dm {
+  color: var(--golden);
+}
+
 /* existing story */
 .story-container {
   overflow: hidden;
@@ -86,6 +108,10 @@ h1 {
   flex-direction: column;
   margin-bottom: 5px;
   background: var(--white);
+}
+
+.story-container.dm {
+  background: var(--darker-black);
 }
 
 .story-header-container{
