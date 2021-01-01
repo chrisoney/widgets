@@ -6,5 +6,6 @@ body {
 }
 
 body.dm {
-  background: var(--light-gray)
+  background: var(--light-gray);
+  color: var(--white);
 }
