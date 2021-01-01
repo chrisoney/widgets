@@ -13,7 +13,7 @@ block content
       span(class="back-text") Back
     a(href=story.link class="story-title")= story.title
     div(class="story-container")
-      div(class="subscribe-container")
+      div(class="subscribe-container theme")
         span(class="sub-list-title")
         each sub in subs
           div(class="single-sub-container")
@@ -26,7 +26,7 @@ block content
             div(class="sub-bottom")
               span=`Book: ${sub.book}`
               span=`Chapter: ${sub.chapter}`
-      div(class="details-container")
+      div(class="details-container theme")
         div(class="top-details")
         div(class="bottom-details")
           div(class="details-description")= story.description
@@ -52,7 +52,7 @@ block content
             div(class="review-container")
               span(class="reveal") Review
               span(class="review-text hidden")=story.recommendation[0].review
-      div(class="recommend-container")
+      div(class="recommend-container theme")
         each rec in recs
           div(class="single-rec-container")
             div(class="rec-top")

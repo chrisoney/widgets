@@ -175,9 +175,9 @@ function reviewEvent(){
         <div class="new-review">
           <textarea class="new-review-textarea"></textarea>
           <div class="new-review-buttons">
-            <button class="submit-review">Submit</button>
-            <button class="delete-review">Delete</button>
-            <button class="cancel-review">Cancel</button>
+            <button class="submit-review theme">Submit</button>
+            <button class="delete-review theme">Delete</button>
+            <button class="cancel-review theme">Cancel</button>
           </div>
         </div>
       `
