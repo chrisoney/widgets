@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const { csrfProtection, asyncHandler } = require('../utils');
-const { Recommendation } = require('../../db/models');
+const { csrfProtection, asyncHandler } = require('./utils');
+const { Recommendation } = require('./../db/models');
 
 router.post("/review/update", asyncHandler (async (req, res) => {
   const { review, storyId } = req.body;

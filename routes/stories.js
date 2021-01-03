@@ -16,7 +16,7 @@ router.use("/recommendations", recommendationsRouter);
 router.use("/search", searchRouter);
 
 router.get("/", (req, res) => {
-    res.redirect('/stories/dashboard');
+    res.redirect('/dashboard');
 })
 
 router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
@@ -106,7 +106,7 @@ router.post("/create", csrfProtection, storyValidators, asyncHandler( async (req
             userId: req.session.auth.userId,
             storyId: newStory.id
         })
-        res.redirect("/stories/dashboard")
+        res.redirect("/dashboard")
     } else {
         errors.push(...validationErrors.array().map(err => err.msg));
         res.render('stories/add-story', { token: req.csrfToken(), errors });
@@ -138,7 +138,7 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
         ]],
     })
     const stories = user.subscribedStories;
-    res.render("stories/dashboard", { title:"Dashboard", stories })
+    res.render("dashboard", { title:"Dashboard", stories })
     // res.json({ stories })
 }))
 

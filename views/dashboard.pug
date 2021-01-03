@@ -1,11 +1,11 @@
-extends ../layout
+extends ./layout
 
-include ../utils
+include ./utils
 
 append head
   link(rel="stylesheet" href="/stylesheets/dashboard.css")
   //- add page specific js
-  script(src="/javascripts/stories/dashboard.js" type="module" defer)
+  script(src="/javascripts/dashboard.js" type="module" defer)
 
 block content
   div(class="modal modal-background")
