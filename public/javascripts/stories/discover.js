@@ -25,10 +25,10 @@ function populateRating(rating, container){
   const result = [];
   rating = parseInt(rating, 10);
   for (let i = 0; i < rating; i++) {
-    result.push(`<span id=${i+1} class="fas fa-star"></span>`)
+    result.push(`<span id=${i+1} class="fas fa-star theme"></span>`)
   }
   for (let j = rating + 1; j <= 5; j++){
-    result.push(`<span id=${j} class="far fa-star"></span>`)
+    result.push(`<span id=${j} class="far fa-star theme"></span>`)
   }
   return result.join("")
 }
@@ -65,11 +65,11 @@ document.querySelector("#stories").addEventListener("click", async e =>{
               <a href=${story.link} class="link">Link to Story</a>
             </div>
             <div class="story-details-top-right">
-              <span class="subscribe-button sub-${story.id}">Subscribe</span>
+              <span class="subscribe-button sub-${story.id} theme">Subscribe</span>
             </div>
           </div>
           <div class="story-details-bottom">
-            <div class="description-container">
+            <div class="description-container theme">
               <span id="${idx}" class="reveal">Description</span>
               <p class="description-text-${idx} hidden">${story.description}</p>
             </div>
@@ -122,7 +122,7 @@ function populateStories(data){
             </div>
           </div>
           <div class="story-details-bottom">
-            <div class="description-container">
+            <div class="description-container theme">
               <span id="${idx}" class="reveal">Description</span>
               <p class="description-text-${idx} hidden">${story.description}</p>
             </div>

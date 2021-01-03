@@ -28,9 +28,9 @@ block content
                     div(class="story-details-top-left")
                       a(href=story.link class="link") Link to Story
                     div(class="story-details-top-right")
-                      div(class=`subscribe-button sub-${story.id}`) Subscribe
+                      div(class=`subscribe-button sub-${story.id} theme`) Subscribe
                   div(class="story-details-bottom")
-                    div(class="description-container")
+                    div(class="description-container theme")
                       span(id=`${story.id}` class="reveal") Description
                       p(class=`description-text-${story.id} hidden`)= story.description
       include nav-section

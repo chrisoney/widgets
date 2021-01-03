@@ -11,26 +11,26 @@ block content
   div(class="modal modal-background")
     div(class="modal modal-container")
       span(class="modal modal-content") Are you sure you want to unsubscribe? It will remove your Book and Chapter permanently.
-      span(class="confirm-button") Confirm
+      span(class="confirm-button theme") Confirm
   div(class="main-container")
     div(class="dashboard-container")
       h1=title
       div(class="stories-container")
         div(class="search-container")
-          input(class="search" type="search" placeholder="Search")
-          div(class="search-icon")
+          input(class="search theme" type="search" placeholder="Search")
+          div(class="search-icon theme")
             span(class="fas fa-search")
         ul
           each story, idx in stories
             - var recommendation = story.recommendation[0] || { id:null, rating: 0, review: ''}
-            li(class="story-container")
-              div(class="story-header-container")
+            li(class="story-container theme")
+              div(class="story-header-container theme")
                 span(class="story-title")=story.title
                 div(class="story-button-container")
                   span(class=`fas fa-chevron-circle-left toggle-${idx}`)
                   span(class=`fas fa-arrow-circle-right id-${story.id}`)
-              div(class=`story-details-container container-${idx}`)
-                div(class="story-details-top")
+              div(class=`story-details-container theme container-${idx}`)
+                div(class="story-details-top theme")
                   div(class="story-details-top-left")
                     +dashStoryDetail("Book:", story.Subscription.book, story.id, "book")
                     +dashStoryDetail("Chapter:", story.Subscription.chapter, story.id, "chapter")
@@ -39,14 +39,14 @@ block content
                     div(id=story.id class="stars user-stars")
                       - var i = 0, j = recommendation.rating + 1
                       while i < recommendation.rating
-                        span(id=(i+1) class="fas fa-star user-rating")
+                        span(id=(i+1) class="fas fa-star user-rating theme")
                         - i++
                       while j <= 5
-                        span(id=j class="far fa-star user-rating")
+                        span(id=j class="far fa-star user-rating theme")
                         - j++
-                    div(class=`subscribe-button sub-${story.id}`) Unsubscribe
+                    div(class=`subscribe-button sub-${story.id} theme`) Unsubscribe
                 div(class="story-details-bottom")
-                  div(class="description-container")
+                  div(class="description-container theme")
                     div(class="reveal") Description
                     p(class="description-text hidden")= story.description
                   div(id=story.id class="review-container")
