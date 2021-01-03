@@ -100,7 +100,7 @@ function populateStories(data){
         `
         <div class="review-container">
           <span id="${story.Recommendation.id}" class="reveal">Review</span>
-          <p class="review-text-${story.Recommendation.id} hidden">${story.Recommendation.review}</p>
+          <p class="review-text-${story.Recommendation.id} theme hidden">${story.Recommendation.review}</p>
         </div>
         `:``;
       return `

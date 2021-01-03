@@ -40,9 +40,9 @@ function DashSearchRating(recommendation){
 
 function DashSearchReview(recommendation){
   if (recommendation.review)
-    return `<div id=${recommendation.id} class="review-text hidden")>${recommendation.review}</div>`;
+    return `<div id=${recommendation.id} class="review-text theme hidden")>${recommendation.review}</div>`;
   else
-    return `<div id=${recommendation.id} class="review-text none hidden">No review yet</div>`;
+    return `<div id=${recommendation.id} class="review-text theme none hidden">No review yet</div>`;
 }
 
 const submitSearch = async (searchEle, dashListEle) => {
@@ -74,11 +74,11 @@ const submitSearch = async (searchEle, dashListEle) => {
             <div id=${story.id} class="stars user-stars">
               ${DashSearchRating(recommendation)}
             </div>
-            <div class="subscribe-button sub-${story.id}">Unsubscribe</div>
+            <div class="subscribe-button sub-${story.id} theme">Unsubscribe</div>
           </div>
         </div>
         <div class="story-details-bottom">
-          <div class="description-container">
+          <div class="description-container theme">
             <div class="reveal">Description</div>
             <p class="description-text hidden">${story.description}</p> 
           </div>
