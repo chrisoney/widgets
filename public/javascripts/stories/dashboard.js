@@ -51,16 +51,16 @@ const submitSearch = async (searchEle, dashListEle) => {
   const stories = data.stories.map((story, idx)=> {
     let recommendation = story.recommendation[0] || { id: null, rating: 0, review: ''}
     return `
-    <li class="story-container">
-      <div class="story-header-container">
+    <li class="story-container theme">
+      <div class="story-header-container theme">
         <span class="story-title")>${story.title}</span>
         <div class="story-button-container">
           <span class="fas fa-chevron-circle-left toggle-${idx}"></span>
           <span class="fas fa-arrow-circle-right id-${story.id}"></span>
         </div>
       </div>
-      <div class="story-details-container container-${idx}">
-        <div class="story-details-top">
+      <div class="story-details-container container-${idx} theme">
+        <div class="story-details-top theme">
           <div class="story-details-top-left">
             <div class="detail-container">
               ${dashStoryDetail("Book:", story.Subscription.book, story.id, "book")}

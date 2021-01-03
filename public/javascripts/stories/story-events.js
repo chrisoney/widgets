@@ -113,10 +113,10 @@ function populateRating(rating, container){
   const result = [];
   rating = parseInt(rating, 10);
   for (let i = 0; i < rating; i++) {
-    result.push(`<span id=${i+1} class="fas fa-star user-rating"></span>`)
+    result.push(`<span id=${i+1} class="fas fa-star user-rating theme"></span>`)
   }
   for (let j = rating + 1; j <= 5; j++){
-    result.push(`<span id=${j} class="far fa-star user-rating"></span>`)
+    result.push(`<span id=${j} class="far fa-star user-rating theme"></span>`)
   }
   if (container){
     container.innerHTML = result.join("")
