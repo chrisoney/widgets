@@ -9,8 +9,8 @@ append head
 
 block content
   div(class="modal modal-background")
-    div(class="modal modal-container")
-      span(class="modal modal-content") Are you sure you want to unsubscribe? It will remove your Book and Chapter permanently.
+    div(class="modal modal-container theme")
+      span(class="modal modal-content theme") Are you sure you want to unsubscribe? It will remove your Book and Chapter permanently.
       span(class="confirm-button theme") Confirm
   div(class="main-container")
     div(class="dashboard-container")
@@ -29,7 +29,7 @@ block content
                 div(class="story-button-container")
                   span(class=`fas fa-chevron-circle-left toggle-${idx}`)
                   span(class=`fas fa-arrow-circle-right id-${story.id}`)
-              div(class=`story-details-container theme container-${idx}`)
+              div(class=`story-details-container container-${idx} theme`)
                 div(class="story-details-top theme")
                   div(class="story-details-top-left")
                     +dashStoryDetail("Book:", story.Subscription.book, story.id, "book")

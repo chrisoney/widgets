@@ -52,15 +52,15 @@ document.querySelector("#stories").addEventListener("click", async e =>{
     const stories = data.map((story, idx)=> {
       return `
       <li class="story-container">
-        <div class="story-header-container">
+        <div class="story-header-container theme">
           <span class="story-title">${story.title}</span>
           <div class="story-button-container">
             <span class="fas fa-chevron-circle-left toggle-${story.id}"></span>
             <span class="fas fa-arrow-circle-right id-${story.id}"></span>
           </div>
         </div>
-        <div class="story-details-container container-${story.id}">
-          <div class="story-details-top">
+        <div class="story-details-container container-${story.id} theme">
+          <div class="story-details-top theme">
             <div class="story-details-top-left">
               <a href=${story.link} class="link">Link to Story</a>
             </div>
@@ -105,15 +105,15 @@ function populateStories(data){
         `:``;
       return `
       <li class="story-container">
-        <div class="story-header-container">
+        <div class="story-header-container theme">
           <span class="story-title">${story.title}</span>
           <div class="story-button-container">
             <span class="fas fa-chevron-circle-left toggle-${story.Recommendation.id}"></span>
             <span class="fas fa-arrow-circle-right id-${story.id}"></span>
           </div>
         </div>
-        <div class="story-details-container container-${story.Recommendation.id}">
-          <div class="story-details-top">
+        <div class="story-details-container container-${story.Recommendation.id} theme">
+          <div class="story-details-top theme">
             <div class="story-details-top-left">
               <a href=${story.link} class="link">Link to Story</a>
             </div>
@@ -135,7 +135,7 @@ function populateStories(data){
     if (stories.length === 0){
       stories.push(`
         <li class="empty-container">
-          <div class="empty-message">This user hasn't recommended any stories</div>
+          <div class="empty-message theme">This user hasn't recommended any stories</div>
         </li>`);
     }
     result.push(`

@@ -11,20 +11,20 @@ block content
     div(class="secondary-container")
       div(class="discover-container")
         div(class="discover-nav")
-          span(id="stories" class="nav-item active") Stories
-          span(id="users" class="nav-item") Users
-          span(id="follows" class="nav-item") Follows
-        div(class="tab-content")
+          span(id="stories" class="nav-item active theme") Stories
+          span(id="users" class="nav-item theme") Users
+          span(id="follows" class="nav-item theme") Follows
+        div(class="tab-content theme")
           ul
             each story in stories
-              li(class="story-container")
-                div(class="story-header-container")
+              li(class="story-container theme")
+                div(class="story-header-container theme")
                   span(class="story-title")=story.title
                   div(class="story-button-container")
                     span(class=`fas fa-chevron-circle-left toggle-${story.id}`)
                     span(class=`fas fa-arrow-circle-right id-${story.id}`)
-                div(class=`story-details-container container-${story.id}`)
-                  div(class="story-details-top")
+                div(class=`story-details-container container-${story.id} theme`)
+                  div(class="story-details-top theme")
                     div(class="story-details-top-left")
                       a(href=story.link class="link") Link to Story
                     div(class="story-details-top-right")
