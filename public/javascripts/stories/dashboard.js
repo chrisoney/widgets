@@ -28,11 +28,11 @@ function DashSearchRating(recommendation){
   let i = 0, j = recommendation.rating + 1;
   let results = []
   while (i < recommendation.rating){
-    results.push(`<span id=${i+1} class="fas fa-star user-rating")></span>`);
+    results.push(`<span id=${i+1} class="fas fa-star user-rating theme")></span>`);
     i++;
   }
   while (j <= 5){
-    results.push(`<span id=${j} class="far fa-star user-rating")></span>`);
+    results.push(`<span id=${j} class="far fa-star user-rating theme")></span>`);
     j++;
   }
   return results.join('');

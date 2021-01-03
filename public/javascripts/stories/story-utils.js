@@ -127,7 +127,7 @@ function detailInputChange(e){
     const parent = e.target.parentElement;
     parent.innerHTML = `
       <span class="detail-label">${oldEle}</span>
-      <input class="detail-value-input" type="text" placeholder="${oldValue}"/>
+      <input class="detail-value-input theme" type="text" placeholder="${oldValue}"/>
     `
     const input = document.querySelector('.detail-value-input')
     
