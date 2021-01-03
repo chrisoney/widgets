@@ -9,7 +9,6 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const storiesRouter = require('./routes/stories/stories');
-const dummyRouter = require('./routes/stories/dummy');
 const { restoreUser, requireAuth } = require('./auth');
 const methodOverride = require('method-override')
 const { session_secret } = require('./config')
@@ -42,7 +41,6 @@ store.sync();
 app.use(restoreUser)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/dummy', dummyRouter)
 app.use(requireAuth)
 app.use('/stories', storiesRouter);
 

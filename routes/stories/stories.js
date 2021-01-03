@@ -198,11 +198,6 @@ router.get("/discover", asyncHandler( async (req,res) =>{
     res.render("stories/discover", { title:"Discover", stories })
 }))
 
-router.get("/dummy", asyncHandler( async (req,res) =>{
-
-    res.render("stories/dummy", { title:"Dummy" })
-}))
-
 router.get("/discover-stories", asyncHandler( async (req,res) =>{
     const stories = await Story.findAll({ 
         include: { 
