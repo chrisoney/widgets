@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const { csrfProtection, asyncHandler } = require('../utils');
-const { User, Story, Recommendation } = require('../../db/models');
-const { Op } = require('../../db/models').Sequelize;
+const { csrfProtection, asyncHandler } = require('./utils');
+const { User, Story, Recommendation } = require('../db/models');
+const { Op } = require('../db/models').Sequelize;
 
 router.get("/", asyncHandler( async (req,res) =>{
   const { term } = req.query;

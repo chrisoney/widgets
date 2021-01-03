@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const { csrfProtection, asyncHandler } = require('../utils');
-const { Subscription } = require('../../db/models');
+const { csrfProtection, asyncHandler } = require('./utils');
+const { Subscription } = require('../db/models');
 
 router.post("/toggle", asyncHandler( async (req, res) => {
   const { oldStoryId } = req.body;

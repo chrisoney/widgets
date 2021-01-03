@@ -1,8 +1,8 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
-const { csrfProtection, asyncHandler } = require('../utils');
-const { Story, User, Subscription, Recommendation } = require('../../db/models');
-const { Op } = require('../../db/models').Sequelize;
+const { csrfProtection, asyncHandler } = require('./utils');
+const { Story, User, Subscription, Recommendation } = require('../db/models');
+const { Op } = require('../db/models').Sequelize;
 const followsRouter = require('./follows');
 const subscriptionsRouter = require('./subscriptions');
 const recommendationsRouter = require('./recommendations')
