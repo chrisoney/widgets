@@ -139,10 +139,10 @@ function populateStories(data){
         </li>`);
     }
     result.push(`
-      <div class="following-container">
+      <div class="following-container theme">
         <div class="following-header">
           <div class="following-name">${following.username}</div>
-          <div class="follow-button follow-${following.id}">Follow</div>
+          <div class="follow-button follow-${following.id} theme">Follow</div>
         </div>
         ${stories.join('')}
       </div>

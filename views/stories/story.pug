@@ -12,7 +12,7 @@ block content
       span(class="fas fa-caret-left")
       span(class="back-text") Back
     a(href=story.link class="story-title")= story.title
-    div(class="story-container")
+    div(class="story-container theme")
       div(class="subscribe-container theme")
         span(class="sub-list-title")
         each sub in subs
@@ -20,9 +20,9 @@ block content
             div(class="sub-top")
               span(class="sub-list-username")= sub.User.username
               if (sub.User.followers.length > 0)
-                button(class=`follow-button follow-${sub.User.id}`) Unfollow
+                button(class=`follow-button follow-${sub.User.id} theme`) Unfollow
               else
-                button(class=`follow-button follow-${sub.User.id}`) Follow
+                button(class=`follow-button follow-${sub.User.id} theme`) Follow
             div(class="sub-bottom")
               span=`Book: ${sub.book}`
               span=`Chapter: ${sub.chapter}`
@@ -58,9 +58,9 @@ block content
             div(class="rec-top")
               span(class="sub-list-username")= rec.User.username
               if (rec.User.followers.length > 0)
-                button(class=`follow-button follow-${rec.User.id}`) Unfollow
+                button(class=`follow-button follow-${rec.User.id} theme`) Unfollow
               else
-                button(class=`follow-button follow-${rec.User.id}`) Follow
+                button(class=`follow-button follow-${rec.User.id} theme`) Follow
             div(class="rec-bottom")
               div(class="rec-review")
                 - var i = 0, j = rec.rating + 1
