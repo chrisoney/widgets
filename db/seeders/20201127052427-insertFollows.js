@@ -27,18 +27,21 @@ module.exports = {
         let followerId = x;
         let followers = [];
         for (let y = 0; y < numFollows; y++){
-          let followingId = Math.floor(Math.random() * stop);
-          while(followers.includes(followingId) || followerId === followingId) {
-            followingId = Math.floor(Math.random() * stop)
+          let followingId = Math.floor(Math.random() * stop) + 1;
+          while(followers.includes(followingId) || x === followingId) {
+            followingId = Math.floor(Math.random() * stop) + 1
           }
           followers.push(followingId);
           result.push({
             followerId: followerId,
             followingId: followingId,
-            createdAt: "new Date()",
-            updatedAt: "new Date()"
+            createdAt: new Date(),
+            updatedAt: new Date()
           })
         }
+        // console.log(followers.sort((a,b) => {
+        //   return a - b
+        // }))
       }
       return result;
     }

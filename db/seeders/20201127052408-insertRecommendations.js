@@ -25,21 +25,23 @@ module.exports = {
     let values = currentRecs;
     function makeRecommendations (number, user, story, reviews){
       const result = [];
-      for (let k = 1; k <= user; k++){
+      for (let k = 2; k <= user; k++){
         let stories = [];
         for (let i = 0; i < number; i++){
           let spot = Math.floor(Math.random() * reviews.length)
           let storyId =  Math.floor(Math.random() * story) + 1;
           while (stories.includes(storyId)) storyId =  Math.floor(Math.random() * story) + 1;
           stories.push(storyId);
-          result.push({
+          let temp = {
             rating: Math.floor(Math.random() * 5) + 1,
             review: reviews[spot],
             userId: k,
             storyId,
-            createdAt: "new Date()",
-            updatedAt: "new Date()"
-          })
+            createdAt: new Date(),
+            updatedAt: new Date()
+          }
+          // console.log(temp);
+          result.push(temp);
         }
       }
       return result;

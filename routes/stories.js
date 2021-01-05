@@ -195,7 +195,7 @@ router.get("/discover", asyncHandler( async (req,res) =>{
         return users.every(id => id !== req.session.auth.userId)
     });
 
-    res.render("stories/discover", { title:"Discover", stories })
+    res.render("discover", { title:"Discover", stories })
 }))
 
 router.get("/discover-stories", asyncHandler( async (req,res) =>{
