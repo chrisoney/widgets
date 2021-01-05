@@ -23,7 +23,7 @@ module.exports = {
     */
     return queryInterface.bulkInsert('Stories', [
       {
-        title: 'The Gods Are Bastards',
+        title: 'The Gods Are Crazy',
         description: `Evil is rising.  The world is rent by strife.  The gods have turned away from us.  In times past, heroes of sword and sorcery have always risen to turn back the tide of darkness…  But what will become of us all, now that swords are obsolete, sorcery is industrialized, and heroism itself is considered a relic of the past?
         The times are changing…`,
         link: 'https://tiraas.net/',
@@ -121,7 +121,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'Inexorable Chaos',
+        title: 'Endless Chaos',
         description: `What happens when a summoned hero completes their task given by those from up above? When a summoned hero returns back to earth after having saved the world, do they still get to live a normal life? 
         The answer is actually yes, they usually do. They get married to the one they love, have kids, and then death takes them away. 
         Of course, that is only usually. There are a select few who choose not to... think the same way. 
@@ -148,7 +148,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'Blue Core',
+        title: 'Dungeon Core',
         description: `Dungeon: A place full of monsters, traps, treasure, and death. Those are the Great Dungeons, with unplumbed depths below the roots of the mountains.
         That's not for me.
         Dungeon: A place of rape, torture, and death, to control and corral enemies and slaves. These are the Red Cores, from which the mage-kings draw their power.
@@ -182,7 +182,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'Brian the Drow',
+        title: 'Brian the Bard',
         description: `Brian is miserable.
         Most of his friends and fellow gamers have long ago moved away, leaving him stuck in a dreary life lamenting the loss of his favorite past time. And so he simply plods along with not much hope for escapism. With nowhere else to turn he finally breaks down and commits to try out some Online Gaming.
         Now, sucked into a fantasy world he will have to call upon all his GameMaster and Player experience not only to survive, but to become the hero, and ladies man, he has only played in his imagination.`,
@@ -285,7 +285,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'Artificial Jelly',
+        title: 'Artificial Stupidity',
         description: `Born to die and be born again, Gell, the Jellyfae must discover her strange connection to the horrible monsters called humans, that speak with words she understands, but seem to want nothing but her death. Driven by a desire for safety and freedom, she ventures forth to Tread the Sky, and finds more worlds than one.`,
         link: 'https://www.royalroad.com/fiction/34030/artificial-jelly',
         createdAt: new Date(),
@@ -318,7 +318,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: 'I Became a [Biologist] in a Fantasy World',
+        title: 'Fantasy Science',
         description: `I loved Biology - always have, and always will. Unfortunately for me, years of fruitless research whittled away what little joy I had left in what I did. Escapism came in the form of reading isekai works, where the stresses of real life seemed so far away.
         Luckily, I was summoned to a fantasy world of magic, dragons, and other mythical beasts. I didn't even need to deal with the Demon Lord threat, since it seemed that my summoning was a mistake, and all they needed was the Hero who was coincidentally summoned together with me! There was no revenge subplot, no hidden trap directed against me, and they even paid me compensation for their mistake. At long last, I could finally do what I ever wanted to do - experiment for the fun of it!
         With my new class as a [Biologist], none of this fantasy world's mysteries will be left untouched. Even if the Demon Lord himself comes knocking, nothing will stop me from researching every nook and cranny there is to discover of the magical biology of this world!`,
@@ -327,7 +327,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        title: "In Loki's Honor",
+        title: "Loki's Downfall",
         description: `Earth is in turmoil. Fiction of travel to other worlds through the use of magic take on airs of prophecy as youngsters all around the world disappear. Amidst this turmoil, one New Yorker is caught in a traffic accident and chosen by Loki to travel to another world. The god's offer was not a fair one.
         But they came not as the Trickster's champion. Their purpose, a sinister one. One that will earn them the enmity of the world. A Heroic destiny is not in their future.
         Their only ally is the impartial and pervasive System. Unable to be purged, they came to stay.
