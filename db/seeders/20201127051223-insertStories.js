@@ -1,5 +1,5 @@
 'use strict';
-const { tempStories, currentStories } = require('../../current.js');
+const { tempStories, currentStories, currentFollows } = require('../../current.js');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -22,7 +22,7 @@ module.exports = {
       },
 
     */
-    return queryInterface.bulkInsert('Stories', tempStories, {});
+    return queryInterface.bulkInsert('Stories', currentStories, {});
   },
 
   down: (queryInterface, Sequelize) => {

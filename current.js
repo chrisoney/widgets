@@ -493,7 +493,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '497',
+    chapter: '512',
     userId: 1, // Chris
     storyId: 5, // Defiance of the Fall
     createdAt: new Date(),
@@ -509,7 +509,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '1370',
+    chapter: '1421',
     userId: 1, // Chris
     storyId: 7, // The Legend of Randidly Ghosthound
     createdAt: new Date(),
@@ -541,7 +541,7 @@ const currentSubs = [
   },
   {
     book: '3',
-    chapter: '10',
+    chapter: '23',
     userId: 1, // Chris
     storyId: 11, // Deeper Darker
     createdAt: new Date(),
@@ -549,7 +549,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '145',
+    chapter: '151',
     userId: 1, // Chris
     storyId: 12, // Inexorable Chaos
     createdAt: new Date(),
@@ -605,7 +605,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '588',
+    chapter: '605',
     userId: 1, // Chris
     storyId: 19, // Azarinth Healer
     createdAt: new Date(),
@@ -629,7 +629,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '233',
+    chapter: '243',
     userId: 1, // Chris
     storyId: 22, // Wake of the Ravager
     createdAt: new Date(),
@@ -677,7 +677,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '53',
+    chapter: '59',
     userId: 1, // Chris
     storyId: 28, // This Quest Is Bullshit
     createdAt: new Date(),
@@ -789,7 +789,7 @@ const currentSubs = [
   },
   {
     book:'0',
-    chapter:'32',
+    chapter:'41',
     userId: 1, // Chris
     storyId: 42, // Prophecy Approved Companion
     createdAt: new Date(),
@@ -805,7 +805,7 @@ const currentSubs = [
   },
 ];
 
-currentFollows = [
+const currentFollows = [
   {
     followerId: 1,
     followingId: 2,

@@ -22,31 +22,31 @@ module.exports = {
       }
     */
     let values = currentFollows;
-    // function makeFollows(start, stop, numFollows){
-    //   let result = [];
-    //   for (let x = start; x <= stop; x++){
-    //     let followerId = x;
-    //     let followers = [];
-    //     for (let y = 0; y < numFollows; y++){
-    //       let followingId = Math.floor(Math.random() * stop) + 1;
-    //       while(followers.includes(followingId) || x === followingId) {
-    //         followingId = Math.floor(Math.random() * stop) + 1
-    //       }
-    //       followers.push(followingId);
-    //       result.push({
-    //         followerId: followerId,
-    //         followingId: followingId,
-    //         createdAt: new Date(),
-    //         updatedAt: new Date()
-    //       })
-    //     }
+    function makeFollows(start, stop, numFollows){
+      let result = [];
+      for (let x = start; x <= stop; x++){
+        let followerId = x;
+        let followers = [];
+        for (let y = 0; y < numFollows; y++){
+          let followingId = Math.floor(Math.random() * stop) + 1;
+          while(followers.includes(followingId) || x === followingId) {
+            followingId = Math.floor(Math.random() * stop) + 1
+          }
+          followers.push(followingId);
+          result.push({
+            followerId: followerId,
+            followingId: followingId,
+            createdAt: new Date(),
+            updatedAt: new Date()
+          })
+        }
 
-    //   }
-    //   return result;
-    // }
-    // let numUsers = await User.count();
-    // let newFollows = makeFollows(2, numUsers, 5)
-    // values.push(...newFollows)
+      }
+      return result;
+    }
+    let numUsers = await User.count();
+    let newFollows = makeFollows(2, numUsers, 5)
+    values.push(...newFollows)
     return queryInterface.bulkInsert('Follows', values, {});
   },
 
