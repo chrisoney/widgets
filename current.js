@@ -797,7 +797,7 @@ const currentSubs = [
   },
   {
     book:'0',
-    chapter:'74',
+    chapter:'94',
     userId: 1, // Chris
     storyId: 43, // The Primal Hunter
     createdAt: new Date(),
