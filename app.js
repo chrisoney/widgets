@@ -10,8 +10,10 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const storiesRouter = require('./routes/stories');
 const { restoreUser, requireAuth } = require('./auth');
-const methodOverride = require('method-override')
-const { session_secret } = require('./config')
+const methodOverride = require('method-override');
+const { session_secret } = require('./config');
+const { asyncHandler } = require('./routes/utils');
+const { User, Recommendation, Subscription } = require('./db/models')
 const app = express();
 
 // view engine setup
@@ -43,6 +45,27 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use(requireAuth)
 app.use('/stories', storiesRouter);
+
+app.get("/grabdata", asyncHandler( async(req, res) => {
+  const data = await User.findByPk(req.session.auth.userId, {
+    include: [{
+      model: Subscription,
+      as: 'subscriptions',
+      order: [
+        ["storyId", "ASC"]
+      ]
+    },
+    {
+      model: Recommendation,
+      as: 'recommendations',
+      order: [
+        ["storyId", "ASC"]
+      ]
+    }
+  ]
+  })
+  res.json({ data })
+}))
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -46,6 +46,8 @@ module.exports = (sequelize, DataTypes) => {
     User.belongsToMany(models.Story, columnMappingTwo);
     User.belongsToMany(models.User, columnMappingThree);
     User.belongsToMany(models.User, columnMappingFour);
+    User.hasMany(models.Recommendation, { foreignKey: 'userId', as: 'recommendations'})
+    User.hasMany(models.Subscription, { foreignKey: 'userId', as: 'subscriptions'})
   };
   return User;
 };
