@@ -86,7 +86,7 @@ router.post('/register', csrfProtection, userValidators,
       user.hashedPassword = hashedPassword;
       await user.save();
       loginUser(req, res, user);
-      res.redirect('/');
+      res.redirect('/stories/dashboard');
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
       res.render('auth/register', {
@@ -142,7 +142,7 @@ router.post('/login', csrfProtection, loginValidators,
           // If the password hashes match, then login the user
           // and redirect them to the default route.
           loginUser(req, res, user);
-          return res.redirect('/');
+          return res.redirect('/stories/dashboard');
         }
       }
 

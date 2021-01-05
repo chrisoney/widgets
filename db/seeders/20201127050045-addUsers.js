@@ -14,48 +14,48 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-  const password = await bcrypt.hash('Hunter12!', 10);
+  // const password = await bcrypt.hash('Hunter12!', 10);
   let users = [
     {
       username: 'chris',
       email: 'chris@chris.com',
-      hashedPassword: password,
+      hashedPassword: 'Hunter12!',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       username: 'demo',
       email: 'demo@demo.com',
-      hashedPassword: password,
+      hashedPassword: 'Hunter12!',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       username: 'worry',
       email: 'worry@worry.com',
-      hashedPassword: password,
+      hashedPassword: 'Hunter12!',
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       username: 'matt',
       email: 'matt@matt.com',
-      hashedPassword: password,
+      hashedPassword: 'Hunter12!',
       createdAt: new Date(),
       updatedAt: new Date()
     },
   ];
   
-  for (let i = 5; i <45; i++){
-    let newUser = {
-      username: faker.internet.userName(),
-      email: faker.internet.email(),
-      hashedPassword: await bcrypt.hash(`password${i}`, 10),
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }
-    users.push(newUser);
-  }
+  // for (let i = 5; i <45; i++){
+  //   let newUser = {
+  //     username: faker.internet.userName(),
+  //     email: faker.internet.email(),
+  //     hashedPassword: await bcrypt.hash(`password${i}`, 10),
+  //     createdAt: new Date(),
+  //     updatedAt: new Date()
+  //   }
+  //   users.push(newUser);
+  // }
   return queryInterface.bulkInsert('Users', users, {});
   },
 

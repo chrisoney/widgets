@@ -78,12 +78,12 @@ router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
         }
     })
     // res.json({ story })
-    res.render("stories/story", { story, subs, recs });
+    res.render("story", { story, subs, recs });
 }))
 
 router.get("/create", csrfProtection, asyncHandler( async (req, res) => {
     const errors = [];
-    res.render('stories/add-story', { token: req.csrfToken(), errors });
+    res.render('add-story', { token: req.csrfToken(), errors });
 }));
 
 const storyValidators = [
@@ -109,7 +109,7 @@ router.post("/create", csrfProtection, storyValidators, asyncHandler( async (req
         res.redirect("/dashboard")
     } else {
         errors.push(...validationErrors.array().map(err => err.msg));
-        res.render('stories/add-story', { token: req.csrfToken(), errors });
+        res.render('add-story', { token: req.csrfToken(), errors });
     }
 
 }))

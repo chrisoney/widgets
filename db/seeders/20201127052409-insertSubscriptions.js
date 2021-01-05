@@ -1,5 +1,5 @@
 'use strict';
-const { currentSubs } = require('../../current.js');
+const { tempSubs, currentSubs } = require('../../current.js');
 const { Recommendation } = require('../models')
 const { Op } = require('../models').Sequelize;
 
@@ -25,25 +25,25 @@ module.exports = {
         updatedAt: new Date()
       },
     */
-    let values = currentSubs;
-    let oldArray = await Recommendation.findAll({
-      where: {
-        userId: {
-          [Op.ne]: 1
-        }
-      }
-    })
-    for (let i = 0; i < oldArray.length; i++){
-      let oldObj = oldArray[i];
-      values.push({
-        book: `${Math.floor(Math.random() * 5)}`,
-        chapter: `${Math.floor(Math.random() * 30)}`,
-        userId: oldObj.userId,
-        storyId: oldObj.storyId,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      })
-    }
+    let values = tempSubs;
+    // let oldArray = await Recommendation.findAll({
+    //   where: {
+    //     userId: {
+    //       [Op.ne]: 1
+    //     }
+    //   }
+    // })
+    // for (let i = 0; i < oldArray.length; i++){
+    //   let oldObj = oldArray[i];
+    //   values.push({
+    //     book: `${Math.floor(Math.random() * 5)}`,
+    //     chapter: `${Math.floor(Math.random() * 30)}`,
+    //     userId: oldObj.userId,
+    //     storyId: oldObj.storyId,
+    //     createdAt: new Date(),
+    //     updatedAt: new Date()
+    //   })
+    // }
     return queryInterface.bulkInsert('Subscriptions', values, {});
   },
 
