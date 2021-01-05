@@ -692,4 +692,25 @@ const currentSubs = [
   },
 ];
 
-module.exports = { currentRecs, currentSubs };
+currentFollows = [
+  {
+    followerId: 1,
+    followingId: 2,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    followerId: 1,
+    followingId: 3,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    followerId: 1,
+    followingId: 4,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+];
+
+module.exports = { currentRecs, currentSubs, currentFollows };
