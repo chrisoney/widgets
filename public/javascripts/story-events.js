@@ -184,7 +184,7 @@ function reviewEvent(){
       document.querySelector(".new-review-buttons .submit-review").addEventListener("click", (e) => {
         const newText = document.querySelector(".new-review-textarea").value
         reviewUpdate(newText, storyId);
-        e.target.parentElement.innerHTML = newText;
+        e.target.parentElement.parentElement.innerHTML = newText;
       })
       document.querySelector(".new-review-buttons .cancel-review").addEventListener("click", (e) => {
         oldTarget.innerHTML = oldText;

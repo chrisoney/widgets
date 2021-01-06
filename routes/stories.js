@@ -7,7 +7,8 @@ const followsRouter = require('./follows');
 const subscriptionsRouter = require('./subscriptions');
 const recommendationsRouter = require('./recommendations')
 const searchRouter = require('./search')
-
+const faker = require('faker');
+const { restart } = require('nodemon');
 const router = express.Router();
 
 router.use("/follows", followsRouter);
@@ -140,6 +141,7 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
     const stories = user.subscribedStories;
     res.render("dashboard", { title:"Dashboard", stories })
     // res.json({ stories })
+    // res.send(faker.lorem.words(30));
 }))
 
 router.get("/:storyId/recommendation/", asyncHandler( async (req,res) => {

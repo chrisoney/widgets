@@ -525,7 +525,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '341',
+    chapter: '352',
     userId: 1, // Chris
     storyId: 9, // He Who Fights With Monsters
     createdAt: new Date(),
@@ -629,7 +629,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '243',
+    chapter: '245',
     userId: 1, // Chris
     storyId: 22, // Wake of the Ravager
     createdAt: new Date(),
@@ -653,7 +653,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '105',
+    chapter: '127',
     userId: 1, // Chris
     storyId: 25, // The Menocht Loop
     createdAt: new Date(),
@@ -677,7 +677,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '59',
+    chapter: '60',
     userId: 1, // Chris
     storyId: 28, // This Quest Is Bullshit
     createdAt: new Date(),
@@ -692,8 +692,8 @@ const currentSubs = [
     updatedAt: new Date()
   },
   {
-    book: '1',
-    chapter: 'epilogue',
+    book: '2',
+    chapter: '6',
     userId: 1, // Chris
     storyId: 30, // Artificial Jelly
     createdAt: new Date(),
@@ -773,7 +773,7 @@ const currentSubs = [
   },
   {
     book:'0',
-    chapter:'23',
+    chapter:'33',
     userId: 1, // Chris
     storyId: 40, // The Perfect Run
     createdAt: new Date(),

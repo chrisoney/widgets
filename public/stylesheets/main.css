@@ -70,6 +70,7 @@ body {
   width:100vw;
   height: 100vh;
   background: var(--light-blue);
+  /* background-image: url("/images/elephant.jpg"); */
   /* font-family: 'Cabin', sans-serif;; */
 }
 
