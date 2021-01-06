@@ -565,7 +565,7 @@ const currentSubs = [
   },
   {
     book: '3',
-    chapter: '9',
+    chapter: '54',
     userId: 1, // Chris
     storyId: 14, // Beastborne
     createdAt: new Date(),
