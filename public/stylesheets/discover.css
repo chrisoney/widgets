@@ -88,6 +88,8 @@ h1 {
 /* no story */
 .empty-container {
   list-style: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .empty-message {

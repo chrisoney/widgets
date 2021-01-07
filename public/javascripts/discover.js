@@ -50,7 +50,9 @@ document.querySelector("#stories").addEventListener("click", async e =>{
     const data = await res.json();
     if (data.length === 0){
       document.querySelector(".tab-content").innerHTML = `
-        <div class="no-content">There are no stories left to discover</div>
+      <li class="empty-container">
+        <div class="empty-message theme">There are no stories left to discover.</div>
+      </li>
     `;
     } else {
       const stories = data.map((story, idx)=> {
@@ -163,7 +165,9 @@ document.querySelector("#users").addEventListener("click", async e =>{
     const data = await res.json()
     if (data.length === 0){
       document.querySelector(".tab-content").innerHTML = `
-        <div class="no-content">There are no users left to discover</div>
+      <li class="empty-container">
+        <div class="empty-message theme">There are no users left to discover</div>
+      </li>
     `;
     } else {
       populateStories(data);
@@ -183,7 +187,9 @@ document.querySelector("#follows").addEventListener("click", async e =>{
     const data = await res.json()
     if (data.length === 0){
       document.querySelector(".tab-content").innerHTML = `
-        <div class="no-content">You aren't following anyone</div>
+      <li class="empty-container">
+        <div class="empty-message theme">You aren't following anyone</div>
+      </li>
     `;
     } else {
       populateStories(data);
