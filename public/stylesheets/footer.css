@@ -1,6 +1,7 @@
 .footer-container {
   background: var(--teal);
   height: 8%;
+  margin-top: 1%;
   width: 100%;
   position: absolute;
   bottom: 0;
