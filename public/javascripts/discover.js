@@ -161,10 +161,16 @@ document.querySelector("#users").addEventListener("click", async e =>{
   try {
     const res = await fetch("/stories/discover-users");
     const data = await res.json()
-    populateStories(data);
-    storyEventListeners();
-    storyDropdownEvents();
-    followEventListeners();
+    if (data.length === 0){
+      document.querySelector(".tab-content").innerHTML = `
+        <div class="no-content">There are no users left to discover</div>
+    `;
+    } else {
+      populateStories(data);
+      storyEventListeners();
+      storyDropdownEvents();
+      followEventListeners();
+    }
   } catch (e){
     throw new Error('Uh oh. Something went wrong...');
   }
@@ -175,10 +181,16 @@ document.querySelector("#follows").addEventListener("click", async e =>{
   try {
     const res = await fetch("/stories/discover-follows");
     const data = await res.json()
-    populateStories(data);
-    storyEventListeners();
-    storyDropdownEvents();
-    followEventListeners();
+    if (data.length === 0){
+      document.querySelector(".tab-content").innerHTML = `
+        <div class="no-content">You aren't following anyone</div>
+    `;
+    } else {
+      populateStories(data);
+      storyEventListeners();
+      storyDropdownEvents();
+      followEventListeners();
+    }
   } catch (e){
     throw new Error('Uh oh. Something went wrong...');
   }
