@@ -48,43 +48,48 @@ document.querySelector("#stories").addEventListener("click", async e =>{
   try {
     const res = await fetch("/stories/discover-stories");
     const data = await res.json();
-    
-    const stories = data.map((story, idx)=> {
-      return `
-      <li class="story-container">
-        <div class="story-header-container theme">
-          <span class="story-title">${story.title}</span>
-          <div class="story-button-container">
-            <span class="fas fa-chevron-circle-left toggle-${story.id}"></span>
-            <span class="fas fa-arrow-circle-right id-${story.id}"></span>
-          </div>
-        </div>
-        <div class="story-details-container container-${story.id} theme">
-          <div class="story-details-top theme">
-            <div class="story-details-top-left">
-              <a href=${story.link} class="link">Link to Story</a>
-            </div>
-            <div class="story-details-top-right">
-              <span class="subscribe-button sub-${story.id} theme">Subscribe</span>
-            </div>
-          </div>
-          <div class="story-details-bottom">
-            <div class="description-container theme">
-              <span id="${idx}" class="reveal">Description</span>
-              <p class="description-text-${idx} hidden">${story.description}</p>
-            </div>
-          </div>
-        </div>
-      </li>
-      `
-    })
-    document.querySelector(".tab-content").innerHTML = `
-      <ul>
-        ${stories.join("")}
-      </ul>
+    if (data.length === 0){
+      document.querySelector(".tab-content").innerHTML = `
+        <div class="no-content">There are no stories left to discover</div>
     `;
-    storyEventListeners();
-    storyDropdownEvents();
+    } else {
+      const stories = data.map((story, idx)=> {
+        return `
+        <li class="story-container">
+          <div class="story-header-container theme">
+            <span class="story-title">${story.title}</span>
+            <div class="story-button-container">
+              <span class="fas fa-chevron-circle-left toggle-${story.id}"></span>
+              <span class="fas fa-arrow-circle-right id-${story.id}"></span>
+            </div>
+          </div>
+          <div class="story-details-container container-${story.id} theme">
+            <div class="story-details-top theme">
+              <div class="story-details-top-left">
+                <a href=${story.link} class="link">Link to Story</a>
+              </div>
+              <div class="story-details-top-right">
+                <span class="subscribe-button sub-${story.id} theme">Subscribe</span>
+              </div>
+            </div>
+            <div class="story-details-bottom">
+              <div class="description-container theme">
+                <span id="${idx}" class="reveal">Description</span>
+                <p class="description-text-${idx} hidden">${story.description}</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        `
+      })
+      document.querySelector(".tab-content").innerHTML = `
+        <ul>
+          ${stories.join("")}
+        </ul>
+      `;
+      storyEventListeners();
+      storyDropdownEvents();
+    }
   } catch (e){
     throw new Error('Uh oh. Something went wrong...');
   }
