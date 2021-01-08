@@ -8,7 +8,6 @@ const subscriptionsRouter = require('./subscriptions');
 const recommendationsRouter = require('./recommendations')
 const searchRouter = require('./search')
 const faker = require('faker');
-const { restart } = require('nodemon');
 const router = express.Router();
 
 router.use("/follows", followsRouter);
