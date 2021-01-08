@@ -52,7 +52,10 @@ block content
                   - j++
             div(class="review-container")
               span(class="reveal") Review
-              span(class="review-text theme hidden")=story.recommendation[0].review
+              if (recommendation.review)
+                +review(recommendation.id, recommendation.review, false)
+              else
+                +review(null, "No review yet", true)
       div(class="recommend-container theme")
         each rec in recs
           div(class="single-rec-container")
