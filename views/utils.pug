@@ -36,5 +36,13 @@ mixin dashStoryDetail(label, value, id, attr)
       span(class="detail-label")=label
       span(id=id class=`detail-value ${attr}`)=value
 
+mixin review(id, value, none)
+  div(id=id class=`review-text theme hidden ${none ? "none" : ""}`)= value
+  div(class="new-review hidden")
+    textarea(class="new-review-textarea")
+    div(class="new-review-buttons")
+      button(class="submit-review theme") Submit
+      button(class="delete-review theme") Delete
+      button(class="cancel-review theme") Cancel
 
 

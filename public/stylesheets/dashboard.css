@@ -307,11 +307,6 @@ h1 {
   color: var(--darker-blue)
 }
 
-.hidden {
-  display: none;
-  transition: 1s ease-in-out;
-}
-
 .description-container {
   border-bottom: 2px solid var(--light-border-gray);
 }
@@ -324,7 +319,7 @@ h1 {
   margin: 10px;
 }
 
-.review-texxt {
+.review-text {
   cursor: pointer;
 }
 
@@ -339,6 +334,11 @@ h1 {
 
 .new-review {
   display: flex;
+}
+
+.hidden {
+  display: none;
+  transition: 1s ease-in-out;
 }
 
 .new-review-textarea {
