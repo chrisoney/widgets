@@ -24,7 +24,7 @@ function subscribeButtons(oldStoryId){
         .forEach(ele => ele.addEventListener("click", async (e) => {
         e.preventDefault();
         const oldStoryId = e.target.classList[1].split("-")[1];
-        let res = await fetch("http://localhost:8080/stories/subscriptions/toggle", {
+        let res = await fetch("/stories/subscriptions/toggle", {
             credentials: 'same-origin',
             method: "POST",
             headers: {
@@ -38,7 +38,7 @@ function subscribeButtons(oldStoryId){
 }
 
 const subscribeToggle = async (oldStoryId) => {
-    let res = await fetch("http://localhost:8080/stories/subscriptions/toggle", {
+    let res = await fetch("/stories/subscriptions/toggle", {
         credentials: 'same-origin',
         method: "POST",
         headers: {
