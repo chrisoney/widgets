@@ -49,7 +49,7 @@ const submitSearch = async (searchEle, dashListEle) => {
   const res = await fetch(`/stories/search?term=${searchEle.value}`, {})
   const data = await res.json();
   const stories = data.stories.map((story, idx)=> {
-    let recommendation = story.recommendation[0] || { id: null, rating: 0, review: ''}
+    let recommendation = story.Recommendations[0] || { id: null, rating: 0, review: ''}
     return `
     <li class="story-container theme">
       <div class="story-header-container theme">

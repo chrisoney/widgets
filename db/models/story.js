@@ -28,8 +28,8 @@ module.exports = (sequelize, DataTypes) => {
 
     Story.belongsToMany(models.User, columnMappingOne);
     Story.belongsToMany(models.User, columnMappingTwo);
-    Story.hasMany(models.Subscription, { as: 'subscription', foreignKey: 'storyId' })
-    Story.hasMany(models.Recommendation, { as: 'recommendation', foreignKey: 'storyId' })
+    Story.hasMany(models.Subscription, { foreignKey: 'storyId' })
+    Story.hasMany(models.Recommendation, { foreignKey: 'storyId' })
   };
   return Story;
 };

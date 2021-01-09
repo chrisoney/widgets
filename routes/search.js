@@ -21,7 +21,6 @@ router.get("/", asyncHandler( async (req,res) =>{
           },
           include: {
               model: Recommendation,
-              as: 'recommendation',
               where: { userId: req.session.auth.userId },
               required: false,
               attributes: ["id", "rating", "review", "userId", "storyId"]

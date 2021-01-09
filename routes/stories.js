@@ -2,12 +2,11 @@ const express = require('express');
 const { check, validationResult } = require('express-validator');
 const { csrfProtection, asyncHandler } = require('./utils');
 const { Story, User, Subscription, Recommendation } = require('../db/models');
-const { Op } = require('../db/models').Sequelize;
+const { Op } = require('../db/models').sequelize;
 const followsRouter = require('./follows');
 const subscriptionsRouter = require('./subscriptions');
 const recommendationsRouter = require('./recommendations')
 const searchRouter = require('./search')
-const faker = require('faker');
 const router = express.Router();
 
 router.use("/follows", followsRouter);
@@ -25,7 +24,6 @@ router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
         where: { id: storyId },
         include: [{
             model: Subscription,
-            as: 'subscription',
             where: {
                 userId: req.session.auth.userId
             },
@@ -33,7 +31,6 @@ router.get("/:id(\\d+)", asyncHandler ( async (req, res) => {
         },
         {
             model: Recommendation,
-            as: 'recommendation',
             where: {
                 userId: req.session.auth.userId
             },
@@ -124,17 +121,22 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
             },
             include: {
                 model: Recommendation,
-                as: 'recommendation',
                 where: { userId: req.session.auth.userId },
                 required: false,
                 attributes: ["id", "rating", "review", "userId", "storyId"]
             },
         },
+        order: [
+            [{ model: Story, as: 'subscribedStories' },
+            Subscription,
+            "updatedAt", 
+            "DESC"]
+        ]
     })
     let stories = user.subscribedStories;
-    stories = stories.sort((a,b) => {
-        return b.Subscription.updatedAt - a.Subscription.updatedAt
-    })
+    // stories = stories.sort((a,b) => {
+    //     return b.Subscription.updatedAt - a.Subscription.updatedAt
+    // })
     res.render("dashboard", { title:"Dashboard", stories })
     // res.json({ stories })
 }))

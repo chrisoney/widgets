@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Subscription.associate = function(models) {
-    Subscription.belongsTo(models.Story, { foreignKey: 'storyId'})
+    Subscription.belongsTo(models.Story, { foreignKey: 'storyId', as: 'subscriptionStory'})
     Subscription.belongsTo(models.User, { foreignKey: 'userId'})
   };
   return Subscription;
