@@ -121,7 +121,7 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
             model: Story,
             as: 'subscribedStories',
             through: {
-                attributes: ["book", "chapter"]
+                attributes: ["book", "chapter", "updatedAt"]
             },
             include: {
                 model: Recommendation,
@@ -130,17 +130,16 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
                 required: false,
                 attributes: ["id", "rating", "review", "userId", "storyId"]
             },
+            order: [[ 
+                {model: Subscription, as: 'subscription'}, 
+                "updatedAt",
+                "DESC"
+            ]],
         },
-        order: [[ 
-            {model: Story, as: 'subscribedStories'}, 
-            "id",
-            "ASC" 
-        ]],
     })
     const stories = user.subscribedStories;
-    res.render("dashboard", { title:"Dashboard", stories })
-    // res.json({ stories })
-    // res.send(faker.lorem.words(30));
+    // res.render("dashboard", { title:"Dashboard", stories })
+    res.json({ stories })
 }))
 
 router.get("/:storyId/recommendation/", asyncHandler( async (req,res) => {
