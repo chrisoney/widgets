@@ -115,13 +115,12 @@ router.post("/create", csrfProtection, storyValidators, asyncHandler( async (req
 }))
 
 router.get("/dashboard", asyncHandler( async (req,res) =>{
-    const user = await User.findOne({
-        where: { id: req.session.auth.userId },
+    const user = await User.findByPk( req.session.auth.userId, {
         include: {
             model: Story,
             as: 'subscribedStories',
             through: {
-                attributes: ["book", "chapter", "updatedAt"]
+                attributes: ["book", "chapter", "updatedAt"],
             },
             include: {
                 model: Recommendation,
@@ -130,16 +129,14 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
                 required: false,
                 attributes: ["id", "rating", "review", "userId", "storyId"]
             },
-            order: [[ 
-                {model: Subscription, as: 'subscription'}, 
-                "updatedAt",
-                "DESC"
-            ]],
         },
     })
-    const stories = user.subscribedStories;
-    // res.render("dashboard", { title:"Dashboard", stories })
-    res.json({ stories })
+    let stories = user.subscribedStories;
+    stories = stories.sort((a,b) => {
+        return b.Subscription.updatedAt - a.Subscription.updatedAt
+    })
+    res.render("dashboard", { title:"Dashboard", stories })
+    // res.json({ stories })
 }))
 
 router.get("/:storyId/recommendation/", asyncHandler( async (req,res) => {
