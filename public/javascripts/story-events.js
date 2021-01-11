@@ -166,7 +166,6 @@ function reviewEvent(){
   document.querySelectorAll(".review-text")
     .forEach(ele => ele.addEventListener("click", (e) => {
       const oldText = e.target.innerHTML;
-      const storyId = e.target.parentElement.id;
       const oldTarget = e.target;
       let none = false;
       if (e.target.classList[1] === "none") none = true;
@@ -182,14 +181,6 @@ function reviewEvent(){
       //     </div>
       //   </div>
       // `
-      document.querySelector(".submit-review").addEventListener("click", (e) => {
-        e.preventDefault();
-        const newText = e.target.parentElement.previousSibling.value;
-        reviewUpdate(newText, storyId);
-        e.target.parentElement.parentElement.previousSibling.innerHTML = newText;
-        e.target.parentElement.previousSibling.value = "";
-        e.target.parentElement.parentElement.classList.toggle("hidden");
-      })
       document.querySelector(".new-review-buttons .cancel-review").addEventListener("click", (e) => {
         oldTarget.innerHTML = oldText;
         if (none) oldTarget.classList.add("none");
@@ -202,6 +193,16 @@ function reviewEvent(){
       })
 
     }))
+
+    document.querySelector(".submit-review").addEventListener("click", (e) => {
+      e.preventDefault();
+      const storyId = e.target.parentElement.parentElement.parentElement.id;
+      const newText = e.target.parentElement.previousSibling.value;
+      reviewUpdate(newText, storyId);
+      e.target.parentElement.parentElement.previousSibling.innerHTML = newText;
+      // e.target.parentElement.previousSibling.value = "";
+      e.target.parentElement.parentElement.classList.toggle("hidden");
+    })
 }
 
 
