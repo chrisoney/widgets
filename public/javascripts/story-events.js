@@ -196,12 +196,15 @@ function reviewEvent(){
 
     document.querySelector(".submit-review").addEventListener("click", (e) => {
       e.preventDefault();
-      const storyId = e.target.parentElement.parentElement.parentElement.id;
-      const newText = e.target.parentElement.previousSibling.value;
+      const parent = e.target.parentElement;
+      const grandparent = parent.parentElement;
+
+      const storyId = grandparent.parentElement.id;
+      const newText = parent.previousSibling.value;
       reviewUpdate(newText, storyId);
-      e.target.parentElement.parentElement.previousSibling.innerHTML = newText;
-      // e.target.parentElement.previousSibling.value = "";
-      e.target.parentElement.parentElement.classList.toggle("hidden");
+      grandparent.previousSibling.innerHTML = newText;
+      parent.previousSibling.value = "";
+      grandparent.classList.toggle("hidden");
     })
 }
 
