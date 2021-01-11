@@ -182,10 +182,13 @@ function reviewEvent(){
       //     </div>
       //   </div>
       // `
-      document.querySelector(".new-review-buttons .submit-review").addEventListener("click", (e) => {
-        const newText = document.querySelector(".new-review-textarea").value
+      document.querySelector(".submit-review").addEventListener("click", (e) => {
+        e.preventDefault();
+        const newText = e.target.parentElement.previousSibling.value;
         reviewUpdate(newText, storyId);
-        e.target.parentElement.parentElement.innerHTML = newText;
+        e.target.parentElement.parentElement.previousSibling.innerHTML = newText;
+        e.target.parentElement.previousSibling.value = "";
+        e.target.parentElement.parentElement.classList.toggle("hidden");
       })
       document.querySelector(".new-review-buttons .cancel-review").addEventListener("click", (e) => {
         oldTarget.innerHTML = oldText;
@@ -198,7 +201,7 @@ function reviewEvent(){
         oldTarget.classList.add("none");
       })
 
-    }, {once: true }))
+    }))
 }
 
 
