@@ -171,16 +171,17 @@ function reviewEvent(){
       let none = false;
       if (e.target.classList[1] === "none") none = true;
       e.target.classList.remove("none");
-      e.target.innerHTML = `
-        <div class="new-review">
-          <textarea class="new-review-textarea"></textarea>
-          <div class="new-review-buttons">
-            <button class="submit-review theme">Submit</button>
-            <button class="delete-review theme">Delete</button>
-            <button class="cancel-review theme">Cancel</button>
-          </div>
-        </div>
-      `
+      e.target.nextSibling.classList.toggle("hidden");
+      // e.target.innerHTML = `
+      //   <div class="new-review">
+      //     <textarea class="new-review-textarea"></textarea>
+      //     <div class="new-review-buttons">
+      //       <button class="submit-review theme">Submit</button>
+      //       <button class="delete-review theme">Delete</button>
+      //       <button class="cancel-review theme">Cancel</button>
+      //     </div>
+      //   </div>
+      // `
       document.querySelector(".new-review-buttons .submit-review").addEventListener("click", (e) => {
         const newText = document.querySelector(".new-review-textarea").value
         reviewUpdate(newText, storyId);
