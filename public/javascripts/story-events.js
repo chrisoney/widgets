@@ -194,7 +194,8 @@ function reviewEvent(){
 
     }))
 
-    document.querySelector(".submit-review").addEventListener("click", (e) => {
+    document.querySelectorAll(".submit-review")
+    .forEach((ele) => ele.addEventListener("click", (e) => {
       e.preventDefault();
       const parent = e.target.parentElement;
       const grandparent = parent.parentElement;
@@ -205,7 +206,7 @@ function reviewEvent(){
       grandparent.previousSibling.innerHTML = newText;
       parent.previousSibling.value = "";
       grandparent.classList.toggle("hidden");
-    })
+    }))
 }
 
 
