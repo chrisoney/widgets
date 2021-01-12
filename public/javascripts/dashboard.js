@@ -104,7 +104,7 @@ searchBar.addEventListener("search", (e) => {
 
 searchBar.addEventListener("input", (e) => {
   e.preventDefault();
-  submitSearch(e.target, dashList)
+  submitSearch(e.target, dashList);
 })
 
 document.querySelector(".fa-search").addEventListener("click", (e)=> {
