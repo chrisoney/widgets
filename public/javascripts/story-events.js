@@ -204,10 +204,11 @@ function reviewEvent(){
       grandparent.classList.toggle("hidden");
     }))
 
-    document.querySelector(".cancel-review").addEventListener("click", (e) => {
-      oldTarget.innerHTML = oldText;
-      if (none) oldTarget.classList.add("none");
-    })
+    document.querySelectorAll(".cancel-review")
+    .forEach(ele => ele.addEventListener("click", (e) => {
+      const grandparent = e.target.parentElement.parentElement;
+      grandparent.classList.toggle("hidden");
+    }))
 }
 
 
