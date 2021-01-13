@@ -181,10 +181,6 @@ function reviewEvent(){
       //     </div>
       //   </div>
       // `
-      document.querySelector(".new-review-buttons .cancel-review").addEventListener("click", (e) => {
-        oldTarget.innerHTML = oldText;
-        if (none) oldTarget.classList.add("none");
-      })
 
       document.querySelector(".new-review-buttons .delete-review").addEventListener("click", (e) => {
         reviewUpdate(null, storyId);
@@ -207,6 +203,11 @@ function reviewEvent(){
       parent.previousSibling.value = "";
       grandparent.classList.toggle("hidden");
     }))
+
+    document.querySelector(".cancel-review").addEventListener("click", (e) => {
+      oldTarget.innerHTML = oldText;
+      if (none) oldTarget.classList.add("none");
+    })
 }
 
 
