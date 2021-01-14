@@ -204,11 +204,12 @@ function reviewEvent(){
       grandparent.classList.toggle("hidden");
     }))
 
-    document.querySelector(".new-review-buttons .delete-review").addEventListener("click", (e) => {
+    document.querySelectorAll(".delete-review")
+    .forEach(ele => ele.addEventListener("click", (e) => {
       reviewUpdate(null, storyId);
       oldTarget.innerHTML = 'No review yet';
       oldTarget.classList.add("none");
-    })
+    }))
 }
 
 
