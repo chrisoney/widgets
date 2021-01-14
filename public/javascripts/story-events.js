@@ -165,10 +165,7 @@ function newRating(){
 function reviewEvent(){
   document.querySelectorAll(".review-text")
     .forEach(ele => ele.addEventListener("click", (e) => {
-      const oldText = e.target.innerHTML;
-      const oldTarget = e.target;
-      let none = false;
-      if (e.target.classList[1] === "none") none = true;
+
       e.target.classList.remove("none");
       e.target.nextSibling.classList.toggle("hidden");
       // e.target.innerHTML = `
@@ -183,7 +180,7 @@ function reviewEvent(){
       // `
 
     }))
-
+    // Fantastic worldbuilding even if the MC is annoying
     document.querySelectorAll(".submit-review")
     .forEach((ele) => ele.addEventListener("click", (e) => {
       e.preventDefault();
@@ -206,9 +203,12 @@ function reviewEvent(){
 
     document.querySelectorAll(".delete-review")
     .forEach(ele => ele.addEventListener("click", (e) => {
+      const grandparent = e.target.parentElement.parentElement;
+      const storyId = grandparent.parentElement.id;
       reviewUpdate(null, storyId);
-      oldTarget.innerHTML = 'No review yet';
-      oldTarget.classList.add("none");
+      grandparent.previousSibling.innerHTML = 'No review yet';
+      grandparent.previousSibling.classList.add('none');
+      grandparent.classList.toggle("hidden");
     }))
 }
 
