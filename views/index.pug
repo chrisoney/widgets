@@ -13,5 +13,6 @@ block content
     h1(class="title")= title
     if locals.authenticated
       +preview("stories-link", "fas fa-book", "Stories", storiesDescription, "https://lithub.com/wp-content/uploads/2015/06/book-piles.jpg")
+      +preview("skills-link", "fas fa-book", "GURPS Skills", gurpsSkillsDescription, "https://lithub.com/wp-content/uploads/2015/06/book-piles.jpg")
     else
       include splash
