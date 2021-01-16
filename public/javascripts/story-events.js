@@ -212,6 +212,12 @@ function reviewEvent(){
     }))
 }
 
+document.querySelector("#dark-mode-toggle-button")
+  .addEventListener("click", () => {
+    document.querySelectorAll(".theme")
+      .forEach(ele => ele.classList.toggle("dm"));
+  })
+
 
 export { 
   modalEvents,
