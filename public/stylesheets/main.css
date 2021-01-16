@@ -76,6 +76,7 @@ body {
 
 body.dm {
   background: var(--light-gray);
+  color: var(--white);
 }
 
 .error-container {
