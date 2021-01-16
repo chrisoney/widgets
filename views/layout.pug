@@ -12,6 +12,7 @@ html
   body(class="theme")
     nav(class="top-nav")
       img(src="/images/widget-white.png" class="widget-icon")
+      button(id="dark-mode-toggle-button") Dark Mode
       if locals.authenticated
         form(class='nav-button logout' action='/users/logout' method='post')
           input(class='' type='submit' value='Logout')
