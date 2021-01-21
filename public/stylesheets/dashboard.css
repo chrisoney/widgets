@@ -50,6 +50,15 @@ h1 {
 
 input[type=search]::-webkit-search-cancel-button {
   cursor: pointer;
+
+  /* return to https://stackoverflow.com/questions/20804016/editing-input-type-search-pseudo-element-button-x to decide */
+  /* -webkit-appearance: none;
+  height: 1em;
+  width: 1em;
+  border-radius: 50em;
+  background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg) no-repeat 50% 50%;
+  filter: rgb(128, 122, 122);
+  background-size: contain; */
 }
 
 .search-icon {

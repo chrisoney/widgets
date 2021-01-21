@@ -3,7 +3,9 @@ const router = express.Router();
 
 
 router.get("/", (req, res) => {
-  res.redirect('/dashboard');
+  // console.log(req._parsedOriginalUrl.path);
+  res.send(req._parsedOriginalUrl.path)
+  // res.redirect('/dashboard');
 })
 
 module.exports = router;

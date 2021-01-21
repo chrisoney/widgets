@@ -7,12 +7,14 @@ const followsRouter = require('./follows');
 const subscriptionsRouter = require('./subscriptions');
 const recommendationsRouter = require('./recommendations')
 const searchRouter = require('./search')
+const gurpsRouter = require('./gurps')
 const router = express.Router();
 
 router.use("/follows", followsRouter);
 router.use("/subscriptions", subscriptionsRouter);
 router.use("/recommendations", recommendationsRouter);
 router.use("/search", searchRouter);
+router.use("/:id/gurps", gurpsRouter);
 
 router.get("/", (req, res) => {
     res.redirect('/dashboard');
