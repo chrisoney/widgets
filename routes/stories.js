@@ -139,6 +139,8 @@ router.get("/dashboard", asyncHandler( async (req,res) =>{
     // stories = stories.sort((a,b) => {
     //     return b.Subscription.updatedAt - a.Subscription.updatedAt
     // })
+    console.log(res.locals.user.username)
+    // let locals = { user: { username: 'Steve '}}
     res.render("dashboard", { title:"Dashboard", stories })
     // res.json({ stories })
 }))
