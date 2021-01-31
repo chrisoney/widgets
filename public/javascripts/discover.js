@@ -36,6 +36,7 @@ function populateRating(rating, container){
 window.addEventListener("DOMContentLoaded", (e)=> {
   storyEventListeners();
   storyDropdownEvents();
+  storyTabClick();
 })
 
 const tabs = document.querySelectorAll(".nav-item")
@@ -44,7 +45,7 @@ tabs.forEach((tab) => tab.addEventListener("click", ()=>{
   tab.classList.add("active");
 }))
 
-document.querySelector("#stories").addEventListener("click", async e =>{
+const storyTabClick = async () => {
   try {
     const res = await fetch("/stories/discover-stories");
     const data = await res.json();
@@ -95,7 +96,9 @@ document.querySelector("#stories").addEventListener("click", async e =>{
   } catch (e){
     throw new Error('Uh oh. Something went wrong...');
   }
-});
+}
+
+document.querySelector("#stories").addEventListener("click", async e => storyTabClick());
 
 function populateStories(data){
   const result = [];
