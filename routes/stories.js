@@ -185,18 +185,22 @@ router.post("/:storyId/recommendation/", asyncHandler( async (req, res) => {
 
 
 router.get("/discover", asyncHandler( async (req,res) =>{
-    const stories = await Story.findAll({ 
-        include: { 
-            model:User,
-            as: 'subscribingUsers',
-            through: { attributes: [] }
-        }
-    }).filter(story => {
-        const users = story.subscribingUsers.map(user => user.id);
-        return users.every(id => id !== req.session.auth.userId)
-    });
-
-    res.render("discover", { title:"Discover", stories })
+    // const stories = await Story.findAll({ 
+    //     include: { 
+    //         model:User,
+    //         as: 'subscribingUsers',
+    //         through: { attributes: [] }
+    //     }
+    // }).filter(story => {
+    //     const users = story.subscribingUsers.map(user => user.id);
+    //     return users.every(id => id !== req.session.auth.userId)
+    // });
+    // const stories = await Story.findAll({
+    //     include: {
+    //         model: User
+    //     }
+    // })
+    res.render("discover", { title:"Discover" })
 }))
 
 router.get("/discover-stories", asyncHandler( async (req,res) =>{
