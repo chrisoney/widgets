@@ -493,7 +493,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '512',
+    chapter: '535',
     userId: 1, // Chris
     storyId: 5, // Defiance of the Fall
     createdAt: new Date(),
@@ -549,7 +549,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '151',
+    chapter: '158',
     userId: 1, // Chris
     storyId: 12, // Inexorable Chaos
     createdAt: new Date(),
