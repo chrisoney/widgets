@@ -509,7 +509,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '1421',
+    chapter: '1470',
     userId: 1, // Chris
     storyId: 7, // The Legend of Randidly Ghosthound
     createdAt: new Date(),
