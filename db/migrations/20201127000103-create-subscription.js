@@ -19,7 +19,7 @@ module.exports = {
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        unique: 'actions_unique',
+        unique: 'subscriptions_unique',
         references: {
           model: "Users",
           key: "id"
@@ -28,7 +28,7 @@ module.exports = {
       storyId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        unique: 'actions_unique',
+        unique: 'subscriptions_unique',
         references: {
           model: "Stories",
           key: "id"
@@ -44,7 +44,7 @@ module.exports = {
       }
     }, {
       uniqueKeys: {
-        actions_unique: {
+        subscriptions_unique: {
             fields: ['userId', 'storyId']
         }
     }
