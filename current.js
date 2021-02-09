@@ -456,6 +456,14 @@ const currentRecs = [
     createdAt: new Date(),
     updatedAt: new Date()
   },
+  {
+    rating: 4,
+    review: 'Silly story but well enough written',
+    userId: 1, // Chris
+    storyId: 44, // Beware of Chick
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
 ]
 
 const currentSubs = [
@@ -800,6 +808,14 @@ const currentSubs = [
     chapter:'94',
     userId: 1, // Chris
     storyId: 43, // The Primal Hunter
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    book:'0',
+    chapter:'38',
+    userId: 1, // Chris
+    storyId: 44, // Beware of Chicken
     createdAt: new Date(),
     updatedAt: new Date()
   },
@@ -1213,6 +1229,16 @@ const currentStories = [
     Jake, a seemingly average office worker, finds himself thrust into this new world. Into a tutorial filled with dangers and opportunities. In a world that should breed fear and concern, an environment that makes his fellow coworkers falter, Jake instead finds himself thriving.
     Perhaps… Jake was born for this kind of world, to begin with.`,
     link: 'https://www.royalroad.com/fiction/36049/the-primal-hunter',
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    title: 'Beware of Chicken',
+    description: `Jin Rou wanted to be a cultivator who defied the heavens, and surpassed all limits.
+    Unfortunately for him, he died, and now I’m stuck here. Arrogant young masters? Heavenly tribulations? Cultivating for days on end, then getting into life or death battles?
+    Yeah, no thanks. I'm getting out of here.
+    In which a transmigrator decides that the only winning move is not to play.`,
+    link: 'https://www.royalroad.com/fiction/39408/beware-of-chicken',
     createdAt: new Date(),
     updatedAt: new Date()
   },
