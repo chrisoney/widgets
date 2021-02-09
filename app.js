@@ -9,7 +9,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const storiesRouter = require('./routes/stories');
-const podcastsRouter = require('./routes/podcasts');
+const audiobookRouter = require('./routes/audiobooks');
 const { restoreUser, requireAuth } = require('./auth');
 const methodOverride = require('method-override');
 const { session_secret } = require('./config');
@@ -46,7 +46,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use(requireAuth)
 app.use('/stories', storiesRouter);
-app.use('/podcasts', podcastsRouter)
+app.use('/audiobooks', audiobookRouter)
 
 app.get("/grabdata", asyncHandler( async(req, res) => {
   const data = await User.findByPk(req.session.auth.userId, {
