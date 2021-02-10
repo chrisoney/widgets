@@ -66,7 +66,7 @@ app.get("/grabdata", asyncHandler( async(req, res) => {
     }
   ]
   })
-  res.json({ data })
+  res.render('testing',{ data })
 }))
 
 // catch 404 and forward to error handler

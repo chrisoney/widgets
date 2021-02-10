@@ -26,7 +26,7 @@ module.exports = {
     let values = currentRecs;
     function makeRecommendations (number, user, story, reviews){
       const result = [];
-      for (let k = start+1; k <= user; k++){
+      for (let k = 2; k <= user; k++){
         let stories = [];
         for (let i = 0; i < number; i++){
           let spot = Math.floor(Math.random() * reviews.length)
@@ -63,7 +63,7 @@ module.exports = {
     ]
     // If we don't want to remigrate
     // let start = await User.findOne({ username: "Chris"});
-    let start = start.id;
+    // let start = start.id;
     let numUsers = await User.count();
     let numStories = await Story.count();
     let recArray = makeRecommendations(5, numUsers, numStories, reviews);

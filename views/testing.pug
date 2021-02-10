@@ -1,0 +1,5 @@
+extends layout
+
+block content
+  div Hello
+  object(class="container")= `${JSON.stringify(data, null, "  ")}`
