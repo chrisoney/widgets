@@ -2,4 +2,4 @@ extends layout
 
 block content
   div Hello
-  object(class="container")= `${JSON.stringify(data, null, "  ")}`
+  textarea(class="container" readonly)=`${JSON.stringify(data, null, "  ")}`

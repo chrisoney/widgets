@@ -557,7 +557,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '158',
+    chapter: '161',
     userId: 1, // Chris
     storyId: 12, // Inexorable Chaos
     createdAt: new Date(),
