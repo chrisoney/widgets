@@ -820,8 +820,8 @@ const currentSubs = [
     updatedAt: new Date()
   },
   {
-    book: '0',
-    chapter: 'Laid Out In Pure Math: Prologue 2/2',
+    book: '1',
+    chapter: 'Side Chapter 9',
     userId: 1, // Chris
     storyId: 45, // The Prince Has No Pants
     createdAt: new Date(),
