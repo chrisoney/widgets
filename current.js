@@ -517,7 +517,7 @@ const currentSubs = [
   },
   {
     book: '0',
-    chapter: '1470',
+    chapter: '1486',
     userId: 1, // Chris
     storyId: 7, // The Legend of Randidly Ghosthound
     createdAt: new Date(),
@@ -819,6 +819,14 @@ const currentSubs = [
     createdAt: new Date(),
     updatedAt: new Date()
   },
+  {
+    book: '0',
+    chapter: 'Laid Out In Pure Math: Prologue 2/2',
+    userId: 1, // Chris
+    storyId: 45, // The Prince Has No Pants
+    createdAt: new Date(),
+    updatedAt: new Date()
+  }
 ];
 
 const currentFollows = [
@@ -1239,6 +1247,16 @@ const currentStories = [
     Yeah, no thanks. I'm getting out of here.
     In which a transmigrator decides that the only winning move is not to play.`,
     link: 'https://www.royalroad.com/fiction/39408/beware-of-chicken',
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    title: `Ben's Damn Adventure: The Prince Has No Pants`,
+    description: `All life on Earth has been stolen away by The System, transported to another world at the behest of a distant galactic empire, who lived in terror of humanity's potential.
+    Ben was a normal, slightly above average man, and had been about to go on the first real vacation of his adult life. Now he must contend with danger and mystery in a world of monsters, magic and treasure, armed with nothing but his wits, and the special item given to him by The System.
+    This is his adventure.
+    Welcome to The World.`,
+    link: 'https://www.royalroad.com/fiction/32411/bens-damn-adventure-the-prince-has-no-pants',
     createdAt: new Date(),
     updatedAt: new Date()
   },
