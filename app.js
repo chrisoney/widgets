@@ -14,7 +14,8 @@ const { restoreUser, requireAuth } = require('./auth');
 const methodOverride = require('method-override');
 const { session_secret } = require('./config');
 const { asyncHandler } = require('./routes/utils');
-const { User, Recommendation, Subscription } = require('./db/models')
+const { User, Story, Recommendation, Subscription } = require('./db/models')
+const { Op } = require('./db/models').Sequelize;
 const app = express();
 
 // view engine setup
@@ -67,6 +68,30 @@ app.get("/grabdata", asyncHandler( async(req, res) => {
   ]
   })
   res.render('testing',{ data })
+}))
+
+app.get("/testing-testing", asyncHandler( async(req, res) => {
+  const data = await Story.findAll({
+    attributes: ["title"],
+    where: {
+      id: {
+        [Op.lt]: 5
+      }
+    },
+    include: [{
+      model: User,
+      as: 'subscribingUsers',
+      attributes: ["username"],
+      where: { username: 'chris'},
+      required: false
+    },
+    {
+      model: Recommendation,
+      where: { rating: 5}
+    }
+  ]
+  })
+  res.json({ data })
 }))
 
 // catch 404 and forward to error handler

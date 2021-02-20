@@ -788,8 +788,8 @@ const currentSubs = [
     updatedAt: new Date()
   },
   {
-    book:'0',
-    chapter:'23',
+    book:'2',
+    chapter:'1',
     userId: 1, // Chris
     storyId: 41, // Apocalypse: Generic System
     createdAt: new Date(),
@@ -820,8 +820,8 @@ const currentSubs = [
     updatedAt: new Date()
   },
   {
-    book: '1',
-    chapter: 'Side Chapter 9',
+    book: '2',
+    chapter: '1',
     userId: 1, // Chris
     storyId: 45, // The Prince Has No Pants
     createdAt: new Date(),
