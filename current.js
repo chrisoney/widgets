@@ -821,7 +821,7 @@ const currentSubs = [
   },
   {
     book: '3',
-    chapter: '1',
+    chapter: 'Problem Kidney And Moral Liver: Chapter 5',
     userId: 1, // Chris
     storyId: 45, // The Prince Has No Pants
     createdAt: new Date(),
