@@ -820,7 +820,7 @@ const currentSubs = [
     updatedAt: new Date()
   },
   {
-    book: '2',
+    book: '3',
     chapter: '1',
     userId: 1, // Chris
     storyId: 45, // The Prince Has No Pants
