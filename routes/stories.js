@@ -7,12 +7,22 @@ const followsRouter = require('./follows');
 const subscriptionsRouter = require('./subscriptions');
 const recommendationsRouter = require('./recommendations')
 const searchRouter = require('./search')
+const testRouter = require('./test')
 const router = express.Router();
+
+const middlewareArray = [
+    function(req,res,next){
+        req.storyId = req.params.storyId;
+        next();
+    },
+    testRouter
+]
 
 router.use("/follows", followsRouter);
 router.use("/subscriptions", subscriptionsRouter);
 router.use("/recommendations", recommendationsRouter);
 router.use("/search", searchRouter);
+router.use("/:storyId/test", middlewareArray);
 
 router.get("/", (req, res) => {
     res.redirect('/dashboard');
