@@ -12,24 +12,46 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING
     }
   }, {});
-  Story.associate = function(models) {
-    const columnMappingOne = { // Story -> User, through Subscription
+  Story.associate = function (models) {
+    const columnMappingOne = {
+      // Story -> User, through Subscription
       through: 'Subscription',
       otherKey: 'userId',
       foreignKey: 'storyId',
-      as: 'subscribingUsers'
-    }
-    const columnMappingTwo = { // Story -> User, through Recommendation
+      as: 'subscribingUsers',
+    };
+    const columnMappingTwo = {
+      // Story -> User, through Recommendation
       through: 'Recommendation',
       otherKey: 'userId',
       foreignKey: 'storyId',
-      as: 'recommendingUsers'
-    }
+      as: 'recommendingUsers',
+    };
 
     Story.belongsToMany(models.User, columnMappingOne);
     Story.belongsToMany(models.User, columnMappingTwo);
-    Story.hasMany(models.Subscription, { foreignKey: 'storyId' })
-    Story.hasMany(models.Recommendation, { foreignKey: 'storyId' })
-  };
+    Story.hasMany(models.Subscription, { foreignKey: 'storyId' });
+    Story.hasMany(models.Recommendation, { foreignKey: 'storyId' });
+
+    Story.belongsToMany(models.User, {
+      through: {
+        model: 'Like',
+        unique: false,
+        scope: {
+          likeableType: 'story',
+        },
+      },
+      as: 'likingUsers',
+      foreignKey: 'likeableId',
+      constraints: false,
+    });
+    // Story.hasMany(models.Like, {
+    //   foreignKey: 'likeableId',
+    //   // constraints: false,
+    //   // scope: {
+    //   //   likeableType: 'story',
+    //   // },
+    // });
+  };;
   return Story;
 };

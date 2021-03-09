@@ -7,7 +7,18 @@ module.exports = (sequelize, DataTypes) => {
     link: DataTypes.STRING
   }, {});
   Audiobook.associate = function(models) {
-    // associations can be defined here
+    Audiobook.belongsToMany(models.User, {
+      through: {
+        model: 'Like',
+        unique: false,
+        scope: {
+          likeableType: 'audiobook',
+        },
+      },
+      foreignKey: 'likeableId',
+      as: 'likingUsers',
+      constraints: false,
+    });
   };
   return Audiobook;
 };

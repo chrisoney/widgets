@@ -14,7 +14,14 @@ const { restoreUser, requireAuth } = require('./auth');
 const methodOverride = require('method-override');
 const { session_secret } = require('./config');
 const { asyncHandler } = require('./routes/utils');
-const { User, Story, Recommendation, Subscription } = require('./db/models')
+const {
+  User,
+  Story,
+  Recommendation,
+  Subscription,
+  Like,
+  Audiobook,
+} = require('./db/models');
 const { Op } = require('./db/models').Sequelize;
 const app = express();
 
@@ -48,6 +55,51 @@ app.use('/users', usersRouter);
 app.use(requireAuth)
 app.use('/stories', storiesRouter);
 app.use('/audiobooks', audiobookRouter)
+
+app.get(
+  '/create-like',
+  asyncHandler(async (req, res) => {
+    const userId = 1;
+    // const userId = req.session.auth.userId;
+    // const { likeableId, likeableType } = req.body // 2, 'story'/'comment'
+    const likeableId = 2;
+    const likeableType = 'audiobook';
+    await Like.create({ userId, likeableId, likeableType })
+      .then((like) => {
+        res.send('You created it!');
+      })
+      .catch((e) => {
+        console.log(e);
+        res.send(`it didn't work!`);
+      });
+  })
+);
+
+app.use(
+  '/see-likes',
+  asyncHandler(async (req, res) => {
+    const likes = await User.findByPk(1, {
+      include: [
+        {
+          model: Story,
+          as: 'likedStories',
+        },
+        {
+          model: Audiobook,
+          as: 'likedAudiobooks',
+        },
+      ],
+    });
+    // const storyLikes = await Like.findAll({
+    //   where: {
+    //     likeableId: 2,
+    //     likeableType: 'story',
+    //   },
+    // });
+    // const numLikes = storyLikes.Likes.length;
+    res.json({ likes });
+  })
+);
 
 app.get("/grabdata", asyncHandler( async(req, res) => {
   const data = await User.findByPk(req.session.auth.userId, {

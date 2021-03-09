@@ -46,8 +46,32 @@ module.exports = (sequelize, DataTypes) => {
     User.belongsToMany(models.Story, columnMappingTwo);
     User.belongsToMany(models.User, columnMappingThree);
     User.belongsToMany(models.User, columnMappingFour);
-    User.hasMany(models.Recommendation, { foreignKey: 'userId', as: 'recommendations'})
-    User.hasMany(models.Subscription, { foreignKey: 'userId', as: 'subscriptions'})
+    User.hasMany(models.Recommendation, {
+      foreignKey: 'userId',
+      as: 'recommendations',
+    });
+    User.hasMany(models.Subscription, {
+      foreignKey: 'userId',
+      as: 'subscriptions',
+    });
+    User.belongsToMany(models.Story, {
+      through: {
+        model: 'Like',
+        unique: false,
+      },
+      foreignKey: 'userId',
+      as: 'likedStories',
+      constraints: false,
+    });
+    User.belongsToMany(models.Audiobook, {
+      through: {
+        model: 'Like',
+        unique: false,
+      },
+      foreignKey: 'userId',
+      as: 'likedAudiobooks',
+      constraints: false,
+    });
   };
   return User;
 };
