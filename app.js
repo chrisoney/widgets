@@ -54,28 +54,23 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use(requireAuth)
 app.use('/stories', storiesRouter);
-app.use('/audiobooks', audiobookRouter)
+// app.use('/audiobooks', audiobookRouter)
+
+// app.get('/', (req, res) => {
+//   res.send('hello!')
+// })
 
 app.get(
-  '/create-like',
+  '/delete-like',
   asyncHandler(async (req, res) => {
-    const userId = 1;
-    // const userId = req.session.auth.userId;
-    // const { likeableId, likeableType } = req.body // 2, 'story'/'comment'
-    const likeableId = 2;
-    const likeableType = 'audiobook';
-    await Like.create({ userId, likeableId, likeableType })
-      .then((like) => {
-        res.send('You created it!');
-      })
-      .catch((e) => {
-        console.log(e);
-        res.send(`it didn't work!`);
-      });
+    const story = await Story.findByPk(2);
+    await story.destroy();
+    const storyAgain = await Story.findByPk(2);
+    res.json({  storyAgain  });;
   })
 );
 
-app.use(
+app.get(
   '/see-likes',
   asyncHandler(async (req, res) => {
     const likes = await User.findByPk(1, {
@@ -84,10 +79,10 @@ app.use(
           model: Story,
           as: 'likedStories',
         },
-        {
-          model: Audiobook,
-          as: 'likedAudiobooks',
-        },
+        // {
+        //   model: Audiobook,
+        //   as: 'likedAudiobooks',
+        // },
       ],
     });
     // const storyLikes = await Like.findAll({
@@ -147,12 +142,12 @@ app.get("/testing-testing", asyncHandler( async(req, res) => {
 }))
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

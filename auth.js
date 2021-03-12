@@ -1,7 +1,8 @@
 
-const db = require('./db/models');
+const { User } = require('./db/models');
 
 const loginUser = (req, res, user) => {
+  console.log("here?")
   req.session.auth = {
     userId: user.id,
   };
@@ -22,13 +23,12 @@ const restoreUser = async (req, res, next) => {
   // Log the session object to the console
   // to assist with debugging.
   // console.log(req.session);
-
   if (req.session.auth) {
     const { userId } = req.session.auth;
-
     try {
-      const user = await db.User.findByPk(userId);
-
+      console.log("here now");
+      const user = await User.findByPk(userId);
+      console.log('after');
       if (user) {
         res.locals.authenticated = true;
         res.locals.user = user;

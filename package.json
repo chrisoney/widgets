@@ -21,6 +21,7 @@
     "http-errors": "~1.6.3",
     "method-override": "^3.0.0",
     "morgan": "~1.9.1",
+    "node-fetch": "^2.6.1",
     "node-sass": "^5.0.0",
     "per-env": "^1.0.2",
     "pg": "^8.4.2",

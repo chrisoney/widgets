@@ -30,8 +30,16 @@ module.exports = (sequelize, DataTypes) => {
 
     Story.belongsToMany(models.User, columnMappingOne);
     Story.belongsToMany(models.User, columnMappingTwo);
-    Story.hasMany(models.Subscription, { foreignKey: 'storyId' });
-    Story.hasMany(models.Recommendation, { foreignKey: 'storyId' });
+    Story.hasMany(models.Subscription, {
+      foreignKey: 'storyId',
+      onDelete: 'cascade',
+      hooks: true,
+    });
+    Story.hasMany(models.Recommendation, {
+      foreignKey: 'storyId',
+      onDelete: 'cascade',
+      hooks: true,
+    });
 
     Story.belongsToMany(models.User, {
       through: {
@@ -45,13 +53,9 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'likeableId',
       constraints: false,
     });
-    // Story.hasMany(models.Like, {
-    //   foreignKey: 'likeableId',
-    //   // constraints: false,
-    //   // scope: {
-    //   //   likeableType: 'story',
-    //   // },
-    // });
+    Story.hasMany(models.Like, {
+      foreignKey: 'likeableId',
+    });
   };;
   return Story;
 };

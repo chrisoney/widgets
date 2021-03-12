@@ -86,7 +86,9 @@ router.post('/register', csrfProtection, userValidators,
       user.hashedPassword = hashedPassword;
       await user.save();
       loginUser(req, res, user);
-      res.redirect('/stories/dashboard');
+      return req.session.save(() => {
+        res.redirect('/stories/dashboard');
+      });;
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
       res.render('auth/register', {
